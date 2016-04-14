@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/change_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="pin"
+        android:background="@drawable/bg_color"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="10dp"
+        >
+
+    <com.wxine.android.utils.CircleImageView
+        android:id="@+id/btn_photos"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_weight="1"
+        android:fitsSystemWindows="true"
+        app:layout_collapseMode="parallax"
+        android:src="@drawable/face"
+       />
+
+
+        <Button
+            android:id="@+id/btn_takephoto"
+            android:background="@drawable/photo18"
+            android:layout_marginLeft="200dp"
+            android:layout_weight="0"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="13dp"
+        >
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:textSize="30dp"
+            android:text="abcabc"
+            android:layout_weight="1"
+            android:textColor="#000000"
+            android:fitsSystemWindows="true"
+
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:hint="输入个性宣言"
+            android:textColorHint="#A4A4A4"
+            />
+    </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="#EEEEEE"
+        android:layout_marginTop="310dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义你的个人资料"
+            android:textSize="25dp"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择要在个人资料上显示的内容"
+            android:textSize="20px"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="50dp"
+            android:textColor="#787878"
+            />
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

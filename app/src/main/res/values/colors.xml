@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="line">#ccc</color>
+    <color name="comment_time">#bbb</color>
+    <color name="name">#565656</color>
+    <color name="black">#565656</color>
+    <color name="white">#ffffff</color>
+    <color name="mainbackground">#dcdcdc</color>
+    <color name="cardbackground">#f9f9f9</color>
+    <color name="comm_join">#89C277</color>
+    <color name="gray">#f1f1f1</color>
+    <color name="transparent">#ffffff</color>
+</resources>

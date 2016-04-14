@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/main_padding"
+        android:background="#ffffff"
+        >
+
+        <ImageView
+            android:id="@+id/tv_user_logo"
+            android:layout_width="@dimen/userface"
+            android:layout_height="@dimen/userface"
+            android:src="@drawable/tou" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingTop="@dimen/padding_four"
+            android:layout_toRightOf="@+id/tv_user_logo"
+            android:textColor="@color/name"
+            android:text="@string/username"
+            android:textSize="@dimen/fontsize"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/iv_info_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_zero"
+        android:paddingRight="@dimen/main_padding"
+        android:paddingLeft="@dimen/main_padding"
+        android:paddingBottom="@dimen/main_padding"
+        android:textSize="@dimen/fontsize"
+        android:text="@string/cart_content"
+        android:textColor="@color/black"
+        android:lineSpacingMultiplier="1.0"
+        android:background="#ffffff"
+         />
+    <ImageView
+        android:id="@+id/iv_info_image"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/pic1"
+         />
+    <View  android:layout_height="70px"
+        android:layout_width="match_parent"
+        android:background="#f9f8f8"/>
+</LinearLayout>

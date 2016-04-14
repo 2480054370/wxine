@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardlist_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    card_view:cardElevation="@dimen/cardview_default_elevation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_info_image"
+                android:layout_width="match_parent"
+                android:layout_height="120dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/face" />
+
+        <TextView
+            android:id="@+id/comm_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/iv_user_logo"
+            android:text="@string/username"
+            android:textColor="@color/name"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/comm_gnumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/iv_user_logo"
+                android:text="2980"
+                android:textColor="@color/name"
+                android:textSize="@dimen/fontsize" />
+
+            <TextView
+                android:id="@+id/comm_gtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/comm_gnumber"
+                android:text="个成员"
+                android:textColor="@color/name"
+                android:textSize="@dimen/fontsize" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/comm_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@id/comm_gnumber"
+            android:text="加入"
+            android:textColor="@color/comm_join"
+            android:textSize="@dimen/fontsize" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

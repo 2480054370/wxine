@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#FFFFFF">
+
+        <RelativeLayout
+            android:id="@+id/SettingRelativeLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip"
+            android:background="#3f51b5">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:navigationIcon="?attr/homeAsUpIndicator"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+            </android.support.design.widget.AppBarLayout>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SettingRelativeLayout"
+            android:fadingEdge="none">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingBottom="60.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:paddingTop="10.0dip">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="4.0dip"
+                    android:text="账户设置"
+                    android:textColor="#ff888888"
+                    android:textSize="16.0sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="1.0dip"
+                        android:shrinkColumns="0"
+                        android:stretchColumns="0">
+
+                        <TableRow
+                            android:id="@+id/LoginAuthentication"
+                            android:layout_width="fill_parent"
+                            android:layout_marginLeft="2.0dip"
+                            android:layout_marginRight="2.0dip"
+                            android:paddingBottom="16.0dip"
+                            android:paddingTop="16.0dip"
+                            android:background="?android:attr/selectableItemBackground">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:drawablePadding="10.0dip"
+                                android:gravity="center_vertical"
+                                android:includeFontPadding="false"
+                                android:paddingLeft="17.0dip"
+                                android:text="登录认证"
+                                android:textColor="#292727"
+                                android:textSize="16.0sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="right"
+                                android:gravity="center_vertical"
+                                android:paddingRight="20.0dip"
+                                android:src="@drawable/ic_arrow" />
+                        </TableRow>
+
+                        <View
+                            android:layout_height="0.5dip"
+                            android:background="#B7B7B7" />
+
+                        <TableRow
+                            android:id="@+id/MessageAuthentication"
+                            android:layout_width="fill_parent"
+                            android:layout_marginLeft="2.0dip"
+                            android:layout_marginRight="2.0dip"
+                            android:paddingBottom="16.0dip"
+                            android:paddingTop="16.0dip"
+                            android:background="?android:attr/selectableItemBackground">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:drawablePadding="10.0dip"
+                                android:gravity="center_vertical"
+                                android:includeFontPadding="false"
+                                android:paddingLeft="17.0dip"
+                                android:text="消息认证"
+                                android:textColor="#292727"
+                                android:textSize="16.0sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="right"
+                                android:gravity="center_vertical"
+                                android:paddingRight="20.0dip"
+                                android:src="@drawable/ic_arrow" />
+                        </TableRow>
+
+                        <View
+                            android:layout_height="0.5dip"
+                            android:background="#B7B7B7" />
+
+                        <TableRow
+                            android:id="@+id/SecretAdmin"
+                            android:layout_width="fill_parent"
+                            android:layout_marginLeft="2.0dip"
+                            android:layout_marginRight="2.0dip"
+                            android:paddingBottom="16.0dip"
+                            android:paddingTop="16.0dip"
+                            android:background="?android:attr/selectableItemBackground">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:drawablePadding="10.0dip"
+                                android:gravity="center_vertical"
+                                android:includeFontPadding="false"
+                                android:paddingLeft="17.0dip"
+                                android:text="隐私管理"
+                                android:textColor="#292727"
+                                android:textSize="16.0sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="right"
+                                android:gravity="center_vertical"
+                                android:paddingRight="20.0dip"
+                                android:src="@drawable/ic_arrow" />
+                        </TableRow>
+
+                    </TableLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="4.0dip"
+                    android:text="应用设置"
+                    android:textColor="#ff888888"
+                    android:textSize="16.0sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="1.0dip"
+                        android:shrinkColumns="0"
+                        android:stretchColumns="0">
+
+                        <TableRow
+                            android:id="@+id/NightMode"
+                            android:layout_width="fill_parent"
+                            android:layout_marginLeft="2.0dip"
+                            android:layout_marginRight="2.0dip"
+                            android:paddingBottom="16.0dip"
+                            android:paddingTop="16.0dip"
+                            android:background="?android:attr/selectableItemBackground">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:drawablePadding="10.0dip"
+                                android:gravity="center_vertical"
+                                android:includeFontPadding="false"
+                                android:paddingLeft="17.0dip"
+                                android:text="主题选择"
+                                android:textColor="#292727"
+                                android:textSize="16.0sp" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="right"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10.0dip" />
+                        </TableRow>
+
+                        <View
+                            android:layout_height="0.5dip"
+                            android:background="#B7B7B7" />
+
+                        <TableRow
+                            android:id="@+id/AboutWangxin"
+                            android:layout_width="fill_parent"
+                            android:layout_marginLeft="2.0dip"
+                            android:layout_marginRight="2.0dip"
+                            android:paddingBottom="16.0dip"
+                            android:paddingTop="16.0dip"
+                            android:background="?android:attr/selectableItemBackground">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:drawablePadding="10.0dip"
+                                android:gravity="center_vertical"
+                                android:includeFontPadding="false"
+                                android:paddingLeft="17.0dip"
+                                android:text="关于网信"
+                                android:textColor="#292727"
+                                android:textSize="16.0sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="right"
+                                android:gravity="center_vertical"
+                                android:paddingRight="20.0dip"
+                                android:src="@drawable/ic_arrow" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4169e1"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:layout_margin="20px"
+        android:background="@drawable/border"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="30px"
+            android:layout_height="30px"
+            android:layout_margin="20px"
+            android:src="@drawable/search"
+            />
+      <EditText
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginRight="40px"
+          android:layout_marginLeft="20px"
+          android:textSize="20px"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mReclcer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</LinearLayout>
