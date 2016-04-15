@@ -5,23 +5,27 @@
 <android.support.v7.widget.RecyclerView
     android:id="@+id/notification"
     android:layout_width="match_parent"
+    android:background="@color/notification_bg"
     android:layout_height="0dp"
-    android:layout_weight="9"
+    android:layout_weight="9.2"
     />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#000000"
-        />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:background="@color/notification_bg"
+        android:layout_weight="0.8"
         >
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/notification_line"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="30px"
+        android:textColor="@color/notification_title"
         android:text="已读通知"
         />
         <ImageView
