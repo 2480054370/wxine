@@ -17,8 +17,8 @@ import java.util.List;
 /**
  * Created by Bumblebee on 2016/3/31.
  */
-public class FriendsFragment extends Fragment {
-    private FriendsAdapter mAdapter;
+public class FollowerFragment extends Fragment {
+    private FollowerAdapter mAdapter;
     private List<Integer> mDataset = Arrays.asList(R.drawable.tou, R.drawable.tou, R.drawable.tou,R.drawable.tou, R.drawable.tou, R.drawable.tou,R.drawable.tou, R.drawable.tou, R.drawable.tou,R.drawable.tou);
     private String mItemData = "Lorem Ipsum is simply dummy text of the printing and ";
     private String mDatas = "typesetting industry Lorem Ipsum has been the industry's standard dummy ";
@@ -26,7 +26,7 @@ public class FriendsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_friends, container, false);
+        View view = inflater.inflate(R.layout.fragment_follwer, container, false);
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(
                 R.id.fragment_list_rv);
@@ -41,7 +41,7 @@ public class FriendsFragment extends Fragment {
         List<String> content=new ArrayList<String>();
         Collections.addAll(list, listItems);
         Collections.addAll(content,listcontent);
-        mAdapter = new FriendsAdapter(mDataset,list,content);
+        mAdapter = new FollowerAdapter(mDataset,list,content);
         recyclerView.setAdapter(mAdapter);
 
         return view;

@@ -128,6 +128,7 @@ public class MainActivity extends AppCompatActivity
                     rotate.setFillAfter(true);
                     open.startAnimation(rotate);
                     menu.clear();
+
                     navigationView.inflateMenu(R.menu.activity_main_drawer);
                 }
 

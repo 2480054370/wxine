@@ -12,13 +12,13 @@ import java.util.List;
 /**
  * Created by Bumblebee on 2016/3/31.
  */
-public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.MyViewHolder> {
+public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.MyViewHolder> {
     List<Integer> mDataset; //图片
     List<String> mListData; //名字
     List<String> mDatas;    //文本
 
 
-    public FriendsAdapter(List<Integer> mDataset,List<String> mListData,List<String> mDatas) {
+    public FollowerAdapter(List<Integer> mDataset, List<String> mListData, List<String> mDatas) {
         this.mDataset = mDataset;
         this.mListData = mListData;
         this.mDatas = mDatas;
@@ -26,7 +26,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.MyViewHo
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_friends_item,
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_follower_item,
                 viewGroup, false);
         return new MyViewHolder(view);
     }
