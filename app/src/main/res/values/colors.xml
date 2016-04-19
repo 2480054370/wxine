@@ -13,4 +13,10 @@
     <color name="comm_join">#89C277</color>
     <color name="gray">#f1f1f1</color>
     <color name="transparent">#ffffff</color>
+
+    <color name="notification_word">#757575</color>
+    <color name="notification_title">#7d7d7d</color>
+    <color name="notification_lined">#c6c6c6</color>
+    <color name="notification_line">#c1c1c1</color>
+    <color name="notification_bg">#e5e5e5</color>
 </resources>
