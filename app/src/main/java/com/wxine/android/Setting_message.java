@@ -26,14 +26,14 @@ public class Setting_message extends AppCompatActivity {
         toolbar.setTitle("设置");
         setSupportActionBar(toolbar);
 
-        PhoneSwitchButton = (Switch)findViewById(R.id.PhoneSwitchButton);
-        EmailSwitchButton = (Switch)findViewById(R.id.EmailSwitchButton);
+        PhoneSwitchButton = (Switch) findViewById(R.id.PhoneSwitchButton);
+        EmailSwitchButton = (Switch) findViewById(R.id.EmailSwitchButton);
 
-        if(PhoneSwitchButton.getTag().toString().equals("true")){
-            Log.d("-------------------","test");
+        if (PhoneSwitchButton.getTag().toString().equals("true")) {
+            Log.d("-------------------", "test");
             PhoneSwitchButton.setChecked(true);
-        }else{
-            Log.d("---------------------","test2");
+        } else {
+            Log.d("---------------------", "test2");
             PhoneSwitchButton.setChecked(false);
         }
         EmailSwitchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -52,13 +52,13 @@ public class Setting_message extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // TODO Auto-generated method stub
-                if(isChecked){
+                if (isChecked) {
                     //Log.d("---------------------", "test2");
                     //PhoneSwitchButton.setTag("true");
-                    Toast.makeText(Setting_message.this, "Hello biao1",Toast.LENGTH_SHORT).show();
-                }else{
+                    Toast.makeText(Setting_message.this, "Hello biao1", Toast.LENGTH_SHORT).show();
+                } else {
                     //PhoneSwitchButton.setTag("false");
-                    Toast.makeText(Setting_message.this, "Hello biao",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Setting_message.this, "Hello biao", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -68,9 +68,9 @@ public class Setting_message extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (item.getItemId() == android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             finish();
-            return true ;
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

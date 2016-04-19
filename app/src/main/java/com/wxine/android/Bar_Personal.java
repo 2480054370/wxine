@@ -28,6 +28,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 
 public class Bar_Personal extends AppCompatActivity {
+    private Toolbar toolbar;
     private Button button;
     private InfosAdapter mAdapter;
     private SwipeRefreshLayout mRefreshLayout;
@@ -36,18 +37,19 @@ public class Bar_Personal extends AppCompatActivity {
     private boolean isRefreshing = false;
     private int page = 0;
     ArrayList<Info> list = new ArrayList<Info>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bar_personal_main);
-        button = (Button)findViewById(R.id.personal_button);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.personal_toolbar);
+        button = (Button) findViewById(R.id.personal_button);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
-        mRefreshLayout =(SwipeRefreshLayout)findViewById(R.id.info_refresh_widget);
+        mRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.info_refresh_widget);
 
-        RecyclerView mRecyclerView = (RecyclerView)findViewById(R.id.infos_recycler_view);
+        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.infos_recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
         mLayoutManager = new LinearLayoutManager(this);
@@ -71,10 +73,11 @@ public class Bar_Personal extends AppCompatActivity {
                 startActivity(i);
             }
 
-            public  void onShareClick(View view,int position){
+            public void onShareClick(View view, int position) {
 
             }
-            public void onCommentClick(View view,Info data){
+
+            public void onCommentClick(View view, Info data) {
 
             }
 
@@ -170,7 +173,7 @@ public class Bar_Personal extends AppCompatActivity {
     }
 
 
-    public void datainit(){
+    public void datainit() {
         User user = new User();
         user.setName("abc");
         user.setImage("http://img.teapic.com/thumbs/201305/28/101143gftcfpzwvukwqjsl.jpg.middle.jpg");
@@ -202,25 +205,25 @@ public class Bar_Personal extends AppCompatActivity {
         info2.setCleancontent("this is c content");
         list.add(info);
         list.add(info2);
-        Log.d("InfosFragment", "Socket Type: " + info.getCleancontent()+"111");
+        Log.d("InfosFragment", "Socket Type: " + info.getCleancontent() + "111");
     }
 
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-            // Inflate the menu; this adds items to the action bar if it is present.
-            getMenuInflater().inflate(R.menu.menu_personal, menu);
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent();
-                    intent.setClass(Bar_Personal.this, changheandActivity.class);
-                    startActivity(intent);
-                }
-            });
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_personal, menu);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Bar_Personal.this, changheandActivity.class);
+                startActivity(intent);
+            }
+        });
 
-            return true;
+        return true;
 
-        }
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -228,16 +231,16 @@ public class Bar_Personal extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (item.getItemId() == android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             finish();
-            return true ;
+            return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_refresh) {
             return true;
-        }else if (id == R.id.action_copylink) {
+        } else if (id == R.id.action_copylink) {
             return true;
-        }else if (id == R.id.action_site) {
+        } else if (id == R.id.action_site) {
             return true;
         } else if (id == R.id.action_opinion) {
             return true;

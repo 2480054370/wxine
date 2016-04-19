@@ -1,105 +1,115 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fadingEdge="vertical"
+    android:fitsSystemWindows="true"
+    app:layout_scrollFlags="scroll|enterAlways"
+    tools:context="com.wxine.android.InfosFragment">
 
-    <android.support.design.widget.CoordinatorLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        android:fadingEdge="vertical"
-        app:layout_scrollFlags="scroll|enterAlways"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context="com.wxine.android.InfosFragment"
-        >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:id="@+id/personal_relativelayout"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@drawable/bg_color"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:navigationIcon="?attr/homeAsUpIndicator"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+            </android.support.design.widget.AppBarLayout>
+        </RelativeLayout>
+
+        <!--   <ScrollView
+               android:id="@+id/personal_scrollView"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/personal_relativelayout"
+               android:fadingEdge="none">-->
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                >
-                <android.support.design.widget.CollapsingToolbarLayout
-                    android:id="@+id/toolbar_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="320dp"
-                    android:background="#FFFFFF"
-                    android:fitsSystemWindows="true"
-                    app:contentScrim="#F6F6F6"
-                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-                    <com.wxine.android.utils.CircleImageView
-                        android:id="@+id/icon"
-                        android:layout_width="85dp"
-                        android:layout_height="85dp"
-                        android:fitsSystemWindows="true"
-                        android:layout_gravity="center"
-                        android:src="@drawable/face"
-                        app:layout_collapseMode="parallax" />
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="40dp"
-                        android:textSize="30dp"
-                        android:text="abcabc"
-                        android:textColor="#000000"
-                        android:fitsSystemWindows="true"
-                        android:layout_marginTop="200dp"
-                        android:layout_gravity="center_horizontal"/>
-
-                    <Button android:id="@+id/personal_button"
-                        style="?android:textAppearanceSmall"
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="250dp"
-                        android:background="@drawable/personal_button"
-                        android:textColor="#FFFFFF"
-                        android:layout_gravity="center_horizontal"
-                        android:text="修改个人资料"
-                        android:textStyle="bold" />
-
-
-
-                    <android.support.v7.widget.Toolbar
-                        android:id="@+id/personal_toolbar"
-                        android:layout_width="match_parent"
-                        android:layout_height="?attr/actionBarSize"
-                        app:layout_collapseMode="pin"
-                        android:background="@drawable/bg_color"
-                        app:navigationIcon="?attr/homeAsUpIndicator"
-                        app:popupTheme="@style/AppTheme.PopupOverlay" />
-                </android.support.design.widget.CollapsingToolbarLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="#EEEEEE"
-                    android:text="个人的信息"
-                    android:textSize="25px"
-                    android:padding="12dp"
-                    android:textColor="#BBBBBB"
-                    android:layout_marginTop="5dp"
-
-                    />
-            </LinearLayout>
-            </LinearLayout>
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/info_refresh_widget"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="435dp"
-            >
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/infos_recycler_view"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/personal_relativelayout"
+            android:orientation="vertical">
+
+            <com.wxine.android.utils.CircleImageView
+                android:id="@+id/icon"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:fitsSystemWindows="true"
+                android:src="@drawable/face"
+                app:layout_collapseMode="parallax" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/icon"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:fitsSystemWindows="true"
+                android:text="abcabc"
+                android:textColor="#000000"
+                android:textSize="30dp" />
+
+            <Button
+                android:id="@+id/personal_button"
+                style="?android:textAppearanceSmall"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:background="@drawable/personal_button"
+                android:text="修改个人资料"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </android.support.v4.widget.SwipeRefreshLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#EEEEEE"
+                android:padding="10dp"
+                android:text="个人的信息"
+                android:textColor="#BBBBBB"
+                android:textSize="15px" />
+        </LinearLayout>
+        <!-- </ScrollView>-->
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/info_refresh_widget"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="330dp">
 
-
-    </android.support.design.widget.CoordinatorLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/infos_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
 
 
 
