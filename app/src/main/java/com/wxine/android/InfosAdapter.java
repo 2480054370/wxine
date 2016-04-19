@@ -31,7 +31,7 @@ public class InfosAdapter extends RecyclerView.Adapter<InfosAdapter.ViewHolder> 
         Log.v("---------", "refresh");
     }
 
-    public void addItems(List<Info> items){
+    public void addItems(List<Info> items) {
         final int positionStart = list.size() + 1;
         list.addAll(items);
         notifyItemRangeInserted(positionStart, items.size());
@@ -57,15 +57,15 @@ public class InfosAdapter extends RecyclerView.Adapter<InfosAdapter.ViewHolder> 
 
         public ViewHolder(Context context, final View v) {
             super(v);
-            user_logo = (ImageView)v.findViewById(R.id.iv_user_logo);
-            user_name = (TextView)v.findViewById(R.id.tv_user_name);
-            info_content = (TextView)v.findViewById(R.id.tv_info_content);
-            info_image = (ImageView)v.findViewById(R.id.iv_info_image);
-            info_comment = (ImageView)v.findViewById(R.id.iv_info_comment);
-            info_comment_num = (TextView)v.findViewById(R.id.info_comment_num);
+            user_logo = (ImageView) v.findViewById(R.id.iv_user_logo);
+            user_name = (TextView) v.findViewById(R.id.tv_user_name);
+            info_content = (TextView) v.findViewById(R.id.tv_info_content);
+            info_image = (ImageView) v.findViewById(R.id.iv_info_image);
+            info_comment = (ImageView) v.findViewById(R.id.iv_info_comment);
+            info_comment_num = (TextView) v.findViewById(R.id.info_comment_num);
             info_agree_img = (ImageView) v.findViewById(R.id.iv_agree_img);
             info_share_img = (ImageView) v.findViewById(R.id.iv_share_img);
-            comments_recycler_view = (RecyclerView)v.findViewById(R.id.comments_recycler_view);
+            comments_recycler_view = (RecyclerView) v.findViewById(R.id.comments_recycler_view);
             comments_recycler_view.setHasFixedSize(true);
 
             FullyLinearLayoutManager mLayoutManager = new FullyLinearLayoutManager(context);
@@ -77,17 +77,17 @@ public class InfosAdapter extends RecyclerView.Adapter<InfosAdapter.ViewHolder> 
                     mOnItemClickListener.onAgreeClick(info_agree_img, getLayoutPosition());   //.onButton1Click(v, getLayoutPosition());
                 }
             });
-            info_share_img.setOnClickListener(new View.OnClickListener(){
+            info_share_img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mOnItemClickListener.onShareClick(v,getLayoutPosition());
+                    mOnItemClickListener.onShareClick(v, getLayoutPosition());
                 }
             });
 
             info_comment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View cv) {
-                    mOnItemClickListener.onCommentClick(v,(Info)v.getTag());
+                    mOnItemClickListener.onCommentClick(v, (Info) v.getTag());
                 }
             });
 
@@ -109,10 +109,13 @@ public class InfosAdapter extends RecyclerView.Adapter<InfosAdapter.ViewHolder> 
 
     //define interface
     public static interface OnRecyclerViewItemClickListener {
-        void onItemClick(View view , Info data);
+        void onItemClick(View view, Info data);
+
         void onAgreeClick(ImageView view, int position);
-        void onShareClick(View view,int positions);
-        void onCommentClick(View view,Info data);
+
+        void onShareClick(View view, int positions);
+
+        void onCommentClick(View view, Info data);
     }
 
     @Override
@@ -132,11 +135,11 @@ public class InfosAdapter extends RecyclerView.Adapter<InfosAdapter.ViewHolder> 
         Info info = list.get(position);
         imageLoader.displayImage(info.getUser().getImage(), holder.user_logo);
         holder.user_name.setText(info.getUser().getName());
-        holder.info_content.setText(info.getContent()+"  this is info_content...");
+        holder.info_content.setText(info.getContent() + "  this is info_content...");
         imageLoader.displayImage(info.getImage(), holder.info_image);
         holder.info_comment_num.setText(String.valueOf(info.getComments().size()));
 
-        if (info.getComments().size()>0) {
+        if (info.getComments().size() > 0) {
             ViewGroup.LayoutParams lp = holder.comments_recycler_view.getLayoutParams();
             lp.height = 200;
             holder.comments_recycler_view.setLayoutParams(lp);
@@ -153,6 +156,7 @@ public class InfosAdapter extends RecyclerView.Adapter<InfosAdapter.ViewHolder> 
                 final Handler handler = new Handler();
                 Runnable runnable = new Runnable() {
                     int to = 1;
+
                     @Override
                     public void run() {
                         holder.comments_recycler_view.smoothScrollToPosition(to);
@@ -179,7 +183,7 @@ public class InfosAdapter extends RecyclerView.Adapter<InfosAdapter.ViewHolder> 
     public void onClick(View v) {
         if (mOnItemClickListener != null) {
             //注意这里使用getTag方法获取数据
-            mOnItemClickListener.onItemClick(v,(Info)v.getTag());
+            mOnItemClickListener.onItemClick(v, (Info) v.getTag());
         }
     }
 

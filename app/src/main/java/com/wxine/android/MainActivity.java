@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity
     private ImageView content_image;
     private ImageView Collection_image;
     private ImageView group_image;
+
     private ImageView notice_image;
     private TextView content_text;
     private TextView Collection_text;
@@ -128,6 +129,7 @@ public class MainActivity extends AppCompatActivity
                     rotate.setFillAfter(true);
                     open.startAnimation(rotate);
                     menu.clear();
+
                     navigationView.inflateMenu(R.menu.activity_main_drawer);
                 }
 

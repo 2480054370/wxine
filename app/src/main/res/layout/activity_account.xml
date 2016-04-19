@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:fitsSystemWindows="true">
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -13,23 +13,23 @@
         <RelativeLayout
             android:id="@+id/SettingAccountRelativeLayout"
             android:layout_width="fill_parent"
-            android:background="#3f51b5"
-            android:layout_height="50.0dip" >
+            android:layout_height="50.0dip"
+            android:background="#3f51b5">
 
             <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fitsSystemWindows="true"
-                android:theme="@style/AppTheme.AppBarOverlay" >
+                android:theme="@style/AppTheme.AppBarOverlay">
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="?attr/colorPrimary"
+                    app:layout_scrollFlags="scroll|enterAlways"
                     app:navigationIcon="?attr/homeAsUpIndicator"
-                    app:popupTheme="@style/AppTheme.PopupOverlay"
-                    app:layout_scrollFlags="scroll|enterAlways"  />
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
             </android.support.design.widget.AppBarLayout>
         </RelativeLayout>
 
@@ -37,7 +37,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/SettingAccountRelativeLayout"
-            android:fadingEdge="none" >
+            android:fadingEdge="none">
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -47,7 +47,7 @@
                 android:paddingBottom="60.0dip"
                 android:paddingLeft="10.0dip"
                 android:paddingRight="10.0dip"
-                android:paddingTop="10.0dip" >
+                android:paddingTop="10.0dip">
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -60,39 +60,60 @@
                     android:textColor="#ff888888"
                     android:textSize="16.0sp" />
 
-                <LinearLayout android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                        <AutoCompleteTextView android:id="@+id/SettingAccountOld" android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:hint="旧密码"
-                            android:inputType="textPassword" android:maxLines="1"
+
+                        <AutoCompleteTextView
+                            android:id="@+id/SettingAccountOld"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="旧密码"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
                             android:singleLine="true" />
                     </android.support.design.widget.TextInputLayout>
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                        <AutoCompleteTextView android:id="@+id/SettingAccountNew" android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:hint="新密码"
-                            android:inputType="textPassword" android:maxLines="1"
+
+                        <AutoCompleteTextView
+                            android:id="@+id/SettingAccountNew"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="新密码"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
                             android:singleLine="true" />
                     </android.support.design.widget.TextInputLayout>
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                        <AutoCompleteTextView android:id="@+id/SettingAccountOk" android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:hint="确认密码"
-                            android:inputType="textPassword" android:maxLines="1"
+
+                        <AutoCompleteTextView
+                            android:id="@+id/SettingAccountOk"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="确认密码"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
                             android:singleLine="true" />
                     </android.support.design.widget.TextInputLayout>
 
-                    <Button android:id="@+id/SettingButtonUpdata" style="?android:textAppearanceSmall"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp" android:text="确认更新"
+                    <Button
+                        android:id="@+id/SettingButtonUpdata"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="确认更新"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>

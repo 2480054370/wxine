@@ -76,9 +76,9 @@
                             android:layout_width="fill_parent"
                             android:layout_marginLeft="2.0dip"
                             android:layout_marginRight="2.0dip"
+                            android:background="?android:attr/selectableItemBackground"
                             android:paddingBottom="16.0dip"
-                            android:paddingTop="16.0dip"
-                            android:background="?android:attr/selectableItemBackground">
+                            android:paddingTop="16.0dip">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -109,9 +109,9 @@
                             android:layout_width="fill_parent"
                             android:layout_marginLeft="2.0dip"
                             android:layout_marginRight="2.0dip"
+                            android:background="?android:attr/selectableItemBackground"
                             android:paddingBottom="16.0dip"
-                            android:paddingTop="16.0dip"
-                            android:background="?android:attr/selectableItemBackground">
+                            android:paddingTop="16.0dip">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -142,9 +142,9 @@
                             android:layout_width="fill_parent"
                             android:layout_marginLeft="2.0dip"
                             android:layout_marginRight="2.0dip"
+                            android:background="?android:attr/selectableItemBackground"
                             android:paddingBottom="16.0dip"
-                            android:paddingTop="16.0dip"
-                            android:background="?android:attr/selectableItemBackground">
+                            android:paddingTop="16.0dip">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -196,9 +196,9 @@
                             android:layout_width="fill_parent"
                             android:layout_marginLeft="2.0dip"
                             android:layout_marginRight="2.0dip"
+                            android:background="?android:attr/selectableItemBackground"
                             android:paddingBottom="16.0dip"
-                            android:paddingTop="16.0dip"
-                            android:background="?android:attr/selectableItemBackground">
+                            android:paddingTop="16.0dip">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -228,9 +228,9 @@
                             android:layout_width="fill_parent"
                             android:layout_marginLeft="2.0dip"
                             android:layout_marginRight="2.0dip"
+                            android:background="?android:attr/selectableItemBackground"
                             android:paddingBottom="16.0dip"
-                            android:paddingTop="16.0dip"
-                            android:background="?android:attr/selectableItemBackground">
+                            android:paddingTop="16.0dip">
 
                             <TextView
                                 android:layout_width="wrap_content"
