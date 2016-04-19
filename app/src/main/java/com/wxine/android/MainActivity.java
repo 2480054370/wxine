@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity
     private ImageView content_image;
     private ImageView Collection_image;
     private ImageView group_image;
+
     private ImageView notice_image;
     private TextView content_text;
     private TextView Collection_text;

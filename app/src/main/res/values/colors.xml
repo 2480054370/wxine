@@ -19,4 +19,9 @@
     <color name="notification_lined">#c6c6c6</color>
     <color name="notification_line">#c1c1c1</color>
     <color name="notification_bg">#e5e5e5</color>
+
+    <color name="barmain">#c53928</color>
+    <color name="barcomm">#097f42</color>
+    <color name="barcoll">#0187d0</color>
+    <color name="barnotice">#c53928</color>
 </resources>
