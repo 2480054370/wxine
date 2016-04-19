@@ -146,6 +146,12 @@
             android:name=".change_Personal"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
+            android:name=".Event_content"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".MySkin"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".Bar_Personal"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
