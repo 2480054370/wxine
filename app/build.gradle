@@ -49,4 +49,5 @@ dependencies {
     compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
     compile 'org.json:json:20160212'
     compile files('libs/BaiduLBS_Android.jar')
+    compile project(':library')
 }

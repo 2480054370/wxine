@@ -3,15 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/personal_toolbar"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_collapseMode="pin"
-        android:background="#DB4437"
-        app:navigationIcon="?attr/homeAsUpIndicator"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#DB4437"
+            app:layout_collapseMode="pin"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +27,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
-        android:layout_weight="1" >
+        android:layout_weight="1">
 
 
         <ImageView
@@ -29,11 +37,6 @@
             android:layout_weight="1"
             android:scaleType="matrix"
             android:src="@drawable/default_wallpaper" />
-
-
-
-
-
 
 
         <ImageView
@@ -48,25 +51,13 @@
     </LinearLayout>
 
 
-
-
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
-        android:layout_weight="1" >
-
-
-
-
-
-
-
-
+        android:layout_weight="1">
 
 
         <ImageView
@@ -76,9 +67,6 @@
             android:layout_weight="1"
             android:scaleType="center"
             android:src="@drawable/wallpaper_d" />
-
-
-
 
 
         <ImageView
@@ -93,14 +81,6 @@
     </LinearLayout>
 
 
-
-
-
-
-
-
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -108,10 +88,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
-        android:layout_weight="1" >
-
-
-
+        android:layout_weight="1">
 
 
         <ImageView
@@ -121,11 +98,6 @@
             android:layout_weight="1"
             android:scaleType="center"
             android:src="@drawable/wallpaper_g" />
-
-
-
-
-
 
 
         <ImageView
