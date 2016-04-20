@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity
     private TextView notice_text;
     private int white = 0xFFFFFFFF;
     private int gray = 0xFF979797;
-    private Fragment fg1, fg2, fg3, fg4;
+    private Fragment fg1, fg2, fg3, fg4,fg5;
     FragmentManager fManager;
 
 
@@ -182,6 +182,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void hideFragments(FragmentTransaction transaction) {
+        fg5 = new NotifacationReadFragment();
+
         if (fg1 != null) {
             transaction.hide(fg1);
         }
@@ -193,6 +195,9 @@ public class MainActivity extends AppCompatActivity
         }
         if (fg4 != null) {
             transaction.hide(fg4);
+        }
+        if(fg5 != null){
+            transaction.hide(fg5);
         }
     }
 

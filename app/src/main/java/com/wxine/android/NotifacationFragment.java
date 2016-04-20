@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.wxine.android.model.Info;
 
@@ -22,6 +24,8 @@ public class NotifacationFragment extends Fragment {
     private RecyclerView mReclcerView;
     private LinearLayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
+    private RelativeLayout mRelativeLayout;
+
     public NotifacationFragment(){
 
     }
@@ -36,6 +40,18 @@ public class NotifacationFragment extends Fragment {
         ArrayList<Info> Test = new ArrayList<Info>();
         mAdapter = new NotificationAdapter(this.getContext(),Test);
         mReclcerView.setAdapter(mAdapter);
+        mRelativeLayout  = (RelativeLayout)view.findViewById(R.id.notification_read);
+        mRelativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NotifacationReadFragment fragment = new NotifacationReadFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.setCustomAnimations(R.anim.fragment_up,R.anim.fragment_slide_left_exit);
+                transaction.replace(R.id.content,fragment);
+                //transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                transaction.commit();
+            }
+        });
         return view;
     }
 
