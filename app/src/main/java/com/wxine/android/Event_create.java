@@ -24,7 +24,7 @@ public class Event_create extends Activity implements
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
     private Button button;
     private SkinSettingManager mSettingManager;
-    private Button btn;
+    private LinearLayout mylayout;
     private LinearLayout layout;
     private TextView datatextstart;
     private TextView timetextstart;
@@ -40,7 +40,7 @@ public class Event_create extends Activity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_event);
         button = (Button) findViewById(R.id.close_btn);
-        btn = (Button) findViewById(R.id.button1);
+        mylayout = (LinearLayout) findViewById(R.id.mylayout);
         datatextstart = (TextView) findViewById(R.id.datatextstart);
         timetextstart = (TextView) findViewById(R.id.timetextstart);
         datatextend = (TextView) findViewById(R.id.datatextend);
@@ -111,7 +111,7 @@ public class Event_create extends Activity implements
                 finish();
             }
         });
-        btn.setOnClickListener(new View.OnClickListener() {
+        mylayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Event_create.this, MySkin.class);
