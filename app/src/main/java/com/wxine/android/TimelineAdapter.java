@@ -60,6 +60,15 @@ public class TimelineAdapter extends BaseAdapter {
 							context.startActivity(intent);
 					                     }
 				                });
+			viewHolder.im_event = (ImageView)convertView.findViewById(R.id.im_event);
+			viewHolder.im_event.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					Intent intent = new Intent(context, SingActivity.class);
+					context.startActivity(intent);
+				}
+			});
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
@@ -79,5 +88,6 @@ public class TimelineAdapter extends BaseAdapter {
 		public TextView title;
 		public ImageView image;
 		public CardView cardView;
+		public ImageView im_event;
 	}
 }
