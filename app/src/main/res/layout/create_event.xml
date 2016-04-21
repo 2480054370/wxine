@@ -14,41 +14,57 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="#E4E4E4"
+            android:weightSum="1"
             android:orientation="horizontal">
+            <RelativeLayout
+                android:id="@+id/close"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="0.5">
+                <ImageView
+                    android:id="@+id/closeimg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/close"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="取消"
+                    android:textSize="28sp"
+                    android:layout_toRightOf="@+id/closeimg"
+                    android:layout_marginLeft="30dp"
+                    android:layout_centerVertical="true"/>
 
-            <Button
-                android:id="@+id/close_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:background="#E4E4E4"
-                android:drawableLeft="@drawable/close"
-                android:gravity="center"
-                android:paddingLeft="60dp"
-                android:text="取消"
-                android:textColor="#737373"
-                android:textSize="20sp" />
-
+            </RelativeLayout>
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:background="#B9B9B9" />
+            <RelativeLayout
+                android:id="@+id/send"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="0.5">
+                <ImageView
+                    android:id="@+id/sendimg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/event_send"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="邀请"
+                    android:textSize="28sp"
+                    android:layout_toRightOf="@+id/sendimg"
+                    android:layout_marginLeft="30dp"
+                    android:layout_centerVertical="true"/>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:background="#E4E4E4"
-                android:drawableLeft="@drawable/event_send"
-                android:gravity="center"
-                android:paddingLeft="60dp"
-                android:text="邀请"
-                android:textColor="#737373"
-                android:textSize="20sp" />
-
+            </RelativeLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -319,7 +335,7 @@
             <EditText
                 android:id="@+id/explaintext"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:background="@null"
                 android:gravity="top|left"
                 android:hint="说明（选填）"
@@ -332,7 +348,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:layout_below="@id/explaintext"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="5dp"
                 android:background="#6db8b1" />
         </RelativeLayout>
 

@@ -20,7 +20,7 @@ import java.util.Calendar;
  */
 public class EventCreate extends Activity implements
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
-    private Button button;
+    private RelativeLayout close;
     private Button but;
     private SkinSettingManager mSettingManager;
     private LinearLayout mylayout;
@@ -38,7 +38,7 @@ public class EventCreate extends Activity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_event);
-        button = (Button) findViewById(R.id.close_btn);
+        close = (RelativeLayout) findViewById(R.id.close);
         but = (Button) findViewById(R.id.but);
         mylayout = (LinearLayout) findViewById(R.id.mylayout);
         datatextstart = (TextView) findViewById(R.id.datatextstart);
@@ -105,7 +105,7 @@ public class EventCreate extends Activity implements
             }
         });
 
-        button.setOnClickListener(new View.OnClickListener() {
+        close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
