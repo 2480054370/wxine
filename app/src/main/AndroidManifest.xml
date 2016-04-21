@@ -155,13 +155,16 @@
             android:name=".Bar_Personal"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
+            android:name=".SingActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".changheandActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".EventActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".Event_create"
+            android:name=".EventCreate"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
