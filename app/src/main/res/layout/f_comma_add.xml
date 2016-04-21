@@ -17,32 +17,33 @@
     </android.support.design.widget.AppBarLayout>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="0px"
+        android:layout_height="0dp"
         android:layout_weight="1.5"
-        android:textSize="70px"
+        android:textSize="70dp"
         android:text="标题"
         />
         <View
         android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_marginTop="40px"
-        android:layout_marginLeft="20px"
-        android:layout_marginRight="20px"
+        android:layout_height="1dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="#cccccc"
         />
     <RelativeLayout
         android:id="@+id/Privacy"
         android:layout_width="match_parent"
-        android:layout_height="0px"
+        android:layout_height="0dp"
         android:layout_weight="1.5">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20px"
+            android:layout_marginLeft="20dp"
             android:layout_centerVertical="true"
             >
             <TextView
+                android:id="@+id/privacy_t"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="公开"
@@ -50,14 +51,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20px"
+                android:layout_marginTop="20dp"
                 android:text="设定后既无法更改。"
                 />
         </LinearLayout>
         <ImageView
-            android:layout_width="20px"
-            android:layout_height="20px"
-            android:layout_marginRight="20px"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="20dp"
             android:src="@drawable/down"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
@@ -65,14 +66,14 @@
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0px"
+        android:layout_height="0dp"
         android:layout_weight="1.5"
         >
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20px"
+            android:layout_marginLeft="20dp"
             android:layout_centerVertical="true"
             >
             <TextView
@@ -84,7 +85,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20px"
+                android:layout_marginTop="20dp"
                 android:text="他人需要申请才能加入你的社群"
                 />
         </LinearLayout>
@@ -97,10 +98,11 @@
     </RelativeLayout>
 <TextView
     android:layout_width="match_parent"
-    android:layout_height="0px"
+    android:layout_height="0dp"
     android:layout_weight="5.5"
     android:text="详细了解公开范围"
-    android:layout_marginTop="20px"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
     android:textColor="#5065ff"
    />
 </LinearLayout>
