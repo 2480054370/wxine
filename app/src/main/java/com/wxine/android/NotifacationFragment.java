@@ -47,9 +47,17 @@ public class NotifacationFragment extends Fragment {
                 NotifacationReadFragment fragment = new NotifacationReadFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.setCustomAnimations(R.anim.fragment_up,R.anim.fragment_slide_left_exit);
-                transaction.replace(R.id.content,fragment);
+           //     transaction.hide(NotifacationFragment.this).show(fragment).commit();
+                transaction.addToBackStack(null);
+                if (!fragment.isAdded()) {
+                    // 隐藏当前的fragment，add下一个到Activity中
+                    transaction.hide(NotifacationFragment.this).add(R.id.content, fragment).commit();
+                } else {
+                    // 隐藏当前的fragment，显示下一个
+                    transaction.hide(NotifacationFragment.this).show(fragment).commit();
+                }
                 //transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                transaction.commit();
+//                transaction.commit();
             }
         });
         return view;

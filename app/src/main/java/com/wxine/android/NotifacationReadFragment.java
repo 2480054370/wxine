@@ -1,5 +1,6 @@
 package com.wxine.android;
 
+import android.app.Notification;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -45,8 +46,16 @@ public class NotifacationReadFragment extends Fragment {
                 transaction.setCustomAnimations(R.anim.fragment_down,R.anim.fragment_slide_left_exit);      //自定义动画
 
                //transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);                  //系统自带的动画
-                transaction.replace(R.id.content,fragment);
-                transaction.commit();
+            //    transaction.hide(NotifacationReadFragment.this).show(fragment).commit();
+                transaction.addToBackStack(null);
+                if (!fragment.isAdded()) {
+                    // 隐藏当前的fragment，add下一个到Activity中
+                    transaction.hide(NotifacationReadFragment.this).add(R.id.content, fragment).commit();
+                } else {
+                    // 隐藏当前的fragment，显示下一个
+                    transaction.hide(NotifacationReadFragment.this).show(fragment).commit();
+                }
+  //              transaction.commit();
             }
         });
         return view;

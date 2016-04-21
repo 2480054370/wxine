@@ -135,7 +135,7 @@ public class InfosAdapter extends RecyclerView.Adapter<InfosAdapter.ViewHolder> 
         Info info = list.get(position);
         imageLoader.displayImage(info.getUser().getImage(), holder.user_logo);
         holder.user_name.setText(info.getUser().getName());
-        holder.info_content.setText(info.getContent() + "  this is info_content...");
+        holder.info_content.setText(info.getCleancontent(80));
         imageLoader.displayImage(info.getImage(), holder.info_image);
         holder.info_comment_num.setText(String.valueOf(info.getComments().size()));
 
