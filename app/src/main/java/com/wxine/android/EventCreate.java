@@ -1,10 +1,8 @@
 package com.wxine.android;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -20,9 +18,10 @@ import java.util.Calendar;
 /**
  * Created by zz on 2016/4/5.
  */
-public class Event_create extends Activity implements
+public class EventCreate extends Activity implements
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
     private Button button;
+    private Button but;
     private SkinSettingManager mSettingManager;
     private LinearLayout mylayout;
     private LinearLayout layout;
@@ -40,6 +39,7 @@ public class Event_create extends Activity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_event);
         button = (Button) findViewById(R.id.close_btn);
+        but = (Button) findViewById(R.id.but);
         mylayout = (LinearLayout) findViewById(R.id.mylayout);
         datatextstart = (TextView) findViewById(R.id.datatextstart);
         timetextstart = (TextView) findViewById(R.id.timetextstart);
@@ -55,7 +55,7 @@ public class Event_create extends Activity implements
             public void onClick(View v) {
                 Calendar now = Calendar.getInstance();
                 DatePickerDialog dpd = DatePickerDialog.newInstance(
-                        Event_create.this,
+                        EventCreate.this,
                         now.get(Calendar.YEAR),
                         now.get(Calendar.MONTH),
                         now.get(Calendar.DAY_OF_MONTH)
@@ -68,7 +68,7 @@ public class Event_create extends Activity implements
             public void onClick(View v) {
                 Calendar now = Calendar.getInstance();
                 DatePickerDialog end = DatePickerDialog.newInstance(
-                        Event_create.this,
+                        EventCreate.this,
                         now.get(Calendar.YEAR),
                         now.get(Calendar.MONTH),
                         now.get(Calendar.DAY_OF_MONTH)
@@ -82,7 +82,7 @@ public class Event_create extends Activity implements
             public void onClick(View v) {
                 Calendar now = Calendar.getInstance();
                 TimePickerDialog tpd = TimePickerDialog.newInstance(
-                        Event_create.this,
+                        EventCreate.this,
                         now.get(Calendar.HOUR_OF_DAY),
                         now.get(Calendar.MINUTE),
                         false
@@ -96,7 +96,7 @@ public class Event_create extends Activity implements
             public void onClick(View v) {
                 Calendar now = Calendar.getInstance();
                 TimePickerDialog ent = TimePickerDialog.newInstance(
-                        Event_create.this,
+                        EventCreate.this,
                         now.get(Calendar.HOUR_OF_DAY),
                         now.get(Calendar.MINUTE),
                         false
@@ -114,7 +114,14 @@ public class Event_create extends Activity implements
         mylayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Event_create.this, MySkin.class);
+                Intent intent = new Intent(EventCreate.this, MySkin.class);
+                startActivity(intent);
+            }
+        });
+        but.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EventCreate.this, MySkin.class);
                 startActivity(intent);
             }
         });
@@ -125,7 +132,7 @@ public class Event_create extends Activity implements
     protected void onResume() {
         //初始化皮肤
         layout = (LinearLayout) findViewById(R.id.mylayout);
-        mSettingManager = new SkinSettingManager(Event_create.this, layout);
+        mSettingManager = new SkinSettingManager(EventCreate.this, layout);
         mSettingManager.initSkins();
         super.onResume();
     }

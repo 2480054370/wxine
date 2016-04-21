@@ -1,114 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true">
 
-    <android.support.design.widget.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#DB4437"
-            app:layout_collapseMode="pin"
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-    </android.support.design.widget.AppBarLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1">
-
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="matrix"
-            android:src="@drawable/default_wallpaper" />
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#DB4437"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        </android.support.design.widget.AppBarLayout>
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="fill_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_weight="1"
-            android:scaleType="center"
-            android:src="@drawable/wallpaper_c" />
-
-    </LinearLayout>
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="matrix"
+                android:src="@drawable/default_wallpaper" />
 
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="center"
-            android:src="@drawable/wallpaper_d" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:scaleType="center"
+                android:src="@drawable/wallpaper_c" />
+
+        </LinearLayout>
 
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_weight="1"
-            android:scaleType="center"
-            android:src="@drawable/wallpaper_f" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1">
-
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="center"
-            android:src="@drawable/wallpaper_g" />
-
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_weight="1"
-            android:scaleType="center"
-            android:src="@drawable/aabbcc" />
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1">
+
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="center"
+                android:src="@drawable/wallpaper_d" />
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:scaleType="center"
+                android:src="@drawable/wallpaper_f" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1">
+
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="center"
+                android:src="@drawable/wallpaper_g" />
+
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:scaleType="center"
+                android:src="@drawable/aabbcc" />
+
+        </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
