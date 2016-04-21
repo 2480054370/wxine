@@ -27,6 +27,6 @@
     <dimen name="margin_ten">10dp</dimen>
     <dimen name="margin_twenty">20dp</dimen>
     <dimen name="icon">24dp</dimen>
-
+    <dimen name="historyscore_tb">10dp</dimen>
     <dimen name="userface">40dp</dimen>
 </resources>
