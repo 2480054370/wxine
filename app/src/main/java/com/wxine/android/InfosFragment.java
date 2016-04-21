@@ -330,7 +330,7 @@ public class InfosFragment extends Fragment {
         info.setAddress("aaa");
         info.setBrief("qiuehgqlehg");
         info.setCmcount(12);
-        info.setContent("this is content");
+        info.setContent("this is content  There are moments in life when you miss someone so much that you just want to pick them from your dreams and hug them for real! Dream what you want to dream;go where you want to go;be what you want to be,because you have only one life and one chance to do all the things you want to do.");
         info.setTitle("this is title");
         info.setName("abc");
         info.setComments(set);
@@ -367,7 +367,7 @@ public class InfosFragment extends Fragment {
         info2.setCmcount(12);
         info2.setTitle("this is title");
         info2.setName("abc");
-        info2.setContent("this is content2");
+        info2.setContent("this is content2 There are moments in life when you miss someone so much that you just want to pick them from your dreams and hug them for real! Dream what you want to dream;go where you want to go;be what you want to be,because you have only one life and one chance to do all the things you want to do.");
         info2.setComments(set2);
         info2.setCleancontent("this is c content");
         list.add(info);
