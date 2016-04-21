@@ -167,4 +167,4 @@
             style="@style/mdtp_ampm_label"
             android:importantForAccessibility="no" />
   </RelativeLayout>
-<!-- From: file:/D:/AndroidStudioProjects/wxine/library/src/main/res/layout/mdtp_time_header_label.xml -->
+<!-- From: file:/D:/android_demo/wxine/library/src/main/res/layout/mdtp_time_header_label.xml -->
