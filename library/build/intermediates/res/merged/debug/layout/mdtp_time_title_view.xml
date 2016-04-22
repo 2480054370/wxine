@@ -11,4 +11,4 @@
     android:singleLine="true"
     android:padding="8dp"
     android:textColor="@color/mdtp_white"
-    android:background="@color/mdtp_accent_color_dark" /><!-- From: file:/D:/AndroidStudioProjects/wxine/library/src/main/res/layout/mdtp_time_title_view.xml -->
+    android:background="@color/mdtp_accent_color_dark" /><!-- From: file:/D:/android_demo/wxine/library/src/main/res/layout/mdtp_time_title_view.xml -->

@@ -8,23 +8,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30px"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:background="@color/notification_bg"
         android:orientation="horizontal">
 
         <com.wxine.android.utils.CircleImageView
             android:id="@+id/headImg"
-            android:layout_width="70px"
-            android:layout_height="70px"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="100px"
-            android:layout_marginRight="50px"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="20dp"
             android:src="@drawable/tou" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:orientation="vertical">
 
             <TextView
@@ -39,14 +40,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/notification_word"
-                android:layout_marginTop="8px"
+                android:layout_marginTop="15dp"
                 android:text="Notification Content" />
         </LinearLayout>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="2px"
-        android:layout_marginTop="25px"
+        android:layout_height="2dp"
+        android:layout_marginTop="25dp"
         android:background="@color/notification_lined"
         />
 </LinearLayout>

@@ -48,4 +48,4 @@
 
     <include layout="@layout/mdtp_done_button" />
 </LinearLayout>
-<!-- From: file:/D:/AndroidStudioProjects/wxine/library/src/main/res/layout/mdtp_time_picker_dialog.xml --><!-- From: file:/D:/AndroidStudioProjects/wxine/library/build/intermediates/bundles/debug/res/layout/mdtp_time_picker_dialog.xml -->
+<!-- From: file:/D:/android_demo/wxine/library/src/main/res/layout/mdtp_time_picker_dialog.xml --><!-- From: file:/D:/android_demo/wxine/library/build/intermediates/bundles/debug/res/layout/mdtp_time_picker_dialog.xml -->
