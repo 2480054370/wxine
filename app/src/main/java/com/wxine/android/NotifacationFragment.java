@@ -25,10 +25,13 @@ public class NotifacationFragment extends Fragment {
     private LinearLayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
     private RelativeLayout mRelativeLayout;
+    private Fragment fragment;
+    private Boolean frag = true;
 
-    public NotifacationFragment(){
+    public NotifacationFragment (){
 
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,14 +47,14 @@ public class NotifacationFragment extends Fragment {
         mRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NotifacationReadFragment fragment = new NotifacationReadFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.setCustomAnimations(R.anim.fragment_up,R.anim.fragment_slide_left_exit);
            //     transaction.hide(NotifacationFragment.this).show(fragment).commit();
                 transaction.addToBackStack(null);
-                if (!fragment.isAdded()) {
+                if (!fragment.isAdded() || frag) {
                     // 隐藏当前的fragment，add下一个到Activity中
                     transaction.hide(NotifacationFragment.this).add(R.id.content, fragment).commit();
+                    frag = false;
                 } else {
                     // 隐藏当前的fragment，显示下一个
                     transaction.hide(NotifacationFragment.this).show(fragment).commit();
@@ -79,6 +82,8 @@ public class NotifacationFragment extends Fragment {
             throw new ClassCastException(activity.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+        MainActivity a = new MainActivity();
+        fragment = a.getNotiReadFra();
     }
 
     @Override
