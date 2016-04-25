@@ -30,6 +30,7 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -272,14 +273,19 @@ public class PublishActivity extends Activity {
     private void initView() {
         mGallery = (LinearLayout) findViewById(R.id.id_gallery);
         for (int i = 0; i < mImgIds.length; i++) {
-            View view = mInflater.inflate(R.layout.album_item,
+            final View view = mInflater.inflate(R.layout.album_item,
                     mGallery, false);
-            ImageView img = (ImageView) view
-                    .findViewById(R.id.pub_photos);
-            //img.setImageResource(mImgIds[i]);
-            //img.setImageDrawable(mImgIds[i]);
+            ImageView img = (ImageView) view.findViewById(R.id.pub_photos);
             img.setImageBitmap(mImgIds[i]);
             mGallery.addView(view);
+            //删除照片
+            ImageView remove = (ImageView) view.findViewById(R.id.remove_img);
+            remove.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mGallery.removeView(view);
+                }
+            });
         }
         if (!TextUtils.isEmpty(editText.getText()) || mImgIds != null) {
             pub_send.setImageResource(R.drawable.ic_issend);
