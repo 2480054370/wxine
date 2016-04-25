@@ -341,10 +341,10 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_profile:
                 fab.hide();
                 if (app.isCerted()) {//判断是否认证
-                    Intent i = new Intent(MainActivity.this, Bar_Personal.class);
+                    Intent i = new Intent(MainActivity.this, PersonalData.class);
                     startActivity(i);
                 } else {
-                    Intent i = new Intent(MainActivity.this, Bar_Personal.class);
+                    Intent i = new Intent(MainActivity.this, PersonalData.class);
                     startActivity(i);
                 }
                 break;

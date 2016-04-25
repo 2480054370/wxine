@@ -24,7 +24,7 @@ public class Setting_account extends AppCompatActivity {
         toolbar.setTitle("设置");
         setSupportActionBar(toolbar);
 
-        updataOk = (Button) findViewById(R.id.SettingButtonUpdata);
+        updataOk = (Button) findViewById(R.id.SettingAccountUpdata);
         updataOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
