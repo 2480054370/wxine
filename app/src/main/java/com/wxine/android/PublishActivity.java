@@ -183,7 +183,7 @@ public class PublishActivity extends Activity {
     private TextWatcher watcher = new TextWatcher() {
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            if (!TextUtils.isEmpty(editText.getText()) || mImgIds != null) {
+            if (!TextUtils.isEmpty(editText.getText()) || mGallery.findViewById(R.id.pub_photos) != null) {
                 pub_send.setImageResource(R.drawable.ic_issend);
             } else {
                 pub_send.setImageResource(R.drawable.ic_send);
@@ -275,7 +275,7 @@ public class PublishActivity extends Activity {
         for (int i = 0; i < mImgIds.length; i++) {
             final View view = mInflater.inflate(R.layout.album_item,
                     mGallery, false);
-            ImageView img = (ImageView) view.findViewById(R.id.pub_photos);
+            final ImageView img = (ImageView) view.findViewById(R.id.pub_photos);
             img.setImageBitmap(mImgIds[i]);
             mGallery.addView(view);
             //删除照片
@@ -284,10 +284,14 @@ public class PublishActivity extends Activity {
                 @Override
                 public void onClick(View v) {
                     mGallery.removeView(view);
+                    if(mGallery.findViewById(R.id.pub_photos) == null){
+                        pub_send.setImageResource(R.drawable.ic_send);
+                    }
                 }
             });
         }
-        if (!TextUtils.isEmpty(editText.getText()) || mImgIds != null) {
+
+        if (!TextUtils.isEmpty(editText.getText()) || mGallery.findViewById(R.id.pub_photos) != null) {
             pub_send.setImageResource(R.drawable.ic_issend);
         } else {
             pub_send.setImageResource(R.drawable.ic_send);
@@ -303,7 +307,7 @@ public class PublishActivity extends Activity {
     //判断发布框是否有内容
     @Override
     public void onBackPressed() {
-        if (!TextUtils.isEmpty(editText.getText()) || mImgIds != null) {
+        if (!TextUtils.isEmpty(editText.getText()) || mGallery.findViewById(R.id.pub_photos) != null) {
             LayoutInflater inflaterDl = LayoutInflater.from(this);
             LinearLayout layout = (LinearLayout) inflaterDl.inflate(R.layout.publish_dialog, null);
 
