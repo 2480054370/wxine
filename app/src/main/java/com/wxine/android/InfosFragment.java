@@ -106,7 +106,7 @@ public class InfosFragment extends Fragment {
 
         mRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.info_refresh_widget);
 
-        RecyclerView mRecyclerView = (RecyclerView)view.findViewById(R.id.infos_recycler_view);
+        final RecyclerView mRecyclerView = (RecyclerView)view.findViewById(R.id.infos_recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
         mLayoutManager = new LinearLayoutManager(this.getContext());
@@ -181,7 +181,45 @@ public class InfosFragment extends Fragment {
                 if (isRefreshing) {
                     Log.d("===", "ignore manually update!");
                 } else {
-                    new LoadDataTask().execute();
+//                    new LoadDataTask().execute();
+
+                    //user
+                    User user2 = new User();
+                    user2.setName("aaa");
+                    user2.setImage("http://upload.jianshu.io/users/upload_avatars/1347069/7a023355fea1.jpg?imageMogr/thumbnail/90x90/quality/100");
+                    user2.setAddress("asgeq");
+                    //comment
+                    Comment comment2 = new Comment();
+                    comment2.setContent("this is a comment1");
+                    comment2.setUser(user2);
+                    comment2.setScore(60);
+                    comment2.setCtime(new java.sql.Timestamp(2014121123));
+                    Comment comment4 = new Comment();
+                    comment4.setContent("this is a comment1");
+                    comment4.setUser(user2);
+                    comment4.setScore(60);
+                    comment4.setId("1");
+                    comment4.setIlike(1);
+                    comment4.setCtime(new java.sql.Timestamp(2014121123));
+                    Set<Comment> set2 = new HashSet<>();
+                    set2.add(comment4);
+                    set2.add(comment2);
+                    set2.add(comment4);
+                    Info info3 = new Info();
+                    info3.setUser(user2);
+                    info3.setComment(comment2);
+                    info3.setImage("http://upload-images.jianshu.io/upload_images/1347069-e28b4eaf8aa770a6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240");
+                    info3.setAddress("aaa");
+                    info3.setBrief("this is brief");
+                    info3.setCmcount(12);
+                    info3.setTitle("this is title");
+                    info3.setName("abc");
+                    info3.setContent("this is content3 There are moments in life when you miss someone so much that you just want to pick them from your dreams and hug them for real! Dream what you want to dream;go where you want to go;be what you want to be,because you have only one life and one chance to do all the things you want to do.");
+                    info3.setComments(set2);
+                    info3.setCleancontent("this is c content");
+                    mAdapter.addItem(info3,0);
+                    mRefreshLayout.setRefreshing(false);
+                    mRecyclerView.scrollToPosition(0);
                 }
             }
         });
@@ -422,6 +460,9 @@ public class InfosFragment extends Fragment {
             FastJsonHttpMessageConverter c = new FastJsonHttpMessageConverter();
             c.setFeatures(SerializerFeature.UseISO8601DateFormat);
             restTemplate.getMessageConverters().add(c);
+
+
+
             //restTemplate.getMessageConverters()
       //      pagesupport = restTemplate.getForObject("http://10.0.2.2:8080/wxine_m/home.htm?page={page}", InfoPage.class, page+1);
 
@@ -472,6 +513,8 @@ public class InfosFragment extends Fragment {
                 }
             }*/
             //Log.v("===========", resultData);
+
+          //  return pagesupport;
 
             return pagesupport;
         }
