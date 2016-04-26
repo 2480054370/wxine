@@ -17,7 +17,7 @@
     <item
         android:id="@+id/nav_courses"
         android:icon="@drawable/courses"
-        android:title="课程" />
+        android:title="相册" />
     <item
         android:id="@+id/nav_task"
         android:icon="@drawable/task"

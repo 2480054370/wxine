@@ -328,7 +328,6 @@ public class MainActivity extends AppCompatActivity
                 //页面从右进，从左退出
                 overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
                 viewIsAtHome = false;
-
                 break;
 
             case R.id.nav_task:
@@ -368,10 +367,8 @@ public class MainActivity extends AppCompatActivity
                 fab.hide();
                 clearChioce();
                 hideFragments(transaction);
-                Toast.makeText(MainActivity.this,"此功能暂停使用",Toast.LENGTH_SHORT).show();
                 toolbar.setBackgroundColor(0xFF01A9F2);
-                /*toolbar.setBackgroundColor(0xFF01A9F2);
-                title = "收藏集";
+                title = "课程";
                 Collection_image.setImageResource(R.drawable.ic_collect_pressed);
                 Collection_text.setTextColor(white);
                 if (fg2 == null) {
@@ -379,7 +376,7 @@ public class MainActivity extends AppCompatActivity
                     transaction.add(R.id.content, fg2);
                 } else {
                     transaction.show(fg2);
-                }*/
+                }
                 break;
             case 2:
                 fab.hide();
