@@ -1,6 +1,8 @@
 package com.wxine.android;
 
+import android.app.Activity;
 import android.app.Notification;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -13,16 +15,19 @@ import android.widget.RelativeLayout;
 
 import com.wxine.android.model.Info;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by NM on 2016/4/7.
  */
-public class NotifacationReadFragment extends Fragment {
+public class NotifacationReadFragment extends Fragment{
+    private OnFragmentInteractionListener mListener;
     private RecyclerView mReclcerView;
     private LinearLayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
     private RelativeLayout mRelativeLayout;
+    private Fragment fragment;
 
     public NotifacationReadFragment(){
 
@@ -41,7 +46,6 @@ public class NotifacationReadFragment extends Fragment {
         view.findViewById(R.id.notification_read).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NotifacationFragment fragment = new NotifacationFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.setCustomAnimations(R.anim.fragment_down,R.anim.fragment_slide_left_exit);      //自定义动画
 
@@ -59,5 +63,36 @@ public class NotifacationReadFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mListener = (OnFragmentInteractionListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+        MainActivity a = new MainActivity();
+        fragment = a.getNotiFra();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        public void onFragmentInteraction(Uri uri);
     }
 }

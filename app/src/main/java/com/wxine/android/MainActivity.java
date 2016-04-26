@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity
         ProfileFragment.OnFragmentInteractionListener,
         ProfileUncertFragment.OnFragmentInteractionListener,
         NotifacationFragment.OnFragmentInteractionListener,
+        NotifacationReadFragment.OnFragmentInteractionListener,
         View.OnClickListener {
     private RelativeLayout content_layout;
     private RelativeLayout Collection_layout;
@@ -53,7 +54,10 @@ public class MainActivity extends AppCompatActivity
     private TextView notice_text;
     private int white = 0xFFFFFFFF;
     private int gray = 0xFF979797;
-    private Fragment fg1, fg2, fg3, fg4,fg5;
+    private Fragment fg1, fg2, fg3;
+    public static Fragment fg4;
+    public static Fragment fg5;
+    private boolean frag = false;
     FragmentManager fManager;
 
 
@@ -67,6 +71,19 @@ public class MainActivity extends AppCompatActivity
     private Animation rotate;
     FloatingActionButton fab;
     DrawerLayout drawer;
+
+
+//    public  interface ButtonClickListener{
+//        void buttonClick();
+//    }
+
+    public  Fragment getNotiReadFra(){
+        return fg5;
+    }
+
+    public Fragment getNotiFra(){
+        return fg4;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -182,7 +199,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void hideFragments(FragmentTransaction transaction) {
-        fg5 = new NotifacationReadFragment();
 
         if (fg1 != null) {
             transaction.hide(fg1);
@@ -305,7 +321,6 @@ public class MainActivity extends AppCompatActivity
                 fab.hide();
                 startActivity(new Intent(MainActivity.this, LocationActivity.class));
                 viewIsAtHome = false;
-
                 break;
             case R.id.nav_friends:
                 fab.hide();
@@ -326,10 +341,10 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_profile:
                 fab.hide();
                 if (app.isCerted()) {//判断是否认证
-                    Intent i = new Intent(MainActivity.this, Bar_Personal.class);
+                    Intent i = new Intent(MainActivity.this, PersonalData.class);
                     startActivity(i);
                 } else {
-                    Intent i = new Intent(MainActivity.this, Bar_Personal.class);
+                    Intent i = new Intent(MainActivity.this, PersonalData.class);
                     startActivity(i);
                 }
                 break;
@@ -337,6 +352,8 @@ public class MainActivity extends AppCompatActivity
             case 0:
                 fab.show();
                 title = "首页";
+                clearChioce();
+                hideFragments(transaction);
                 toolbar.setBackgroundColor(0xFF3F51B5);
                 content_image.setImageResource(R.drawable.ic_home_pressed);
                 content_text.setTextColor(white);
@@ -349,6 +366,8 @@ public class MainActivity extends AppCompatActivity
                 break;
             case 1:
                 fab.hide();
+                clearChioce();
+                hideFragments(transaction);
                 Toast.makeText(MainActivity.this,"此功能暂停使用",Toast.LENGTH_SHORT).show();
                 toolbar.setBackgroundColor(0xFF01A9F2);
                 /*toolbar.setBackgroundColor(0xFF01A9F2);
@@ -364,6 +383,8 @@ public class MainActivity extends AppCompatActivity
                 break;
             case 2:
                 fab.hide();
+                clearChioce();
+                hideFragments(transaction);
                 toolbar.setBackgroundColor(0xFF0D9D57);
                 title = "社群";
                 group_image.setImageResource(R.drawable.ic_group_pressed);
@@ -377,13 +398,21 @@ public class MainActivity extends AppCompatActivity
                 break;
             case 3:
                 fab.hide();
+                clearChioce();
+                hideFragments(transaction);
                 toolbar.setBackgroundColor(0xFFDA4436);
                 title = "通知";
                 notice_image.setImageResource(R.drawable.ic_notice_pressed);
                 notice_text.setTextColor(white);
-                if (fg4 == null) {
+                if (!frag) {
                     fg4 = new NotifacationFragment();
+                    fg5 = new NotifacationReadFragment();
+//                    if(getFragmentManager() instanceof ButtonClickListener)
+//                        ((ButtonClickListener)getFragmentManager()).buttonClick();
+//                    Bundle bundle = new Bundle();
+//                    fg4.setArguments(bundle);
                     transaction.add(R.id.content, fg4);
+                    frag = true;
                 } else {
                     transaction.show(fg4);
                 }
