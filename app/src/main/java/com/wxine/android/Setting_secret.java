@@ -23,7 +23,7 @@ public class Setting_secret extends AppCompatActivity {
         toolbar.setTitle("设置");
         setSupportActionBar(toolbar);
 
-        updataOk = (Button) findViewById(R.id.SettingButtonUpdata);
+        updataOk = (Button) findViewById(R.id.SettingSecretUpdata);
         updataOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
