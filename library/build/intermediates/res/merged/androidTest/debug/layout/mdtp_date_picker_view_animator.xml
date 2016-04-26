@@ -20,4 +20,4 @@
      android:layout_height="@dimen/mdtp_date_picker_view_animator_height"
      android:gravity="center"
      android:paddingLeft="8dp"
-     android:paddingRight="8dp" /><!-- From: file:/F:/asworkspace/wxine/library/src/main/res/layout/mdtp_date_picker_view_animator.xml --><!-- From: file:/F:/asworkspace/wxine/library/build/intermediates/bundles/debug/res/layout/mdtp_date_picker_view_animator.xml -->
+     android:paddingRight="8dp" /><!-- From: file:/D:/AndroidStudio/AndroidStudioProjects/wxine/library/src/main/res/layout/mdtp_date_picker_view_animator.xml --><!-- From: file:/D:/AndroidStudio/AndroidStudioProjects/wxine/library/build/intermediates/bundles/debug/res/layout/mdtp_date_picker_view_animator.xml -->

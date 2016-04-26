@@ -41,4 +41,4 @@
         style="@style/mdtp_ActionButton.Text"
         android:text="@string/mdtp_ok" />
 </LinearLayout>
-<!-- From: file:/F:/asworkspace/wxine/library/src/main/res/layout/mdtp_done_button.xml --><!-- From: file:/F:/asworkspace/wxine/library/build/intermediates/bundles/debug/res/layout/mdtp_done_button.xml -->
+<!-- From: file:/D:/AndroidStudio/AndroidStudioProjects/wxine/library/src/main/res/layout/mdtp_done_button.xml --><!-- From: file:/D:/AndroidStudio/AndroidStudioProjects/wxine/library/build/intermediates/bundles/debug/res/layout/mdtp_done_button.xml -->
