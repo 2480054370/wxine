@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:background="#F1F1F1"
     android:orientation="vertical"
     android:paddingRight="20dp">
@@ -45,6 +46,7 @@
         android:layout_marginTop="-50dp"
         android:layout_toRightOf="@+id/images">
 
+
         <android.support.v7.widget.CardView
             android:id="@+id/relative"
             android:layout_width="match_parent"
@@ -75,6 +77,7 @@
                 android:id="@+id/userimage"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                app:cardUseCompatPadding="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="50dp"
                 android:src="@drawable/face" />
@@ -160,267 +163,297 @@
                         android:background="#E8E8E8"
                         android:text="评价" />
                 </LinearLayout>
-                <RelativeLayout
-                    android:id="@+id/attendance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/allbutton"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"
-                    android:paddingTop="8dp"
-                    android:visibility="gone">
 
-                    <RelativeLayout
-                        android:id="@+id/user"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <com.wxine.android.utils.CircleImageView
-                            android:id="@+id/user_logo"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/face" />
-
-                        <TextView
-                            android:id="@+id/user_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="10dp"
-                            android:layout_toRightOf="@+id/user_logo"
-                            android:text="某某某"
-                            android:textColor="#000" />
-                    </RelativeLayout>
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/reason"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/user"
-                        android:layout_marginTop="8dp">
-
-                        <AutoCompleteTextView
-                            android:id="@+id/reasontext"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="请假理由："
-                            android:inputType="textLongMessage"
-                            android:maxLines="3"
-                            android:singleLine="true"
-                            android:textColor="#000" />
-                    </android.support.design.widget.TextInputLayout>
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/reason"
-                        android:layout_alignParentRight="true">
-                        <Button
-                            android:id="@+id/cancel"
-                            style="?android:textAppearanceSmall"
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="取消"
-                            android:textColor="#000"
-                            android:textStyle="bold" />
-                        <Button
-                            android:id="@+id/submit"
-                            style="?android:textAppearanceSmall"
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="提交"
-                            android:textColor="#fff"
-                            android:textStyle="bold"
-                            android:backgroundTint="#109D58"
-                            android:layout_toRightOf="@+id/cancel"/>
-                    </RelativeLayout>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/evaluate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/allbutton"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"
-                    android:paddingTop="8dp"
-                    android:visibility="gone">
-
-                    <LinearLayout
-                        android:id="@+id/content1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:weightSum="1">
-
-                        <android.support.design.widget.TextInputLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5">
-
-                            <AutoCompleteTextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="评价："
-                                android:inputType="textLongMessage"
-                                android:maxLines="3"
-                                android:singleLine="true"
-                                android:textColor="#000" />
-                        </android.support.design.widget.TextInputLayout>
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5">
-
-                            <TextView
-                                android:id="@+id/test1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginTop="30dp"
-                                android:text="活动内容:"
-                                android:textColor="#000000"
-                                android:textSize="16sp" />
-
-                            <RatingBar
-                                style="@style/roomRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="35dp"
-                                android:layout_toRightOf="@+id/test1" />
-                        </RelativeLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/content2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/content1"
-                        android:orientation="horizontal"
-                        android:weightSum="1">
-
-                        <android.support.design.widget.TextInputLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5">
-
-                            <AutoCompleteTextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="评价人员："
-                                android:inputType="textLongMessage"
-                                android:maxLines="3"
-                                android:singleLine="true"
-                                android:textColor="#000" />
-                        </android.support.design.widget.TextInputLayout>
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5">
-
-                            <TextView
-                                android:id="@+id/test2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginTop="30dp"
-                                android:text="吸引程度:"
-                                android:textColor="#000000"
-                                android:textSize="16sp" />
-
-                            <RatingBar
-                                style="@style/roomRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="35dp"
-                                android:layout_toRightOf="@+id/test2" />
-                        </RelativeLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/content3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/content2"
-                        android:orientation="horizontal"
-                        android:weightSum="1">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
-                            android:layout_weight="0.5">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="活动照片:"
-                                android:textColor="#000000"
-                                android:textSize="16sp" />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/takephoto"
-                                android:layout_marginLeft="10dp"/>
-                        </LinearLayout>
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5">
-
-                            <TextView
-                                android:id="@+id/test3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginTop="30dp"
-                                android:text="总体程度:"
-                                android:textColor="#000000"
-                                android:textSize="16sp" />
-
-                            <RatingBar
-                                style="@style/roomRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="35dp"
-                                android:layout_toRightOf="@+id/test3" />
-                        </RelativeLayout>
-                    </LinearLayout>
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/content3"
-                        android:layout_alignParentRight="true">
-                        <Button
-                            android:id="@+id/cancel1"
-                            style="?android:textAppearanceSmall"
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="取消"
-                            android:textColor="#000"
-                            android:textStyle="bold" />
-                        <Button
-                            android:id="@+id/submit1"
-                            style="?android:textAppearanceSmall"
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="提交"
-                            android:textColor="#fff"
-                            android:textStyle="bold"
-                            android:backgroundTint="#109D58"
-                            android:layout_toRightOf="@+id/cancel1"/>
-                    </RelativeLayout>
-                </RelativeLayout>
             </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cardview_qj"
+            android:layout_marginTop="230dp"
+            card_view:cardBackgroundColor="#E8E8E8"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true"
+            android:visibility="gone"
+            >
+        <RelativeLayout
+            android:id="@+id/attendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="8dp"
+
+       >
+
+            <RelativeLayout
+                android:id="@+id/user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.wxine.android.utils.CircleImageView
+                    android:id="@+id/user_logo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/face" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/user_logo"
+                    android:text="某某某"
+                    android:textColor="#000" />
+            </RelativeLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user"
+                android:layout_marginTop="8dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/reasontext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请假理由："
+                    android:inputType="textLongMessage"
+                    android:maxLines="3"
+                    android:singleLine="true"
+                    android:textColor="#000" />
+            </android.support.design.widget.TextInputLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reason"
+                android:layout_alignParentRight="true">
+                <Button
+                    android:id="@+id/cancel"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="取消"
+                    android:textColor="#000"
+                    android:background="#c1c1c1"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/submit"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="提交"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    android:background="#109D58"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/cancel"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:id="@+id/cardview_pj"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="230dp"
+            card_view:cardBackgroundColor="#E8E8E8"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true"
+            android:visibility="gone"
+            >
+        <RelativeLayout
+            android:id="@+id/evaluate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative"
+            android:paddingTop="8dp">
+
+            <LinearLayout
+                android:id="@+id/content1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:paddingRight="10dp">
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="评价："
+                        android:inputType="textLongMessage"
+                        android:maxLines="3"
+                        android:singleLine="true"
+                        android:textColor="#000" />
+                </android.support.design.widget.TextInputLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/test1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="活动内容:"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <RatingBar
+                        style="@style/roomRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="35dp"
+                        android:layout_toRightOf="@+id/test1" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/content2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content1"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:paddingRight="10dp">
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="评价人员："
+                        android:inputType="textLongMessage"
+                        android:maxLines="3"
+                        android:singleLine="true"
+                        android:textColor="#000" />
+                </android.support.design.widget.TextInputLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/test2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="吸引程度:"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <RatingBar
+                        style="@style/roomRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="35dp"
+                        android:layout_toRightOf="@+id/test2" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/content3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content2"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:paddingRight="10dp"
+                    android:layout_weight="0.5">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="活动照片:"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/takephoto"
+                        android:layout_marginLeft="10dp"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/test3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="总体程度:"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <RatingBar
+                        style="@style/roomRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="35dp"
+                        android:layout_toRightOf="@+id/test3" />
+                </RelativeLayout>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content3"
+                android:layout_alignParentRight="true">
+                <Button
+                    android:id="@+id/cancel1"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="取消"
+                    android:background="#c1c1c1"
+                    android:textColor="#000"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/submit1"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="提交"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    android:background="#109D58"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/cancel1"/>
+            </RelativeLayout>
+        </RelativeLayout>
         </android.support.v7.widget.CardView>
     </RelativeLayout>
 </RelativeLayout>

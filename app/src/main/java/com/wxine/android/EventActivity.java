@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -88,35 +89,45 @@ public class EventActivity extends AppCompatActivity {
 
             @Override
             public void onQJClick(View view, Info da, int position) {
-                RelativeLayout attendance = (RelativeLayout) view.findViewById(R.id.attendance);
-                RelativeLayout evaluate = (RelativeLayout) view.findViewById(R.id.evaluate);
+                CardView cardview_qj = (CardView) view.findViewById(R.id.cardview_qj);
+                CardView cardview_pj = (CardView) view.findViewById(R.id.cardview_pj);
+                Button btn2 = (Button)view.findViewById(R.id.btn2);
+                Button btn3 = (Button)view.findViewById(R.id.btn3);
                 // i=0,it is visible;i=4,it is invisible;i=0,it is gone;
+
                 int i = 0;
-                i = attendance.getVisibility();
+                i = cardview_qj.getVisibility();
                 if (i == 8) {
-                    attendance.setVisibility(View.VISIBLE);
-                    evaluate.setVisibility(View.GONE);
+                    cardview_qj.setVisibility(View.VISIBLE);
+                    btn2.setBackgroundColor(0xff979797);
+                    btn3.setBackgroundColor(0xffE8E8E8);
+                    cardview_pj.setVisibility(View.GONE);
                 } else {
-                    attendance.setVisibility(View.GONE);
+                    btn2.setBackgroundColor(0xffE8E8E8);
+                    cardview_qj.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onPJClick(View view, Info da, int position) {
-                RelativeLayout evaluate = (RelativeLayout) view.findViewById(R.id.evaluate);
-                RelativeLayout attendance = (RelativeLayout) view.findViewById(R.id.attendance);
-                // i=0,it is visible;i=4,it is invisible;i=0,it is gone;
+                CardView cardview_pj = (CardView) view.findViewById(R.id.cardview_pj);
+                CardView cardview_qj = (CardView) view.findViewById(R.id.cardview_qj);
+                Button btn3 = (Button)view.findViewById(R.id.btn3);
+                Button btn2 = (Button)view.findViewById(R.id.btn2);
+
                 int i = 0;
-                i = evaluate.getVisibility();
+                i = cardview_pj.getVisibility();
                 if (i == 8) {
-                    evaluate.setVisibility(View.VISIBLE);
-                    attendance.setVisibility(View.GONE);
+                    cardview_pj.setVisibility(View.VISIBLE);
+                    btn3.setBackgroundColor(0xff979797);
+                    btn2.setBackgroundColor(0xffE8E8E8);
+                    cardview_qj.setVisibility(View.GONE);
                 } else {
-                    evaluate.setVisibility(View.GONE);
+                    cardview_pj.setVisibility(View.GONE);
+                    btn3.setBackgroundColor(0xffE8E8E8);
                 }
             }
         });
 
     }
-
 }
