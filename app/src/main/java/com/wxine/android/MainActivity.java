@@ -415,14 +415,14 @@ public class MainActivity extends AppCompatActivity
                 hideFragments(transaction);
                 toolbar.setBackgroundColor(0xFF01A9F2);
                 title = "课程";
-                Collection_image.setImageResource(R.drawable.ic_collect_pressed);
+                /*Collection_image.setImageResource(R.drawable.ic_collect_pressed);
                 Collection_text.setTextColor(white);
                 if (fg2 == null) {
                     fg2 = new CollectionFragment();
                     transaction.add(R.id.content, fg2);
                 } else {
                     transaction.show(fg2);
-                }
+                }*/
                 break;
             case 2:
                 fab.hide();
