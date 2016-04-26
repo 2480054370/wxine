@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/F:/asworkspace/wxine/library/build/intermediates/bundles/debug/res/values-v16/values-v16.xml -->
+    <!-- From: file:/D:/AndroidStudioProjects/wxine/library/build/intermediates/bundles/debug/res/values-v16/values-v16.xml -->
     <eat-comment/>
     <string name="mdtp_day_of_week_label_typeface" translatable="false">sans-serif-light</string>
     <style name="mdtp_day_of_week_label_condensed">
