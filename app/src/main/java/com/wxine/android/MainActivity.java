@@ -29,6 +29,9 @@ import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,//系统自带item侧滑菜单监听
         CollectionFragment.OnFragmentInteractionListener,
@@ -71,6 +74,10 @@ public class MainActivity extends AppCompatActivity
     private Animation rotate;
     FloatingActionButton fab;
     DrawerLayout drawer;
+
+    Timer timer = new Timer();
+    TimerTask task;
+
 
 
 //    public  interface ButtonClickListener{
@@ -319,20 +326,44 @@ public class MainActivity extends AppCompatActivity
         switch (viewId) {
             case R.id.nav_location:
                 fab.hide();
-                startActivity(new Intent(MainActivity.this, LocationActivity.class));
+                //startActivity(new Intent(MainActivity.this, LocationActivity.class));
+                task = new TimerTask() {
+                    @Override
+                    public void run() {
+                        final Intent InLocation = new Intent(MainActivity.this, LocationActivity.class);
+                        startActivity(InLocation);
+                    }
+                };
+                timer.schedule(task, 300 * 1);
                 viewIsAtHome = false;
                 break;
             case R.id.nav_friends:
                 fab.hide();
-                startActivity(new Intent(MainActivity.this, FriendsActivity.class));
+                //startActivity(new Intent(MainActivity.this, FriendsActivity.class));
                 //页面从右进，从左退出
-                overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
+                //overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
+
+                 task = new TimerTask() {
+                    @Override
+                    public void run() {
+                        final Intent InFriends = new Intent(MainActivity.this, FriendsActivity.class);
+                        startActivity(InFriends);
+                    }
+                };
+                timer.schedule(task, 300 * 1);
                 viewIsAtHome = false;
                 break;
 
             case R.id.nav_task:
-                startActivity(new Intent(MainActivity.this, EventActivity.class));
-
+                //startActivity(new Intent(MainActivity.this, EventActivity.class));
+                task = new TimerTask() {
+                    @Override
+                    public void run() {
+                        final Intent InEvent = new Intent(MainActivity.this, EventActivity.class);
+                        startActivity(InEvent);
+                    }
+                };
+                timer.schedule(task, 300 * 1);
                 viewIsAtHome = true;
 
                 break;
@@ -340,12 +371,27 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_profile:
                 fab.hide();
                 if (app.isCerted()) {//判断是否认证
-                    Intent i = new Intent(MainActivity.this, PersonalData.class);
-                    startActivity(i);
+                    //Intent i = new Intent(MainActivity.this, PersonalData.class);
+                    //startActivity(i);
+                    task = new TimerTask() {
+                        @Override
+                        public void run() {
+                            final Intent InPersonal = new Intent(MainActivity.this, PersonalData.class);
+                            startActivity(InPersonal);
+                        }
+                    };
                 } else {
-                    Intent i = new Intent(MainActivity.this, PersonalData.class);
-                    startActivity(i);
+                    //Intent i = new Intent(MainActivity.this, PersonalData.class);
+                    //startActivity(i);
+                    task = new TimerTask() {
+                        @Override
+                        public void run() {
+                            final Intent InPersonal = new Intent(MainActivity.this, PersonalData.class);
+                            startActivity(InPersonal);
+                        }
+                    };
                 }
+                timer.schedule(task, 300 * 1);
                 break;
 
             case 0:
