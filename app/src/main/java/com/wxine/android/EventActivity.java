@@ -89,11 +89,13 @@ public class EventActivity extends AppCompatActivity {
             @Override
             public void onQJClick(View view, Info da, int position) {
                 RelativeLayout attendance = (RelativeLayout) view.findViewById(R.id.attendance);
+                RelativeLayout evaluate = (RelativeLayout) view.findViewById(R.id.evaluate);
                 // i=0,it is visible;i=4,it is invisible;i=0,it is gone;
                 int i = 0;
                 i = attendance.getVisibility();
                 if (i == 8) {
                     attendance.setVisibility(View.VISIBLE);
+                    evaluate.setVisibility(View.GONE);
                 } else {
                     attendance.setVisibility(View.GONE);
                 }
@@ -101,14 +103,16 @@ public class EventActivity extends AppCompatActivity {
 
             @Override
             public void onPJClick(View view, Info da, int position) {
-                LinearLayout qingjia = (LinearLayout) view.findViewById(R.id.qingjia);
+                RelativeLayout evaluate = (RelativeLayout) view.findViewById(R.id.evaluate);
+                RelativeLayout attendance = (RelativeLayout) view.findViewById(R.id.attendance);
                 // i=0,it is visible;i=4,it is invisible;i=0,it is gone;
                 int i = 0;
-                i = qingjia.getVisibility();
+                i = evaluate.getVisibility();
                 if (i == 8) {
-                    qingjia.setVisibility(View.VISIBLE);
+                    evaluate.setVisibility(View.VISIBLE);
+                    attendance.setVisibility(View.GONE);
                 } else {
-                    qingjia.setVisibility(View.GONE);
+                    evaluate.setVisibility(View.GONE);
                 }
             }
         });
