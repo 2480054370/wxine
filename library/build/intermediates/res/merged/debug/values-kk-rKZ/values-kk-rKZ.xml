@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/D:/android_demo/wxine/library/src/main/res/values-kk-rKZ/strings.xml -->
+    <!-- From: file:/F:/asworkspace/wxine/library/src/main/res/values-kk-rKZ/strings.xml -->
     <eat-comment/>
     <string name="mdtp_date_v1_monthyear">MMMM yyyy</string>
     <string msgid="3968620852217927702" name="mdtp_day_picker_description">"Күндердің айлық торы"</string>

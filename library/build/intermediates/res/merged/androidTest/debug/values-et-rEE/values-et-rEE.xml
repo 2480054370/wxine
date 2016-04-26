@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/D:/android_demo/wxine/library/build/intermediates/bundles/debug/res/values-et-rEE/values-et-rEE.xml -->
+    <!-- From: file:/F:/asworkspace/wxine/library/build/intermediates/bundles/debug/res/values-et-rEE/values-et-rEE.xml -->
     <eat-comment/>
     <string name="mdtp_cancel"/>
     <string name="mdtp_date_v1_monthyear">MMMM yyyy</string>

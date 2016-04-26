@@ -71,4 +71,4 @@
         android:textSize="@dimen/mdtp_selected_date_year_size"
         tools:text="2015" />
 
-</LinearLayout><!-- From: file:/D:/AndroidStudioProjects/wxine/library/src/main/res/layout/mdtp_date_picker_selected_date.xml --><!-- From: file:/D:/AndroidStudioProjects/wxine/library/build/intermediates/bundles/debug/res/layout/mdtp_date_picker_selected_date.xml -->
+</LinearLayout><!-- From: file:/F:/asworkspace/wxine/library/src/main/res/layout/mdtp_date_picker_selected_date.xml --><!-- From: file:/F:/asworkspace/wxine/library/build/intermediates/bundles/debug/res/layout/mdtp_date_picker_selected_date.xml -->

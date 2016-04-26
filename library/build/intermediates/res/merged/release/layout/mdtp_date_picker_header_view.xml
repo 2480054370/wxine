@@ -24,4 +24,4 @@
     android:textColor="@color/mdtp_white"
     android:textSize="@dimen/mdtp_date_picker_header_text_size"
     android:importantForAccessibility="no" />
-<!-- From: file:/D:/AndroidStudioProjects/wxine/library/src/main/res/layout/mdtp_date_picker_header_view.xml -->
+<!-- From: file:/F:/asworkspace/wxine/library/src/main/res/layout/mdtp_date_picker_header_view.xml -->
