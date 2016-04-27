@@ -86,7 +86,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="收藏集"
+                        android:text="课程"
                         android:textColor="#979797" />
                 </LinearLayout>
             </RelativeLayout>
