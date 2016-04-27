@@ -6,4 +6,4 @@
         android:id="@android:id/mask"
         android:drawable="@drawable/mdtp_material_button_selected" />
 
-</ripple><!-- From: file:/D:/AndroidStudioProjects/wxine/library/src/main/res/drawable-v21/mdtp_material_button_background.xml -->
+</ripple><!-- From: file:/D:/AndroidStudio/AndroidStudioProjects/wxine/library/src/main/res/drawable-v21/mdtp_material_button_background.xml -->

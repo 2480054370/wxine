@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/D:/AndroidStudioProjects/wxine/library/build/intermediates/bundles/debug/res/values-bn-rBD/values-bn-rBD.xml -->
+    <!-- From: file:/D:/AndroidStudio/AndroidStudioProjects/wxine/library/build/intermediates/bundles/debug/res/values-bn-rBD/values-bn-rBD.xml -->
     <eat-comment/>
     <string name="mdtp_date_v1_monthyear">MMMM yyyy</string>
     <string msgid="3968620852217927702" name="mdtp_day_picker_description">"দিন দিয়ে সংগঠিত মাসের গ্রিড"</string>

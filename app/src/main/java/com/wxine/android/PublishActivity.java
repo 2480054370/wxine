@@ -54,6 +54,7 @@ public class PublishActivity extends Activity {
     private LinearLayout mGallery;  //Gallery视图
     private Bitmap[] mImgIds;       //选中的图片
     private LayoutInflater mInflater;   //图片的item
+    private boolean sendTF = false;    //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -185,8 +186,10 @@ public class PublishActivity extends Activity {
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             if (!TextUtils.isEmpty(editText.getText()) || mGallery.findViewById(R.id.pub_photos) != null) {
                 pub_send.setImageResource(R.drawable.ic_issend);
+                sendTF = true;
             } else {
                 pub_send.setImageResource(R.drawable.ic_send);
+                sendTF = false;
             }
         }
 
@@ -286,6 +289,7 @@ public class PublishActivity extends Activity {
                     mGallery.removeView(view);
                     if(mGallery.findViewById(R.id.pub_photos) == null){
                         pub_send.setImageResource(R.drawable.ic_send);
+                        sendTF = false;
                     }
                 }
             });
@@ -293,8 +297,10 @@ public class PublishActivity extends Activity {
 
         if (!TextUtils.isEmpty(editText.getText()) || mGallery.findViewById(R.id.pub_photos) != null) {
             pub_send.setImageResource(R.drawable.ic_issend);
+            sendTF = true;
         } else {
             pub_send.setImageResource(R.drawable.ic_send);
+            sendTF = false;
         }
     }
 
@@ -307,7 +313,7 @@ public class PublishActivity extends Activity {
     //判断发布框是否有内容
     @Override
     public void onBackPressed() {
-        if (!TextUtils.isEmpty(editText.getText()) || mGallery.findViewById(R.id.pub_photos) != null) {
+        if (sendTF == true) {
             LayoutInflater inflaterDl = LayoutInflater.from(this);
             LinearLayout layout = (LinearLayout) inflaterDl.inflate(R.layout.publish_dialog, null);
 
