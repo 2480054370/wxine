@@ -355,6 +355,22 @@ public class MainActivity extends AppCompatActivity
                 timer.schedule(task, 300 * 1);
                 viewIsAtHome = false;
                 break;
+            case R.id.nav_photos:
+                fab.hide();
+                //startActivity(new Intent(MainActivity.this, FriendsActivity.class));
+                //页面从右进，从左退出
+                //overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
+
+                task = new TimerTask() {
+                    @Override
+                    public void run() {
+                        final Intent InPhotos = new Intent(MainActivity.this, PhotosActivity.class);
+                        startActivity(InPhotos);
+                    }
+                };
+                timer.schedule(task, 300 * 1);
+                viewIsAtHome = false;
+                break;
 
             case R.id.nav_task:
                 //startActivity(new Intent(MainActivity.this, EventActivity.class));
