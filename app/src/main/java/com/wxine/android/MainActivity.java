@@ -1,6 +1,7 @@
 package com.wxine.android;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -19,15 +20,17 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
+
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -79,16 +82,15 @@ public class MainActivity extends AppCompatActivity
     TimerTask task;
 
 
-
 //    public  interface ButtonClickListener{
 //        void buttonClick();
 //    }
 
-    public  Fragment getNotiReadFra(){
+    public Fragment getNotiReadFra() {
         return fg5;
     }
 
-    public Fragment getNotiFra(){
+    public Fragment getNotiFra() {
         return fg4;
     }
 
@@ -125,12 +127,12 @@ public class MainActivity extends AppCompatActivity
         TextView user_name = (TextView) nav_header.findViewById(R.id.tv_user_name);
         TextView user_sign = (TextView) nav_header.findViewById(R.id.tv_user_sign);
 
-        im = (ImageView)findViewById(R.id.iv_user_logo);
+        im = (ImageView) findViewById(R.id.iv_user_logo);
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this , Bar_Personal.class);
+                intent.setClass(MainActivity.this, Bar_Personal.class);
                 startActivity(intent);
             }
         });
@@ -142,14 +144,14 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Menu menu = navigationView.getMenu();
-                if( menu.findItem(R.id.nav_profile)!= null){
-                    rotate = AnimationUtils.loadAnimation(MainActivity.this,R.anim.tip);
+                if (menu.findItem(R.id.nav_profile) != null) {
+                    rotate = AnimationUtils.loadAnimation(MainActivity.this, R.anim.tip);
                     rotate.setFillAfter(true);
                     open.startAnimation(rotate);
                     menu.clear();
                     navigationView.inflateMenu(R.menu.activity_next_drawer);
-                }else {
-                    rotate = AnimationUtils.loadAnimation(MainActivity.this,R.anim.tip_next);
+                } else {
+                    rotate = AnimationUtils.loadAnimation(MainActivity.this, R.anim.tip_next);
                     rotate.setFillAfter(true);
                     open.startAnimation(rotate);
                     menu.clear();
@@ -219,7 +221,7 @@ public class MainActivity extends AppCompatActivity
         if (fg4 != null) {
             transaction.hide(fg4);
         }
-        if(fg5 != null){
+        if (fg5 != null) {
             transaction.hide(fg5);
         }
     }
@@ -278,7 +280,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.action_settings:
                 Intent ite = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(ite);
-            return true;
+                return true;
             case R.id.action_search:
                 Intent it = new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(it);
@@ -330,7 +332,7 @@ public class MainActivity extends AppCompatActivity
                 task = new TimerTask() {
                     @Override
                     public void run() {
-                        final Intent InLocation = new Intent(MainActivity.this, LocationActivity.class);
+                        Intent InLocation = new Intent(MainActivity.this, LocationActivity.class);
                         startActivity(InLocation);
                     }
                 };
@@ -343,10 +345,10 @@ public class MainActivity extends AppCompatActivity
                 //页面从右进，从左退出
                 //overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
 
-                 task = new TimerTask() {
+                task = new TimerTask() {
                     @Override
                     public void run() {
-                        final Intent InFriends = new Intent(MainActivity.this, FriendsActivity.class);
+                        Intent InFriends = new Intent(MainActivity.this, FriendsActivity.class);
                         startActivity(InFriends);
                     }
                 };
@@ -359,7 +361,7 @@ public class MainActivity extends AppCompatActivity
                 task = new TimerTask() {
                     @Override
                     public void run() {
-                        final Intent InEvent = new Intent(MainActivity.this, EventActivity.class);
+                        Intent InEvent = new Intent(MainActivity.this, EventActivity.class);
                         startActivity(InEvent);
                     }
                 };
@@ -376,7 +378,7 @@ public class MainActivity extends AppCompatActivity
                     task = new TimerTask() {
                         @Override
                         public void run() {
-                            final Intent InPersonal = new Intent(MainActivity.this, PersonalData.class);
+                            Intent InPersonal = new Intent(MainActivity.this, PersonalData.class);
                             startActivity(InPersonal);
                         }
                     };
@@ -386,14 +388,13 @@ public class MainActivity extends AppCompatActivity
                     task = new TimerTask() {
                         @Override
                         public void run() {
-                            final Intent InPersonal = new Intent(MainActivity.this, PersonalData.class);
+                            Intent InPersonal = new Intent(MainActivity.this, PersonalData.class);
                             startActivity(InPersonal);
                         }
                     };
                 }
                 timer.schedule(task, 300 * 1);
                 break;
-
             case 0:
                 fab.show();
                 title = "首页";
