@@ -1,5 +1,8 @@
 package com.wxine.android;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,8 +12,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -89,45 +95,53 @@ public class EventActivity extends AppCompatActivity {
 
             @Override
             public void onQJClick(View view, Info da, int position) {
-                CardView cardview_qj = (CardView) view.findViewById(R.id.cardview_qj);
-                CardView cardview_pj = (CardView) view.findViewById(R.id.cardview_pj);
-                Button btn2 = (Button)view.findViewById(R.id.btn2);
-                Button btn3 = (Button)view.findViewById(R.id.btn3);
-                // i=0,it is visible;i=4,it is invisible;i=0,it is gone;
-
-                int i = 0;
-                i = cardview_qj.getVisibility();
-                if (i == 8) {
-                    cardview_qj.setVisibility(View.VISIBLE);
-                    btn2.setBackgroundColor(0xff979797);
-                    btn3.setBackgroundColor(0xffE8E8E8);
-                    cardview_pj.setVisibility(View.GONE);
-                } else {
-                    btn2.setBackgroundColor(0xffE8E8E8);
-                    cardview_qj.setVisibility(View.GONE);
-                }
+               showQJDig();
             }
+
+
 
             @Override
             public void onPJClick(View view, Info da, int position) {
-                CardView cardview_pj = (CardView) view.findViewById(R.id.cardview_pj);
-                CardView cardview_qj = (CardView) view.findViewById(R.id.cardview_qj);
-                Button btn3 = (Button)view.findViewById(R.id.btn3);
-                Button btn2 = (Button)view.findViewById(R.id.btn2);
+                Intent intent = new Intent(EventActivity.this, Event_PJ.class);
+                startActivity(intent);
 
-                int i = 0;
-                i = cardview_pj.getVisibility();
-                if (i == 8) {
-                    cardview_pj.setVisibility(View.VISIBLE);
-                    btn3.setBackgroundColor(0xff979797);
-                    btn2.setBackgroundColor(0xffE8E8E8);
-                    cardview_qj.setVisibility(View.GONE);
-                } else {
-                    cardview_pj.setVisibility(View.GONE);
-                    btn3.setBackgroundColor(0xffE8E8E8);
-                }
+            }
+
+            @Override
+            public void onQDClick(View view, Info da, int position) {
+                Intent intent = new Intent(EventActivity.this, SingActivity.class);
+                startActivity(intent);
             }
         });
 
     }
+    public void showQJDig() {
+        LayoutInflater inflaterDl = LayoutInflater.from(this);
+        LinearLayout layout = (LinearLayout) inflaterDl.inflate(R.layout.event_qj,null);
+
+        //对话框
+        final Dialog dialog = new AlertDialog.Builder(EventActivity.this, R.style.Pub_Dialog).create();
+        dialog.show();
+        dialog.getWindow().setContentView(layout);
+
+        WindowManager.LayoutParams mt = getWindow().getAttributes();
+        Window dialogWindow = dialog.getWindow();
+        WindowManager.LayoutParams dg = dialogWindow.getAttributes();
+        dg.width = 600;
+        dg.height = 350;
+
+        dialogWindow.setAttributes(dg);
+        dialog.show();
+        //取消按钮
+        Button btnCancel = (Button) layout.findViewById(R.id.cancel);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.hide();
+            }
+        });
+
+
+    }
 }
+

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/attendance"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/border"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="8dp"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:id="@+id/user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+
+            <com.wxine.android.utils.CircleImageView
+                android:id="@+id/user_logo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/face" />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/user_logo"
+                android:text="某某某"
+                android:textColor="#000" />
+        </RelativeLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user"
+            android:layout_marginTop="8dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/reasontext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请假理由："
+                android:inputType="textLongMessage"
+                android:maxLines="3"
+                android:singleLine="true"
+                android:textColor="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_takephoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reason"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="活动照片:"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/im_pj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/takephoto"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_takephoto"
+            android:gravity="right"
+            android:layout_marginTop="10dp"
+            >
+            <Button
+                android:id="@+id/cancel"
+                style="?android:textAppearanceSmall"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:text="取消"
+                android:textColor="#000"
+                android:background="#c1c1c1"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/submit"
+                style="?android:textAppearanceSmall"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:text="提交"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:background="#109D58"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/cancel"/>
+        </RelativeLayout>
+
+    </LinearLayout>
