@@ -460,7 +460,7 @@ public class MainActivity extends AppCompatActivity
                 }*/
                 break;
             case 2:
-                tintManager.setStatusBarTintResource(R.color.barcomm);
+                tintManager.setStatusBarTintResource(R.color.subpage);
                 getWindow().getDecorView().setFitsSystemWindows(true);
 
                 fab.hide();
