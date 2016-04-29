@@ -1,5 +1,6 @@
 package com.wxine.android;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+
+import com.wxine.android.utils.SystemStatusManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +27,16 @@ public class FriendsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            // 透明状态栏
+            getWindow().addFlags(
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            SystemStatusManager tintManager = new SystemStatusManager(this);
+            tintManager.setStatusBarTintEnabled(true);
+            // 设置状态栏的颜色
+            tintManager.setStatusBarTintResource(R.color.barcomm);
+            getWindow().getDecorView().setFitsSystemWindows(true);
+        }
         setContentView(R.layout.activity_friends);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("好友");

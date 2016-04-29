@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,7 @@ import android.widget.Toast;
 
 import com.wxine.android.model.Event;
 import com.wxine.android.model.Info;
+import com.wxine.android.utils.SystemStatusManager;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,6 +50,16 @@ public class EventActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            // 透明状态栏
+            getWindow().addFlags(
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            SystemStatusManager tintManager = new SystemStatusManager(this);
+            tintManager.setStatusBarTintEnabled(true);
+            // 设置状态栏的颜色
+            tintManager.setStatusBarTintResource(R.color.barcomm);
+            getWindow().getDecorView().setFitsSystemWindows(true);
+        }
         setContentView(R.layout.fragment_event);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         Toolbar toolbar = (Toolbar) findViewById(R.id.event_toolbar);

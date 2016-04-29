@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_gravity="bottom"
-            app:tabIndicatorColor="#91d5db"
+            app:tabIndicatorColor="#0F9D58"
             android:background="#0d9d57"/>
 
     </android.support.design.widget.AppBarLayout>
