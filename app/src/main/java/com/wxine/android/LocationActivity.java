@@ -1,14 +1,12 @@
 package com.wxine.android;
 
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
@@ -22,7 +20,6 @@ import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
-import com.wxine.android.utils.SystemStatusManager;
 
 public class LocationActivity extends AppCompatActivity {
     private MapView mMapView;

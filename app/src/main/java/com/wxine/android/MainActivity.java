@@ -2,8 +2,8 @@ package com.wxine.android;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -20,7 +20,6 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -29,7 +28,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.wxine.android.utils.SystemStatusManager;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity
     Timer timer = new Timer();
     TimerTask task;
 
-    SystemStatusManager tintManager;
+    CoordinatorLayout status;   //状态栏颜色
 
 
 //    public  interface ButtonClickListener{
@@ -99,21 +97,13 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         app = (MyApplication) getApplication();
-        //状态栏
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            // 透明状态栏
-            getWindow().addFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            tintManager = new SystemStatusManager(this);
-            tintManager.setStatusBarTintEnabled(true);
-            // 设置状态栏的颜色
-            tintManager.setStatusBarTintResource(R.color.barmain);
-            getWindow().getDecorView().setFitsSystemWindows(true);
-        }
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         initViews();
+        //状态栏颜色
+        status = (CoordinatorLayout) findViewById(R.id.mainCoordLayoutStatus);
+        status.setStatusBarBackgroundColor(getResources().getColor(R.color.barmain));
 
         fManager = getSupportFragmentManager();
 
@@ -424,9 +414,8 @@ public class MainActivity extends AppCompatActivity
                 timer.schedule(task, 300 * 1);
                 break;
             case 0:
-                tintManager.setStatusBarTintResource(R.color.barmain);
-                getWindow().getDecorView().setFitsSystemWindows(true);
-
+                //状态栏颜色
+                status.setStatusBarBackgroundColor(getResources().getColor(R.color.barmain));
                 fab.show();
                 title = "首页";
                 clearChioce();
@@ -442,9 +431,8 @@ public class MainActivity extends AppCompatActivity
                 }
                 break;
             case 1:
-                tintManager.setStatusBarTintResource(R.color.barcoll);
-                getWindow().getDecorView().setFitsSystemWindows(true);
-
+                //状态栏颜色
+                status.setStatusBarBackgroundColor(getResources().getColor(R.color.barcoll));
                 fab.hide();
                 clearChioce();
                 hideFragments(transaction);
@@ -460,9 +448,8 @@ public class MainActivity extends AppCompatActivity
                 }*/
                 break;
             case 2:
-                tintManager.setStatusBarTintResource(R.color.subpage);
-                getWindow().getDecorView().setFitsSystemWindows(true);
-
+                //状态栏颜色
+                status.setStatusBarBackgroundColor(getResources().getColor(R.color.subpage));
                 fab.hide();
                 clearChioce();
                 hideFragments(transaction);
@@ -478,9 +465,8 @@ public class MainActivity extends AppCompatActivity
                 }
                 break;
             case 3:
-                tintManager.setStatusBarTintResource(R.color.barnotice);
-                getWindow().getDecorView().setFitsSystemWindows(true);
-
+                //状态栏颜色
+                status.setStatusBarBackgroundColor(getResources().getColor(R.color.barnotice));
                 fab.hide();
                 clearChioce();
                 hideFragments(transaction);

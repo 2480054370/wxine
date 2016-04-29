@@ -1,18 +1,14 @@
 package com.wxine.android;
 
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
-
-import com.wxine.android.utils.SystemStatusManager;
 
 /**
  * Created by zz on 2016/4/8.

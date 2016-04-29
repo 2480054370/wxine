@@ -2,10 +2,8 @@ package com.wxine.android;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -14,7 +12,6 @@ import android.widget.TextView;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
-import com.wxine.android.utils.SystemStatusManager;
 
 import java.util.Calendar;
 
@@ -40,16 +37,6 @@ public class EventCreate extends Activity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            // 透明状态栏
-            getWindow().addFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            SystemStatusManager tintManager = new SystemStatusManager(this);
-            tintManager.setStatusBarTintEnabled(true);
-            // 设置状态栏的颜色
-            tintManager.setStatusBarTintResource(R.color.barcomm);
-            getWindow().getDecorView().setFitsSystemWindows(true);
-        }
         setContentView(R.layout.create_event);
         close = (RelativeLayout) findViewById(R.id.close);
         but = (Button) findViewById(R.id.but);

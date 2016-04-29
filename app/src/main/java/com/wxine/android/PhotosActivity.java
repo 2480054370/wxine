@@ -1,13 +1,9 @@
 package com.wxine.android;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.WindowManager;
-
-import com.wxine.android.utils.SystemStatusManager;
 
 /**
  * Created by Bumblebee on 2016/4/28.
