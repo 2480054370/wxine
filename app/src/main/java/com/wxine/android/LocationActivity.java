@@ -40,16 +40,6 @@ public class LocationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            // 透明状态栏
-            getWindow().addFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            SystemStatusManager tintManager = new SystemStatusManager(this);
-            tintManager.setStatusBarTintEnabled(true);
-            // 设置状态栏的颜色
-            tintManager.setStatusBarTintResource(R.color.barcomm);
-            getWindow().getDecorView().setFitsSystemWindows(true);
-        }
         // requestWindowFeature(Window.FEATURE_NO_TITLE);
         // 在使用SDK各组件之前初始化context信息，传入ApplicationContext
         SDKInitializer.initialize(getApplicationContext());
