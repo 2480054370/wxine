@@ -61,7 +61,7 @@ public class FriendsActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new FindFragment(), "推荐");
-        adapter.addFrag(new FindFragment(), "以关注");
+        adapter.addFrag(new TofollowFragment(), "以关注");
         adapter.addFrag(new FollowerFragment(), "关注者");
 
         viewPager.setAdapter(adapter);

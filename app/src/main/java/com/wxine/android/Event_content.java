@@ -1,39 +1,25 @@
 package com.wxine.android;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.AdapterView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * Created by zz on 2016/4/5.
  */
 public class Event_content extends AppCompatActivity {
-    FloatingActionButton fab;
-    private Button button;
-    private EditText startDateTime;
-    private EditText endDateTime;
-    private SkinSettingManager mSettingManager;
-    private Button btn;
-    private LinearLayout layout;
     private Toolbar toolbar;
-    private Spinner spCity = null;
-    private ArrayAdapter<CharSequence> adapterCity = null;
-    private static String[] cityInfo={"会参加","不会参加"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_content);
         toolbar = (Toolbar) findViewById(R.id.content_toolbar);
-        toolbar.setTitle("活动");
+        toolbar.setTitle("详细内容");
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,12 +27,23 @@ public class Event_content extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        Spinner spinner = (Spinner) findViewById(R.id.spinnerattend);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int pos, long id) {
 
-        this.spCity = (Spinner) super.findViewById(R.id.spinnerCity);
-        this.adapterCity = new ArrayAdapter<CharSequence>(this,
-                android.R.layout.simple_spinner_dropdown_item, cityInfo);
-        this.spCity.setAdapter(adapterCity);
+                String[] languages = getResources().getStringArray(R.array.join);
+                Toast.makeText(Event_content.this, "你点击的是:" + languages[pos], Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Another interface callback
+            }
+        });
     }
-
-
 }
+
+
+
