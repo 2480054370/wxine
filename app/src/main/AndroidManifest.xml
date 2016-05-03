@@ -145,10 +145,6 @@
         </activity>
 
         <activity
-            android:name=".Event_QJ"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity
             android:name=".PhotosActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
@@ -170,9 +166,6 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Bar_Personal"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name=".Event_PJ"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".SingActivity"
