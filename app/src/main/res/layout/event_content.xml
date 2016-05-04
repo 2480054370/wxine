@@ -28,7 +28,7 @@
 
         <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@id/event">
 
             <android.support.v7.widget.CardView
@@ -217,6 +217,7 @@
                                 android:layout_below="@id/whose"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="20dp"
+                                android:layout_marginBottom="14dp"
                                 android:text="查看全部"
                                 android:textColor="#4F7DD5"
                                 android:textSize="14sp" />
