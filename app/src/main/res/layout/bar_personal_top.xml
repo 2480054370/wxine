@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/top_LineraLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_weight="1"
+            android:background="@drawable/topbackground"/>
+
+        <com.wxine.android.utils.CircleImageView
+            android:id="@+id/icon"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-50dp"
+            android:fitsSystemWindows="true"
+            android:src="@drawable/face" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/personal_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="15dp"
+                android:text="林听寒"
+                android:textColor="#000000"
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/personal_name"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                android:text="1 位关注者"
+                android:textColor="#000000"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/personal_button"
+                style="?android:textAppearanceSmall"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/personal_button"
+                android:text="修改个人资料"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#EEEEEE"
+                android:padding="10dp"
+                android:text="个人的信息"
+                android:textColor="#BBBBBB"
+                android:textSize="15px" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
