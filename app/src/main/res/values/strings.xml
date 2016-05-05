@@ -5,6 +5,7 @@
     <string name="action_settings">设置</string>
     <string name="username">名称</string>
     <string name="usersign">xxxxxxx@qq.com</string>
+    <string name="event_content">活动详细内容活动详细内容活动详细内容活动详细内容活动详细内容活动详细内容活动详细内容活动详细内容活动详细内容活动详细内容活动详细内容活动详细内容活动详细内容活动详细内容活动详细内容</string>
     <string name="cart_content"></string>
     <string name="commentname"></string>
     <string name="commentdetail"></string>
@@ -115,6 +116,10 @@
     <string name="regist_tip_pwd1">请设置您密码</string>
     <string name="regist_tip_pwd2">请重复上面密码</string>
     <string name="demoText">admin</string>
+    <string name="border_top">Border Top</string>
+    <string name="border_bottom">Border Bottom</string>
+    <string name="image_url">Image Url</string>
+
 
     <string-array name="spingarr">
         <item>允许&#12288;&#12288;</item>

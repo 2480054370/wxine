@@ -143,6 +143,14 @@
             android:name=".FriendsActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+        <activity
+            android:name=".PhotosActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".PhotosDetailsActivity">
+
+        </activity>
         <activity
             android:name=".CommAddActivity"
             android:theme="@style/AppTheme.NoActionBar">

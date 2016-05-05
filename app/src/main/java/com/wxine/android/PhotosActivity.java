@@ -1,29 +1,26 @@
 package com.wxine.android;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
-public abstract class PhotosActivity extends FragmentActivity {
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(getLayoutId());
-
-		FragmentManager fm = getSupportFragmentManager();
-		Fragment fragment = fm.findFragmentById(R.id.id_fragmentContainer);
-
-		if (fragment == null) {
-			fragment = createFragment();
-			fm.beginTransaction().add(R.id.id_fragmentContainer, fragment)
-					.commit();
-		}
-
-	}
-
-	protected abstract Fragment createFragment();
-
-	protected abstract int getLayoutId();
-
+/**
+ * Created by Bumblebee on 2016/4/28.
+ */
+public class PhotosActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_photos);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("相册");
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+    }
 }

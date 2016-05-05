@@ -33,7 +33,7 @@ import android.widget.ViewFlipper;
 @SuppressWarnings("deprecation")
 public class SignCalendar extends ViewFlipper implements
     GestureDetector.OnGestureListener {
-  public static final int COLOR_BG_WEEK_TITLE = Color.parseColor("#FF4167"); // 星期标题背景颜色
+  public static final int COLOR_BG_WEEK_TITLE = Color.parseColor("#33AC71"); // 星期标题背景颜色
   public static final int COLOR_TX_WEEK_TITLE = Color.parseColor("#FFFFFF"); // 星期标题文字颜色
   public static final int BEFORE_TODAY_BACKGROUND = Color.parseColor("#FFE4E4E4"); // 星期标题文字颜色
   // public static final int COLOR_TX_THIS_MONTH_DAY = Color.parseColor("#aa564b4b"); // 当前月日历数字颜色

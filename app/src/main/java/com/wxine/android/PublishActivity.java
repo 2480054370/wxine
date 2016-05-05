@@ -317,7 +317,6 @@ public class PublishActivity extends Activity {
             LayoutInflater inflaterDl = LayoutInflater.from(this);
             LinearLayout layout = (LinearLayout) inflaterDl.inflate(R.layout.publish_dialog, null);
 
-
             //对话框
             final Dialog dialog = new AlertDialog.Builder(PublishActivity.this, R.style.Pub_Dialog).create();
             dialog.show();

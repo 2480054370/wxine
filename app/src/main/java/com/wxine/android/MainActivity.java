@@ -3,6 +3,7 @@ package com.wxine.android;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -25,7 +26,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -78,17 +78,18 @@ public class MainActivity extends AppCompatActivity
     Timer timer = new Timer();
     TimerTask task;
 
+    CoordinatorLayout status;   //状态栏颜色
 
 
 //    public  interface ButtonClickListener{
 //        void buttonClick();
 //    }
 
-    public  Fragment getNotiReadFra(){
+    public Fragment getNotiReadFra() {
         return fg5;
     }
 
-    public Fragment getNotiFra(){
+    public Fragment getNotiFra() {
         return fg4;
     }
 
@@ -100,6 +101,9 @@ public class MainActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         initViews();
+        //状态栏颜色
+        status = (CoordinatorLayout) findViewById(R.id.mainCoordLayoutStatus);
+        status.setStatusBarBackgroundColor(getResources().getColor(R.color.barmain));
 
         fManager = getSupportFragmentManager();
 
@@ -125,12 +129,12 @@ public class MainActivity extends AppCompatActivity
         TextView user_name = (TextView) nav_header.findViewById(R.id.tv_user_name);
         TextView user_sign = (TextView) nav_header.findViewById(R.id.tv_user_sign);
 
-        im = (ImageView)findViewById(R.id.iv_user_logo);
+        im = (ImageView) findViewById(R.id.iv_user_logo);
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this , Bar_Personal.class);
+                intent.setClass(MainActivity.this, Bar_Personal.class);
                 startActivity(intent);
             }
         });
@@ -142,14 +146,14 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Menu menu = navigationView.getMenu();
-                if( menu.findItem(R.id.nav_profile)!= null){
-                    rotate = AnimationUtils.loadAnimation(MainActivity.this,R.anim.tip);
+                if (menu.findItem(R.id.nav_profile) != null) {
+                    rotate = AnimationUtils.loadAnimation(MainActivity.this, R.anim.tip);
                     rotate.setFillAfter(true);
                     open.startAnimation(rotate);
                     menu.clear();
                     navigationView.inflateMenu(R.menu.activity_next_drawer);
-                }else {
-                    rotate = AnimationUtils.loadAnimation(MainActivity.this,R.anim.tip_next);
+                } else {
+                    rotate = AnimationUtils.loadAnimation(MainActivity.this, R.anim.tip_next);
                     rotate.setFillAfter(true);
                     open.startAnimation(rotate);
                     menu.clear();
@@ -219,7 +223,7 @@ public class MainActivity extends AppCompatActivity
         if (fg4 != null) {
             transaction.hide(fg4);
         }
-        if(fg5 != null){
+        if (fg5 != null) {
             transaction.hide(fg5);
         }
     }
@@ -278,7 +282,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.action_settings:
                 Intent ite = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(ite);
-            return true;
+                return true;
             case R.id.action_search:
                 Intent it = new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(it);
@@ -330,7 +334,7 @@ public class MainActivity extends AppCompatActivity
                 task = new TimerTask() {
                     @Override
                     public void run() {
-                        final Intent InLocation = new Intent(MainActivity.this, LocationActivity.class);
+                        Intent InLocation = new Intent(MainActivity.this, LocationActivity.class);
                         startActivity(InLocation);
                     }
                 };
@@ -343,11 +347,27 @@ public class MainActivity extends AppCompatActivity
                 //页面从右进，从左退出
                 //overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
 
-                 task = new TimerTask() {
+                task = new TimerTask() {
                     @Override
                     public void run() {
-                        final Intent InFriends = new Intent(MainActivity.this, FriendsActivity.class);
+                        Intent InFriends = new Intent(MainActivity.this, FriendsActivity.class);
                         startActivity(InFriends);
+                    }
+                };
+                timer.schedule(task, 300 * 1);
+                viewIsAtHome = false;
+                break;
+            case R.id.nav_photos:
+                fab.hide();
+                //startActivity(new Intent(MainActivity.this, FriendsActivity.class));
+                //页面从右进，从左退出
+                //overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
+
+                task = new TimerTask() {
+                    @Override
+                    public void run() {
+                        final Intent InPhotos = new Intent(MainActivity.this, PhotosActivity.class);
+                        startActivity(InPhotos);
                     }
                 };
                 timer.schedule(task, 300 * 1);
@@ -359,7 +379,7 @@ public class MainActivity extends AppCompatActivity
                 task = new TimerTask() {
                     @Override
                     public void run() {
-                        final Intent InEvent = new Intent(MainActivity.this, EventActivity.class);
+                        Intent InEvent = new Intent(MainActivity.this, EventActivity.class);
                         startActivity(InEvent);
                     }
                 };
@@ -376,7 +396,7 @@ public class MainActivity extends AppCompatActivity
                     task = new TimerTask() {
                         @Override
                         public void run() {
-                            final Intent InPersonal = new Intent(MainActivity.this, PersonalData.class);
+                            Intent InPersonal = new Intent(MainActivity.this, PersonalData.class);
                             startActivity(InPersonal);
                         }
                     };
@@ -386,20 +406,21 @@ public class MainActivity extends AppCompatActivity
                     task = new TimerTask() {
                         @Override
                         public void run() {
-                            final Intent InPersonal = new Intent(MainActivity.this, PersonalData.class);
+                            Intent InPersonal = new Intent(MainActivity.this, PersonalData.class);
                             startActivity(InPersonal);
                         }
                     };
                 }
                 timer.schedule(task, 300 * 1);
                 break;
-
             case 0:
+                //状态栏颜色
+                status.setStatusBarBackgroundColor(getResources().getColor(R.color.barmain));
                 fab.show();
                 title = "首页";
                 clearChioce();
                 hideFragments(transaction);
-                toolbar.setBackgroundColor(0xFF3F51B5);
+                toolbar.setBackgroundColor(0xFFDA4436);
                 content_image.setImageResource(R.drawable.ic_home_pressed);
                 content_text.setTextColor(white);
                 if (fg1 == null) {
@@ -410,6 +431,8 @@ public class MainActivity extends AppCompatActivity
                 }
                 break;
             case 1:
+                //状态栏颜色
+                status.setStatusBarBackgroundColor(getResources().getColor(R.color.barcoll));
                 fab.hide();
                 clearChioce();
                 hideFragments(transaction);
@@ -425,10 +448,12 @@ public class MainActivity extends AppCompatActivity
                 }*/
                 break;
             case 2:
+                //状态栏颜色
+                status.setStatusBarBackgroundColor(getResources().getColor(R.color.subpage));
                 fab.hide();
                 clearChioce();
                 hideFragments(transaction);
-                toolbar.setBackgroundColor(0xFF0D9D57);
+                toolbar.setBackgroundColor(0xFF0F9D58);
                 title = "社群";
                 group_image.setImageResource(R.drawable.ic_group_pressed);
                 group_text.setTextColor(white);
@@ -440,6 +465,8 @@ public class MainActivity extends AppCompatActivity
                 }
                 break;
             case 3:
+                //状态栏颜色
+                status.setStatusBarBackgroundColor(getResources().getColor(R.color.barnotice));
                 fab.hide();
                 clearChioce();
                 hideFragments(transaction);

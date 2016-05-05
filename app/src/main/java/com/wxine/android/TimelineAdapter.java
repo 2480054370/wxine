@@ -73,20 +73,14 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.MyView
         Button btn1;
         Button btn2;
         Button btn3;
-
+        Button btn4;
         public MyViewHolder(final View itemView) {
             super(itemView);
             icon = (ImageView) itemView.findViewById(R.id.userimage);
             name = (TextView) itemView.findViewById(R.id.username);
             content = (TextView) itemView.findViewById(R.id.listview_time);
-            imitem = (ImageView) itemView.findViewById(R.id.im_event);
-            imitem.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(content.getContext(), SingActivity.class);
-                    content.getContext().startActivity(intent);
-                }
-            });
+
+
 
             cardView = (CardView) itemView.findViewById(R.id.relative);
             cardView.setOnClickListener(new View.OnClickListener() {
@@ -120,6 +114,14 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.MyView
                     mOnItemClickListener.onPJClick(itemView, (Info) v.getTag(), getLayoutPosition());
                 }
             });
+
+            btn4 = (Button) itemView.findViewById(R.id.btn4);
+            btn4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mOnItemClickListener.onQDClick(itemView, (Info) v.getTag(), getLayoutPosition());
+                }
+            });
         }
     }
 
@@ -136,5 +138,7 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.MyView
         void onQJClick(View view, Info da, int position);
 
         void onPJClick(View view, Info da, int position);
+
+        void onQDClick(View view, Info da, int position);
     }
 }
