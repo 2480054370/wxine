@@ -41,7 +41,8 @@
                         android:hint="别名(注册后不能再次更改)："
                         android:inputType="textLongMessage"
                         android:maxLines="1"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:text="某某某" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -55,7 +56,8 @@
                         android:hint="个人签名："
                         android:inputType="textLongMessage"
                         android:maxLines="1"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:text="该用户很懒，什么都没有写。" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -125,9 +127,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingLeft="17.0dip"
                     android:paddingTop="4dp"
                     android:text="婚姻"
-                    android:textSize="20dp" />
+                    android:textSize="18dp" />
 
                 <RadioGroup
                     android:id="@+id/radioGroup"
@@ -161,8 +164,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="17.0dip"
                     android:text="血型"
-                    android:textSize="20dp" />
+                    android:textSize="18dp" />
 
                 <Spinner
                     android:layout_width="wrap_content"
@@ -180,8 +184,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="17.0dip"
                     android:text="学历"
-                    android:textSize="20dp" />
+                    android:textSize="18dp" />
 
                 <Spinner
                     android:layout_width="wrap_content"
@@ -196,19 +201,26 @@
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自我介绍："
+                    android:textSize="18dp" />
 
-                    <AutoCompleteTextView
-                        android:id="@+id/PersonaldataIntroduction"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="自我介绍："
-                        android:inputType="textLongMessage"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-                </android.support.design.widget.TextInputLayout>
+                <EditText
+                    android:id="@+id/add_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:drawable/edit_text"
+                    android:enabled="true"
+                    android:gravity="top"
+                    android:hint="用一句话介绍自己吧！"
+                    android:inputType="textMultiLine"
+                    android:maxLines="3"
+                    android:minLines="3"
+                    android:scrollbars="vertical" />
 
                 <Button
                     android:id="@+id/PersonalInformationUpdata"
