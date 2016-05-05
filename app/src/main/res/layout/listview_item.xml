@@ -30,14 +30,23 @@
         android:layout_marginLeft="4dp"
         android:src="@drawable/timeline_green" />
 
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/view_1"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/eventtime"
+        />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/images"
         android:layout_marginTop="30dp"
-        android:paddingLeft="10dp"
+        android:paddingLeft="40dp"
         android:text="10:00am"
-        android:textColor="#000000"
+        android:textColor="#33AC71"
         android:textSize="16sp"
         />
 

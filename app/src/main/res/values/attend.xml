@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="join">
+        <item>会参加</item>
+        <item>不会参加</item>
+    </string-array>
+</resources>

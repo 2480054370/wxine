@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -8,207 +6,225 @@
     android:background="#F1F1F1"
     android:fitsSystemWindows="true">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/content_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#0F9D58"
-
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/relative"
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="700dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="50dp"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="8dp"
-        app:cardUseCompatPadding="true">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:background="@drawable/wallpaper_d"></LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="120dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="0"
-                android:orientation="vertical">
-
-                <com.wxine.android.utils.CircleImageView
-                    android:id="@+id/image_1"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/face" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="1"
-                    android:text="测试数据"
-                    android:textSize="14dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="1"
-                    android:text="你参加吗？"
-                    android:textSize="10dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-
-                >
-
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="测试数据"
-                    android:textColor="#000000"
-                    android:textSize="14dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="WWWW"
-                    android:textColor="#000000"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-
-                    android:text="今天10:00"
-                    android:textColor="#000000"
-                    android:textSize="14dp" />
-            </LinearLayout>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="280dp"
-            android:background="#EEEEEE">
-
-            <Spinner
-                android:id="@+id/spinnerCity"
-                android:layout_width="250dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:paddingLeft="30dp" />
-
-            <Button
-                android:layout_width="250dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="right"
-                android:layout_weight="1"
-                android:background="#EEEEEE"
-                android:drawableLeft="@drawable/add_event"
-                android:text="邀请更多人"
-                android:textColor="#000000"
-                android:textSize="14dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/event"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="370dp"
-            android:orientation="vertical">
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-            <LinearLayout
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/content_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:gravity="center_vertical">
+                android:layout_height="?attr/actionBarSize"
+                android:background="#0F9D58"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/time" />
+        </android.support.design.widget.AppBarLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="今天13:00"
-                    android:textColor="#000000"
-                    android:textSize="28px" />
-            </LinearLayout>
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/event">
 
-            <LinearLayout
-
-                android:layout_width="match_parent"
+            <android.support.v7.widget.CardView
+                android:id="@+id/relative"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardUseCompatPadding="true">
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#EDEDED" />
-
-                <TextView
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="20dp"
-                    android:text="邀请对象(1 人)"
-                    android:textColor="#8C8C8C"
-                    android:textSize="25px" />
+                    android:layout_height="wrap_content">
 
-                <com.wxine.android.utils.CircleImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/face" />
+                    <ImageView
+                        android:id="@+id/event_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:background="@drawable/wallpaper_d" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="60dp"
-                    android:text="查看全部"
-                    android:textColor="#4F7DD5"
-                    android:textSize="15dp" />
-            </LinearLayout>
+                    <com.wxine.android.utils.CircleImageView
+                        android:id="@+id/event_user"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="50dp"
+                        android:src="@drawable/face" />
+
+                    <RelativeLayout
+                        android:id="@+id/contenta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="80dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/event_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="15dp"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="10dp"
+                                android:text="WWWW"
+                                android:textColor="#8D8D8D"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/event_content"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="4dp"
+                                android:lineSpacingMultiplier="1.0"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="4dp"
+                                android:text="@string/event_content"
+                                android:textColor="#8D8D8D"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/attend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/contenta"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="8dp"
+                        android:text="你是否参加了？"
+                        android:textColor="#8D8D8D"
+                        android:textSize="14sp" />
 
 
-        </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/contentb"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@id/attend"
+                        android:layout_marginTop="8dp"
+                        android:background="#EEEEEE"
+                        android:weightSum="1">
 
-    </android.support.v7.widget.CardView>
+                        <Spinner
+                            android:id="@+id/spinnerattend"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:entries="@array/join" />
 
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true">
+
+                                <ImageView
+                                    android:id="@+id/add"
+                                    android:layout_width="20dp"
+                                    android:layout_height="22dp"
+                                    android:layout_marginTop="3dp"
+                                    android:src="@drawable/add_event" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toRightOf="@+id/add"
+                                    android:text="邀请更多人"
+                                    android:textSize="14sp" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/contentb"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:src="@drawable/time" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="今天13:00"
+                                android:textColor="#000000"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/line"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#c1c1c1" />
+
+                            <TextView
+                                android:id="@+id/number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/line"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="8dp"
+                                android:text="邀请对象(1 人)"
+                                android:textColor="#8C8C8C"
+                                android:textSize="14sp" />
+
+                            <com.wxine.android.utils.CircleImageView
+                                android:id="@+id/whose"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_below="@id/number"
+                                android:layout_marginLeft="20dp"
+                                android:src="@drawable/face" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/whose"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="14dp"
+                                android:text="查看全部"
+                                android:textColor="#4F7DD5"
+                                android:textSize="14sp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </ScrollView>
+    </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

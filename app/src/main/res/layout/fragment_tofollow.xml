@@ -10,6 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="15dp"
-        tools:listitem="@layout/adapter_follower_item"/>
+        tools:listitem="@layout/adapter_tofollow_item"/>
 
 </FrameLayout>
