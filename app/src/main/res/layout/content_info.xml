@@ -120,8 +120,6 @@
                             android:textSize="@dimen/fontsize" />
                     </RelativeLayout>
                 </LinearLayout>
-
-
             </LinearLayout>
 
             <View
@@ -134,11 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="vertical" />
-
-
         </LinearLayout>
-
-
     </ScrollView>
 
     <LinearLayout
@@ -151,7 +145,6 @@
         android:orientation="horizontal"
         android:visibility="gone"
         android:weightSum="1">
-
 
         <ImageView
             android:id="@+id/iv_voice_text"
@@ -174,11 +167,10 @@
             android:id="@+id/btn_send"
             android:layout_width="50dp"
             android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
             android:background="@drawable/btn_chat_send_selector"
             android:text="发送"
-            android:layout_gravity="center_vertical"
             android:textColor="@color/white"
             android:textSize="16sp" />
-
     </LinearLayout>
 </RelativeLayout>

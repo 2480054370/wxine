@@ -396,17 +396,15 @@ public class MainActivity extends AppCompatActivity
                     task = new TimerTask() {
                         @Override
                         public void run() {
-                            Intent InPersonal = new Intent(MainActivity.this, PersonalData.class);
+                            Intent InPersonal = new Intent(MainActivity.this, Bar_Personal.class);
                             startActivity(InPersonal);
                         }
                     };
                 } else {
-                    //Intent i = new Intent(MainActivity.this, PersonalData.class);
-                    //startActivity(i);
                     task = new TimerTask() {
                         @Override
                         public void run() {
-                            Intent InPersonal = new Intent(MainActivity.this, PersonalData.class);
+                            Intent InPersonal = new Intent(MainActivity.this, Bar_Personal.class);
                             startActivity(InPersonal);
                         }
                     };
