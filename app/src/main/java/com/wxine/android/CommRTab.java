@@ -1,5 +1,6 @@
 package com.wxine.android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -39,6 +40,13 @@ public class CommRTab extends Fragment {
 
         mAdapter = new CommRAdapter(list);
         recyclerView.setAdapter(mAdapter);
+        mAdapter.setOnItemClickLitener(new CommRAdapter.OnItemClickLitener() {
+            @Override
+            public void onItemClick(View view) {
+                Intent i = new Intent(getActivity(),PersonalActivity.class);
+                startActivity(i);
+            }
+        });
 
         return view;
 

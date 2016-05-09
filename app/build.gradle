@@ -50,4 +50,5 @@ dependencies {
     compile 'org.json:json:20160212'
     compile files('libs/BaiduLBS_Android.jar')
     compile project(':library')
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }

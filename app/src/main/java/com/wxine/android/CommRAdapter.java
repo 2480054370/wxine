@@ -9,9 +9,9 @@ import android.widget.TextView;
 import java.util.List;
 
 
-public class CommRAdapter extends RecyclerView.Adapter<CommRAdapter.MyViewHolder>{
+public class CommRAdapter extends RecyclerView.Adapter<CommRAdapter.MyViewHolder>implements View.OnClickListener{
     List<String> mListData;
-
+    private static OnItemClickLitener mOnItemClickLitener = null;
     public CommRAdapter(List<String> mListData) {
         this.mListData = mListData;
     }
@@ -20,6 +20,7 @@ public class CommRAdapter extends RecyclerView.Adapter<CommRAdapter.MyViewHolder
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.f_commr_card,
                 viewGroup, false);
+        view.setOnClickListener(this);
         return new MyViewHolder(view);
     }
 
@@ -34,14 +35,30 @@ public class CommRAdapter extends RecyclerView.Adapter<CommRAdapter.MyViewHolder
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-
         TextView title;
-
         public MyViewHolder(View itemView) {
             super(itemView);
-
             title = (TextView) itemView.findViewById(R.id.comm_name);
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (mOnItemClickLitener != null) {
+            mOnItemClickLitener.onItemClick(v);
+        }
+    }
+
+    public static interface OnItemClickLitener
+    {
+        void onItemClick(View view);
+    }
+
+
+
+    public  void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener)
+    {
+        this.mOnItemClickLitener = mOnItemClickLitener;
     }
 
 }

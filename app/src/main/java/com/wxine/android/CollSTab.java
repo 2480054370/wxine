@@ -41,6 +41,11 @@ public class CollSTab extends Fragment {
 
         mAdapter = new CollSAdapter(list);
         recyclerView.setAdapter(mAdapter);
+        mAdapter.setOnItemClickLitener(new CollSAdapter.OnItemClickLitener() {
+            @Override
+            public void onItemClick(View view) {}
+        });
+
 
         return view;
 

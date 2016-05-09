@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="0.5"
+        android:layout_weight="5"
         android:layout_margin="20px"
         android:background="@drawable/border"
         android:orientation="horizontal"
@@ -31,6 +31,6 @@
         android:id="@+id/mReclcer"
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="9.5"
+        android:layout_weight="85"
         />
 </LinearLayout>
