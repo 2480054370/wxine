@@ -21,6 +21,7 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
 
     <provider
         android:name=".datasync.InfoProvider"
@@ -146,6 +147,11 @@
 
         <activity
             android:name=".PhotosActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".Event_kq"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".PhotosDetailsActivity">
