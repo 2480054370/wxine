@@ -1,291 +1,62 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border"
-    >
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/event_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/kq_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#0F9D58"
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <LinearLayout
-        android:layout_below="@+id/event_toolbar"
-        android:id="@+id/allbutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#0F9D58"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#33AC71"
-            android:text="全部"
-            android:textColor="#fff"
-            />
-
-        <Button
-            android:id="@+id/btn1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#33AC71"
-            android:text="迟到"
-            android:textColor="#fff"
-            />
-
-        <Button
-            android:id="@+id/btn2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#33AC71"
-            android:text="未参加"
-            android:textColor="#fff"
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/qb"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/allbutton"
-        android:orientation="vertical"
-        android:visibility="gone"
-        >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="成员(8/8)"
-                android:paddingLeft="20dp"
-                android:textColor="#000"
-                android:textSize="16sp"
-                />
-
-        </LinearLayout>
-
-    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/gridView_qb"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numColumns="4"
-        >
-
-    </GridView>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:gravity="right|bottom"
-            android:paddingRight="20dp"
-            >
-            <Button
-                android:id="@+id/cancel1"
-                style="?android:textAppearanceSmall"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:text="取消"
-                android:background="#c1c1c1"
-                android:textColor="#000"
-                android:textStyle="bold" />
-            <Button
-                android:id="@+id/submit1"
-                style="?android:textAppearanceSmall"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:text="提交"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:background="#109D58"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/cancel1"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/cd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/allbutton"
-        android:orientation="vertical"
-        android:visibility="gone"
-        >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="成员(8/3)"
-                android:paddingLeft="20dp"
-                android:textColor="#000"
-                android:textSize="16sp"
-                />
-
-        </LinearLayout>
-
-        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/gridView_cd"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numColumns="4"
-            >
-
-        </GridView>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:gravity="right|bottom"
-            android:paddingRight="20dp"
-            >
-            <Button
-                android:id="@+id/cancel2"
-                style="?android:textAppearanceSmall"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:text="取消"
-                android:background="#c1c1c1"
-                android:textColor="#000"
-                android:textStyle="bold" />
-            <Button
-                android:id="@+id/submit2"
-                style="?android:textAppearanceSmall"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:text="提交"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:background="#109D58"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/cancel1"/>
-        </LinearLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/wcj"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/allbutton"
-        android:orientation="vertical"
-        android:visibility="gone"
-        >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="成员(8/2)"
-                android:paddingLeft="20dp"
-                android:textColor="#000"
-                android:textSize="16sp"
-                />
-
-        </LinearLayout>
-
-        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/gridView_wcj"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numColumns="4"
-            >
-
-        </GridView>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:gravity="right|bottom"
-            android:paddingRight="20dp"
-            >
-            <Button
-                android:id="@+id/cancel"
-                style="?android:textAppearanceSmall"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:text="取消"
-                android:background="#c1c1c1"
-                android:textColor="#000"
-                android:textStyle="bold" />
-            <Button
-                android:id="@+id/submit"
-                style="?android:textAppearanceSmall"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:text="提交"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:background="#109D58"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/cancel1"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_below="@+id/allbutton"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center_horizontal"
-        >
-<TextView
-    android:id="@+id/kqtext"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="点击上面按钮进行考勤"
-    android:visibility="visible"
+    android:background="@drawable/border">
 
-    android:layout_gravity="center_vertical"
-    android:textColor="#F1F1F1"
-    android:textSize="18sp"
-    />
-    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/event_kq_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PersonaldataRelativeLayout">
 
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/event_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/kq_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#0F9D58"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        </android.support.design.widget.AppBarLayout>
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/TabLayout_RelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/event_kq_toolbar">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/event_kq_TabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="bottom"
+                android:background="#0F9D58"
+                app:tabIndicatorColor="#91d5db" />
+        </android.support.design.widget.AppBarLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TabLayout_RelativeLayout">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/event_kq_ViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </RelativeLayout>
+</RelativeLayout>

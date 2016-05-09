@@ -1,8 +1,6 @@
 package com.wxine.android;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -14,21 +12,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.RelativeLayout;
 
-import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.wxine.android.model.Info;
 import com.wxine.android.model.User;
-import com.wxine.android.utils.InfoPage;
-
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 
