@@ -44,6 +44,7 @@
                 android:src="@drawable/pic1" />
 
             <LinearLayout
+                android:id="@+id/aaa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -69,7 +70,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1px"
+                android:layout_height="30px"
                 android:background="?android:attr/listDivider" />
         </LinearLayout>
     </ScrollView>

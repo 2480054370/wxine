@@ -21,6 +21,7 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
 
     <provider
         android:name=".datasync.InfoProvider"
@@ -79,6 +80,10 @@
         <activity
             android:name=".auth.LoginActivity"
             android:label="@string/action_sign_in_short" >
+        </activity>
+        <activity
+            android:name=".auth.RegisterActivity"
+            android:label="@string/action_register_in" >
         </activity>
         <activity
             android:name=".SearchActivity"
@@ -146,6 +151,11 @@
 
         <activity
             android:name=".PhotosActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".Event_kq"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".PhotosDetailsActivity">

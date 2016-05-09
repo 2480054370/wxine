@@ -1,8 +1,6 @@
 package com.wxine.android;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -14,27 +12,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.RelativeLayout;
 
-import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.wxine.android.model.Info;
 import com.wxine.android.model.User;
-import com.wxine.android.utils.InfoPage;
-
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 
 public class Bar_Personal extends AppCompatActivity {
     private Toolbar toolbar;
-    private Button button;
     private BarPersonalAdapter mAdapter;
     private SwipeRefreshLayout mRefreshLayout;
     private LinearLayoutManager mLayoutManager;
@@ -44,7 +31,6 @@ public class Bar_Personal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bar_personal_main);
-        button = (Button) findViewById(R.id.personal_button);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
@@ -57,11 +43,22 @@ public class Bar_Personal extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new BarPersonalAdapter(this.getApplicationContext(), list);
         mRecyclerView.setAdapter(mAdapter);
+        mAdapter.setOnItemClickListener(new BarPersonalAdapter.OnRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(View view) {
+                Log.e("--------","skajdksa");
+            }
+            @Override
+            public void onKQClick(View view, int position) {
+                Intent intent = new Intent(Bar_Personal.this,PersonalData.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void datainit() {
         User user = new User();
-        user.setName("abc");
+        user.setName("aaa");
         user.setImage("http://img.teapic.com/thumbs/201305/28/101143gftcfpzwvukwqjsl.jpg.middle.jpg");
         user.setAddress("asgeq");
         Info info = new Info();
@@ -72,11 +69,11 @@ public class Bar_Personal extends AppCompatActivity {
         info.setCmcount(12);
         info.setContent("this is content");
         info.setTitle("this is title");
-        info.setName("abc");
+        info.setName("aaa");
         info.setCleancontent("this is c content1");
 
         User user2 = new User();
-        user2.setName("aaa");
+        user2.setName("bbb");
         user2.setImage("http://www.qqpk.cn/Article/UploadFiles/201112/20111228132051137.jpg");
         user2.setAddress("asgeq");
         Info info2 = new Info();
@@ -86,12 +83,12 @@ public class Bar_Personal extends AppCompatActivity {
         info2.setBrief("this is brief");
         info2.setCmcount(12);
         info2.setTitle("this is title");
-        info2.setName("abc");
+        info2.setName("bbb");
         info2.setContent("this is content2");
         info2.setCleancontent("this is c content");
+
         list.add(info);
         list.add(info2);
-        Log.d("InfosFragment", "Socket Type: " + info.getCleancontent() + "111");
     }
 
     @Override

@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:clipToPadding="true"
     android:fitsSystemWindows="true"
+    app:statusBarBackground="@color/subpage"
     app:layout_scrollFlags="scroll|enterAlways">
 
     <RelativeLayout
@@ -20,6 +21,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="50dip"
+                android:background="#0F9D58"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:navigationIcon="?attr/homeAsUpIndicator" />
         </android.support.design.widget.AppBarLayout>

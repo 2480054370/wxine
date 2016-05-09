@@ -1,13 +1,19 @@
 package com.wxine.android;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,6 +29,7 @@ public class SingActivity extends AppCompatActivity {
     private TextView popupwindow_calendar_month;
     private SignCalendar calendar;
     private Button btn_signIn;
+    private ImageView im_photo;
     private List<String> list = new ArrayList<String>(); //设置标记列表
     DBManager dbManager;
     boolean isinput=false;
@@ -39,6 +46,17 @@ public class SingActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        im_photo = (ImageView)findViewById(R.id.im_qd);
+        im_photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                intent2.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(Environment.getExternalStorageDirectory(),
+                        "head.jpg")));
+                startActivityForResult(intent2, 2);//采用ForResult打开
+            }
+        });
+
 
         // 初始化DBManager
         dbManager = new DBManager(this);
