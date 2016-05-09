@@ -82,6 +82,10 @@
             android:label="@string/action_sign_in_short" >
         </activity>
         <activity
+            android:name=".auth.RegisterActivity"
+            android:label="@string/action_register_in" >
+        </activity>
+        <activity
             android:name=".SearchActivity"
             android:label="@string/search_all" >
         </activity>
