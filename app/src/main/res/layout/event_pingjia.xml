@@ -7,25 +7,48 @@
             android:layout_height="wrap_content"
 
             >
-      <LinearLayout
+
+     <android.support.design.widget.AppBarLayout
+         android:id="@+id/pj_barlayout"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:theme="@style/AppTheme.AppBarOverlay">
+
+         <android.support.v7.widget.Toolbar
+             android:id="@+id/pj_toolbar"
              android:layout_width="match_parent"
-             android:layout_height="220dp"
+             android:layout_height="?attr/actionBarSize"
+             android:background="#0F9D58"
+             app:navigationIcon="?attr/homeAsUpIndicator"
+             app:popupTheme="@style/AppTheme.PopupOverlay" />
+     </android.support.design.widget.AppBarLayout>
+      <LinearLayout
+          android:layout_below="@+id/pj_barlayout"
+             android:layout_width="match_parent"
+             android:layout_height="250dp"
              android:orientation="vertical"
              android:background="#fff"
              android:id="@+id/bg"
           >
-            <ImageView
+            <LinearLayout
+                android:id="@+id/im_bg"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:background="@drawable/b4">
-            </ImageView>
+                android:background="@drawable/b4"
+                android:orientation="horizontal"
+                >
+
+
+
+            </LinearLayout>
+
           <LinearLayout
               android:id="@+id/content1"
               android:layout_below="@+id/userimage"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:orientation="horizontal"
-              android:layout_marginTop="35dp"
+              android:layout_marginTop="50dp"
               android:layout_marginLeft="20dp"
               android:weightSum="1">
 
@@ -76,14 +99,19 @@
           </LinearLayout>
 
       </LinearLayout>
+
+
+
             <com.wxine.android.utils.CircleImageView
                 android:id="@+id/userimage"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 app:cardUseCompatPadding="true"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="100dp"
                 android:src="@drawable/face" />
+
+
 
 
 

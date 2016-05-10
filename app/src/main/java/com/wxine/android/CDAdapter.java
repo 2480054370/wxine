@@ -18,6 +18,9 @@ private int icons[];
  private Context mContext;
  private TextView name_tv;
  private CircleImageView img;
+
+
+
  private View deleteView;
  private boolean isShowDelete;//根据这个变量来判断是否显示删除图标，true是显示，false是不显示
 
@@ -38,8 +41,15 @@ private int icons[];
  }
 
  @Override
- public Object getItem(int position) {
+ public Object getItem(final int position) {
   // TODO Auto-generated method stub
+  deleteView.setOnClickListener(new View.OnClickListener() {
+   @Override
+   public void onClick(View v) {
+    
+   }
+  });
+
   return icons[position];
  }
 
@@ -56,14 +66,9 @@ private int icons[];
   img = (CircleImageView) convertView.findViewById(R.id.img);
   name_tv = (TextView) convertView.findViewById(R.id.name_tv);
   deleteView = convertView.findViewById(R.id.delete_markView);
-  deleteView.setVisibility(isShowDelete?View.VISIBLE:View.GONE);//设置删除按钮是否显示
-  deleteView.setOnClickListener(new View.OnClickListener() {
-   @Override
-   public void onClick(View v) {
+  deleteView.setVisibility(isShowDelete ? View.VISIBLE : View.GONE);//设置删除按钮是否显示
 
-   }
-  });
-  img.setBackgroundResource(icons[position]);
+   img.setImageResource(icons[position]);
   name_tv.setText(names[position]);
   return convertView;
  }

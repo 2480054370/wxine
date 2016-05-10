@@ -18,16 +18,8 @@ import java.util.List;
 /**
  * Created by zz on 2016/4/5.
  */
-public class Event_kq extends AppCompatActivity implements AdapterView.OnItemLongClickListener {
+public class Event_kq extends AppCompatActivity {
 
-    private GridView mGridView;
-    private GridViewAdapter mAdapter;
-    private CDAdapter cdAdapter;
-    private GridView cdGridView;
-    private GridView qbGridView;
-    private QBAdapter qbAdapter;
-
-    private boolean isShowDelete = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,56 +35,9 @@ public class Event_kq extends AppCompatActivity implements AdapterView.OnItemLon
                 onBackPressed();
             }
         });
-//        qbGridView = (GridView) findViewById(R.id.gridView_qb);
-//        qbGridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-//            @Override
-//            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (isShowDelete) {
-//                    isShowDelete = false;
-//                } else {
-//                    isShowDelete = true;
-//                }
-//                qbAdapter.setIsShowDelete(isShowDelete);
-//                return true;
-//
-//            }
-//        });
-//        qbAdapter = new QBAdapter(Event_kq.this, new String[]{"abc", "dsaf", "redv", "gdsfs", "test", "ffff", "aaaa"}, new int[]{R.drawable.face, R.drawable.face, R.drawable.face, R.drawable.face, R.drawable.face, R.drawable.face, R.drawable.face});
-//        qbGridView.setAdapter(qbAdapter);
-//
-//        cdGridView = (GridView) findViewById(R.id.gridView_cd);
-//        cdGridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-//            @Override
-//            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (isShowDelete) {
-//                    isShowDelete = false;
-//                } else {
-//                    isShowDelete = true;
-//                }
-//                cdAdapter.setIsShowDelete(isShowDelete);
-//                return true;
-//            }
-//        });
-//        cdAdapter = new CDAdapter(Event_kq.this, new String[]{"abc", "dsaf", "redv"}, new int[]{R.drawable.face, R.drawable.face, R.drawable.face});
-//        cdGridView.setAdapter(cdAdapter);
-//        mGridView = (GridView) findViewById(R.id.gridView_wcj);
-//        mGridView.setOnItemLongClickListener(this);
-//        mAdapter = new GridViewAdapter(Event_kq.this, new String[]{"abc", "dsaf"}, new int[]{R.drawable.face, R.drawable.face});
-//        mGridView.setAdapter(mAdapter);
+
     }
 
-    @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view,
-                                   int position, long id) {
-        if (isShowDelete) {
-            isShowDelete = false;
-
-        } else {
-            isShowDelete = true;
-        }
-        mAdapter.setIsShowDelete(isShowDelete);
-        return true;
-    }
 
     private void setupViewPager() {
         final ViewPager viewPager = (ViewPager) findViewById(R.id.event_kq_ViewPager);
@@ -104,9 +49,9 @@ public class Event_kq extends AppCompatActivity implements AdapterView.OnItemLon
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new PersonalDataInformation_Tab(), "基本信息");
-        adapter.addFrag(new PersonalDataRealname_Tab(), "实名认证");
-        adapter.addFrag(new PersonalDataContact_Tab(), "联系信息");
+        adapter.addFrag(new Event_qb_Tab(), "全部");
+        adapter.addFrag(new Event_cd_Tab(), "迟到");
+        adapter.addFrag(new Event_wcj_Tab(), "未参加");
         viewPager.setAdapter(adapter);
     }
 

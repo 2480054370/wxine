@@ -55,7 +55,7 @@ private int icons[];
   name_tv = (TextView) convertView.findViewById(R.id.name_tv);
   deleteView = convertView.findViewById(R.id.delete_markView);
   deleteView.setVisibility(isShowDelete?View.VISIBLE:View.GONE);//设置删除按钮是否显示
-  img.setBackgroundResource(icons[position]);
+  img.setImageResource(icons[position]);
   name_tv.setText(names[position]);
   return convertView;
  }

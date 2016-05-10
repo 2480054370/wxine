@@ -94,13 +94,15 @@ public class EventActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onQJClick(View view, Info da, int position) {showQJDig();}
+            public void onQJClick(View view, Info da, int position) {
+                showQJDig();
+            }
 
 
             @Override
             public void onPJClick(View view, Info da, int position) {
-                showPJDig();
-
+                Intent intent = new Intent(EventActivity.this, Event_pj.class);
+                startActivity(intent);
             }
 
             @Override
@@ -150,89 +152,12 @@ public class EventActivity extends AppCompatActivity {
     }
 
 
-    public void showPJDig() {
-        LayoutInflater inflaterDl = LayoutInflater.from(this);
-        RelativeLayout layout = (RelativeLayout) inflaterDl.inflate(R.layout.event_pingjia,null);
-
-        //对话框
-        final Dialog dialog = new AlertDialog.Builder(EventActivity.this, R.style.Pub_Dialog).create();
-        dialog.show();
-        dialog.getWindow().setContentView(layout);
-
-        Display mt = getWindowManager().getDefaultDisplay();
-        Window dialogWindow = dialog.getWindow();
-        WindowManager.LayoutParams dg = dialogWindow.getAttributes();
-        dg.width = (int) Math.ceil(mt.getWidth() * 0.8);
-        dg.height = (int) Math.ceil(mt.getHeight() * 0.6);
-
-        dialogWindow.setAttributes(dg);
-        dialog.show();
-        //取消按钮
-        Button btnCancel = (Button) layout.findViewById(R.id.cancel1);
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.hide();
-            }
-        });
-
-        ImageView imageView = (ImageView)layout.findViewById(R.id.im_pj);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                intent2.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(Environment.getExternalStorageDirectory(),
-                        "head.jpg")));
-                startActivityForResult(intent2, 2);//采用ForResult打开
-            }
-        });
-
-
-
-
-    }
 
 
 
     public void showQDDig() {
-        LayoutInflater inflaterDl = LayoutInflater.from(this);
-        LinearLayout layout = (LinearLayout) inflaterDl.inflate(R.layout.event_qd,null);
-        //对话框
-        final Dialog dialog = new AlertDialog.Builder(EventActivity.this, R.style.Pub_Dialog).create();
-        dialog.show();
-        dialog.getWindow().setContentView(layout);
-
-        Display mt = getWindowManager().getDefaultDisplay();
-        Window dialogWindow = dialog.getWindow();
-        WindowManager.LayoutParams dg = dialogWindow.getAttributes();
-        dg.width = (int) Math.ceil(mt.getWidth() * 0.8);
-        dg.height = (int) Math.ceil(mt.getHeight() * 0.35);
-
-        dialogWindow.setAttributes(dg);
-        dialog.show();
-        //取消按钮
-        Button btnCancel = (Button) layout.findViewById(R.id.cancel1);
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.hide();
-            }
-        });
-
-        ImageView imageView = (ImageView)layout.findViewById(R.id.im_qd);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                intent2.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(Environment.getExternalStorageDirectory(),
-                        "head.jpg")));
-                startActivityForResult(intent2, 2);//采用ForResult打开
-            }
-        });
-
-
-
-
+        Intent intent = new Intent(EventActivity.this, Event_qd.class);
+        startActivity(intent);
     }
 
 
