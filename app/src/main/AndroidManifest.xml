@@ -158,6 +158,11 @@
             android:name=".PhotosActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+        <activity
+            android:name=".Event_qj"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
             android:name=".ImgActivity"
             android:theme="@style/AppTheme.NoActionBar">
