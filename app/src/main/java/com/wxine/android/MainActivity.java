@@ -366,7 +366,7 @@ public class MainActivity extends AppCompatActivity
                 task = new TimerTask() {
                     @Override
                     public void run() {
-                        final Intent InPhotos = new Intent(MainActivity.this, PhotosActivity.class);
+                        final Intent InPhotos = new Intent(MainActivity.this, ImgActivity.class);
                         startActivity(InPhotos);
                     }
                 };
