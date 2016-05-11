@@ -31,7 +31,7 @@ public class CommunitiesFragment extends Fragment implements View.OnClickListene
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_communities, container, false);
-        viewPager = (ViewPager) view.findViewById(R.id.contacts_viewpager);
+        viewPager = (ViewPager) view.findViewById(R.id.contacts_viewpager2);
         tabLayout = (TabLayout) view.findViewById(R.id.contacts_tabs);
         setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);

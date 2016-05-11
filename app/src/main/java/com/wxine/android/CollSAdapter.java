@@ -22,7 +22,7 @@ public class CollSAdapter extends RecyclerView.Adapter<CollSAdapter.MyViewHolder
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.f_colls_card,
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.f_collS_card,
                 viewGroup, false);
         view.setOnClickListener(this);
         return new MyViewHolder(i,view);
@@ -64,7 +64,7 @@ public class CollSAdapter extends RecyclerView.Adapter<CollSAdapter.MyViewHolder
 
         public MyViewHolder(final int position, View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.listitem_name);
+            title = (TextView) itemView.findViewById(R.id.coll_name);
         }
     }
 
