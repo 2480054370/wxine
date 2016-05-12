@@ -26,4 +26,8 @@
     <color name="barnotice">#c53928</color>
     <color name="subpage">#095e35</color>
     <color name="initial">#000000</color>
+
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
 </resources>
