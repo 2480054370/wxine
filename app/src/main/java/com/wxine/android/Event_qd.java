@@ -33,7 +33,7 @@ public class Event_qd extends AppCompatActivity {
             }
         });
 
-        TableRow tableRow = (TableRow)findViewById(R.id.im_qd);
+        TableRow tableRow = (TableRow)findViewById(R.id.photo);
         tableRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +54,6 @@ public class Event_qd extends AppCompatActivity {
                 startActivityForResult(intent, SCANNIN_GREQUEST_CODE);
             }
         });
-
 
     }
 
