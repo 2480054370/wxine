@@ -47,9 +47,9 @@ public class CollectionFragment extends Fragment implements View.OnClickListener
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
-        adapter.addFrag(new CollSTab(), "精选");
-        adapter.addFrag(new CollCTab(), "已关注");
-        adapter.addFrag(new CollMTab(), "你的收藏集");
+        adapter.addFrag(new CollSTab(), "推荐的");
+        adapter.addFrag(new CollCTab(), "加入的");
+        adapter.addFrag(new CollMTab(), "管理的");
 
         viewPager.setAdapter(adapter);
     }

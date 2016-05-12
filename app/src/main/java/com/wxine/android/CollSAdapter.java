@@ -64,7 +64,7 @@ public class CollSAdapter extends RecyclerView.Adapter<CollSAdapter.MyViewHolder
 
         public MyViewHolder(final int position, View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.listitem_name);
+            title = (TextView) itemView.findViewById(R.id.coll_name);
         }
     }
 
