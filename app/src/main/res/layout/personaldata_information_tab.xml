@@ -20,15 +20,17 @@
                 android:layout_marginBottom="10.0dip"
                 android:layout_marginTop="10.0dip"
                 android:gravity="center_vertical"
+                android:paddingBottom="5dp"
                 android:paddingLeft="4.0dip"
                 android:text="基本信息"
                 android:textColor="#ff888888"
-                android:textSize="16.0sp" />
+                android:textSize="15.0sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingLeft="12.0dip">
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -42,7 +44,7 @@
                         android:inputType="textLongMessage"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:text="某某某" />
+                        android:textSize="14sp" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -57,7 +59,7 @@
                         android:inputType="textLongMessage"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:text="该用户很懒，什么都没有写。" />
+                        android:textSize="14sp" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -71,7 +73,8 @@
                         android:hint="籍贯(与户口本一致)："
                         android:inputType="textLongMessage"
                         android:maxLines="1"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:textSize="14sp" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -85,7 +88,8 @@
                         android:hint="宗教："
                         android:inputType="textLongMessage"
                         android:maxLines="1"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:textSize="14sp" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -99,7 +103,8 @@
                         android:hint="爱好："
                         android:inputType="textLongMessage"
                         android:maxLines="1"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:textSize="14sp" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -113,7 +118,8 @@
                         android:hint="个人主页："
                         android:inputType="textLongMessage"
                         android:maxLines="1"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:textSize="14sp" />
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
@@ -130,7 +136,7 @@
                     android:paddingLeft="17.0dip"
                     android:paddingTop="4dp"
                     android:text="婚姻"
-                    android:textSize="18dp" />
+                    android:textSize="14sp" />
 
                 <RadioGroup
                     android:id="@+id/radioGroup"
@@ -144,14 +150,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="未婚" />
+                        android:text="未婚"
+                        android:textSize="14sp" />
 
                     <RadioButton
                         android:id="@+id/UnmarriedRadio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="false"
-                        android:text="已婚" />
+                        android:text="已婚"
+                        android:textSize="14sp" />
                 </RadioGroup>
             </LinearLayout>
 
@@ -166,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="17.0dip"
                     android:text="血型"
-                    android:textSize="18dp" />
+                    android:textSize="14sp" />
 
                 <Spinner
                     android:layout_width="wrap_content"
@@ -186,7 +194,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="17.0dip"
                     android:text="学历"
-                    android:textSize="18dp" />
+                    android:textSize="14sp" />
 
                 <Spinner
                     android:layout_width="wrap_content"
@@ -199,13 +207,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingLeft="12.0dip">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="自我介绍："
-                    android:textSize="18dp" />
+                    android:textSize="14sp" />
 
                 <EditText
                     android:id="@+id/add_content"
@@ -220,17 +229,19 @@
                     android:inputType="textMultiLine"
                     android:maxLines="3"
                     android:minLines="3"
-                    android:scrollbars="vertical" />
-
-                <Button
-                    android:id="@+id/PersonalInformationUpdata"
-                    style="?android:textAppearanceSmall"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="确认更新"
-                    android:textStyle="bold" />
+                    android:scrollbars="vertical"
+                    android:textSize="14sp" />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/PersonalInformationUpdata"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="确认更新"
+                android:textSize="12sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
