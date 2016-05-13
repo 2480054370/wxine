@@ -33,6 +33,7 @@ public class Bar_Personal extends AppCompatActivity {
         setContentView(R.layout.bar_personal_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
+
         setSupportActionBar(toolbar);
 
         mRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.info_refresh_widget);
@@ -54,6 +55,14 @@ public class Bar_Personal extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        //    super.onBackPressed();
+        MainActivity a = new MainActivity();
+        Intent back = new Intent(Bar_Personal.this,a.getClass());
+        startActivity(back);
     }
 
     public void datainit() {
@@ -105,7 +114,7 @@ public class Bar_Personal extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (item.getItemId() == android.R.id.home) {
-            finish();
+            onBackPressed();
             return true;
         }
         //noinspection SimplifiableIfStatement

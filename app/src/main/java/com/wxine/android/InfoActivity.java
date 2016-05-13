@@ -25,8 +25,22 @@ import com.wxine.android.model.Info;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class InfoActivity extends AppCompatActivity {
     private final ImageLoader imageLoader = ImageLoader.getInstance();
+
+    // bind
+    @BindView(R.id.iv_user_logo) ImageView user_logo;
+    @BindView(R.id.iv_info_agree_img) ImageView agree_img;
+    @BindView(R.id.tv_user_name) TextView user_name;
+    @BindView(R.id.tv_info_content) TextView info_content;
+    @BindView(R.id.iv_info_image) ImageView info_image;
+    @BindView(R.id.iv_share_img) ImageView info_share_img;
+    @BindView(R.id.info_comment_num) TextView info_comment_num;
+    @BindView(R.id.iv_info_comment) ImageView info_comment_img;
+    @BindView(R.id.comments_recycler_view) RecyclerView comments_recycler_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,22 +55,22 @@ public class InfoActivity extends AppCompatActivity {
             }
         });
 
-
+        ButterKnife.bind(this);
         //RecyclerView mRecyclerView = (RecyclerView)findViewById(R.id.comments_recycler_view);
         //mRecyclerView.setHasFixedSize(true);
 
         //RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this.getApplicationContext());
         //mRecyclerView.setLayoutManager(mLayoutManager);
         final LinearLayout commentLayout = (LinearLayout)findViewById(R.id.comment_layout);
-        ImageView user_logo = (ImageView)findViewById(R.id.iv_user_logo);
-        ImageView agree_img = (ImageView)findViewById(R.id.iv_info_agree_img);
-        TextView user_name = (TextView)findViewById(R.id.tv_user_name);
-        TextView info_content = (TextView)findViewById(R.id.tv_info_content);
-        ImageView info_image = (ImageView)findViewById(R.id.iv_info_image);
-        ImageView info_share_img = (ImageView) findViewById(R.id.iv_share_img);
-        TextView info_comment_num = (TextView)findViewById(R.id.info_comment_num);
-        ImageView info_comment_img = (ImageView)findViewById(R.id.iv_info_comment);
-        RecyclerView comments_recycler_view = (RecyclerView)findViewById(R.id.comments_recycler_view);
+        //ImageView user_logo = (ImageView)findViewById(R.id.iv_user_logo)
+        //ImageView agree_img = (ImageView)findViewById(R.id.iv_info_agree_img);
+      //  TextView user_name = (TextView)findViewById(R.id.tv_user_name);
+        //TextView info_content = (TextView)findViewById(R.id.tv_info_content);
+    //    ImageView info_image = (ImageView)findViewById(R.id.iv_info_image);
+ //       ImageView info_share_img = (ImageView) findViewById(R.id.iv_share_img);
+   //     TextView info_comment_num = (TextView)findViewById(R.id.info_comment_num);
+     //   ImageView info_comment_img = (ImageView)findViewById(R.id.iv_info_comment);
+    //    RecyclerView comments_recycler_view = (RecyclerView)findViewById(R.id.comments_recycler_view);
         comments_recycler_view.setHasFixedSize(true);
         FullyLinearLayoutManager mLayoutManager = new FullyLinearLayoutManager(this);
         comments_recycler_view.setLayoutManager(mLayoutManager);
@@ -76,6 +90,7 @@ public class InfoActivity extends AppCompatActivity {
         }else{
             commentLayout.setVisibility(View.GONE);
         }
+
 
         if(tag.equals("no")){
             agree_img.setImageResource(R.drawable.xfavorite);

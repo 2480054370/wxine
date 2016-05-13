@@ -1,6 +1,7 @@
 package com.wxine.android;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -54,6 +55,14 @@ public class LocationActivity extends AppCompatActivity {
         initView();
         // 初始化定位
         initLocation();
+    }
+
+    @Override
+    public void onBackPressed() {
+    //    super.onBackPressed();
+        MainActivity a = new MainActivity();
+        Intent back = new Intent(LocationActivity.this,a.getClass());
+        startActivity(back);
     }
 
     @Override

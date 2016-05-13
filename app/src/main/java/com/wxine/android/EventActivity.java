@@ -157,6 +157,13 @@ public class EventActivity extends AppCompatActivity {
 
 
 
+    @Override
+    public void onBackPressed() {
+        //    super.onBackPressed();
+        MainActivity a = new MainActivity();
+        Intent back = new Intent(EventActivity.this,a.getClass());
+        startActivity(back);
+    }
 
     public void showQDDig() {
         Intent intent = new Intent(EventActivity.this, Event_qd.class);

@@ -72,6 +72,14 @@ public class ImgActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        //    super.onBackPressed();
+        MainActivity a = new MainActivity();
+        Intent back = new Intent(ImgActivity.this,a.getClass());
+        startActivity(back);
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (resultCode) { //resultCode为回传的标记，我在B中回传的是RESULT_OK
             case RESULT_OK:

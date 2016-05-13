@@ -363,6 +363,7 @@ public class InfosFragment extends Fragment {
         Info info = new Info();
         info.setImages(img);
         info.setUser(user);
+
         info.setComment(comment);
         info.setImage("http://icon.nipic.com/BannerPic/20160224/home/20160224113102.jpg");
         info.setAddress("aaa");
