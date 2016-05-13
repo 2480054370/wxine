@@ -47,70 +47,70 @@
             android:fitsSystemWindows="true"
             android:src="@drawable/face" />
 
-        <LinearLayout
-            android:id="@+id/show"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+        <!--<LinearLayout-->
+            <!--android:id="@+id/show"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:orientation="horizontal">-->
 
-            <LinearLayout
-                android:layout_width="80dp"
-                android:layout_height="90dp"
-                android:layout_weight="1"
-                android:background="#5EB759"
-                android:orientation="vertical">
+            <!--<LinearLayout-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="90dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#5EB759"-->
+                <!--android:orientation="vertical">-->
 
-                <TextView
-                    android:id="@+id/qdtext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:text="12"
-                    android:textColor="#fff"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
+                <!--<TextView-->
+                    <!--android:id="@+id/qdtext"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:text="12"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:textSize="30sp"-->
+                    <!--android:textStyle="bold" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="4dp"
-                    android:text="已经签到/人"
-                    android:textColor="#fff"
-                    android:textSize="20sp" />
-            </LinearLayout>
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--android:layout_marginTop="4dp"-->
+                    <!--android:text="已经签到/人"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:textSize="20sp" />-->
+            <!--</LinearLayout>-->
 
 
-            <LinearLayout
-                android:layout_width="80dp"
-                android:layout_height="90dp"
-                android:layout_weight="1"
-                android:background="#5EB759"
-                android:orientation="vertical">
+            <!--<LinearLayout-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="90dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#5EB759"-->
+                <!--android:orientation="vertical">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:text="8"
-                    android:textColor="#fff"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:text="8"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:textSize="30sp"-->
+                    <!--android:textStyle="bold" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="4dp"
-                    android:text="未签到/人"
-                    android:textColor="#fff"
-                    android:textSize="20sp" />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--android:layout_marginTop="4dp"-->
+                    <!--android:text="未签到/人"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:textSize="20sp" />-->
 
-            </LinearLayout>
-        </LinearLayout>
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -153,7 +153,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/LoginAuthentication"
+                android:id="@+id/saoma"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="2.0dip"
@@ -186,33 +186,44 @@
 
             </TableRow>
 
+            <TableRow
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:paddingBottom="16.0dip"
+                android:paddingTop="16.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left"
+                    android:paddingLeft="20dp"
+                    android:src="@drawable/takephoto" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="10dp"
+                    android:text="拍照签到"
+                    android:textColor="#292727"
+                    android:textSize="16.0sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="300dp"
+                    android:src="@drawable/ic_arrow" />
+
+            </TableRow>
+
 
         </LinearLayout>
 
 
-        <LinearLayout
-            android:id="@+id/btn_takephoto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/reason"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="签到照片:"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:id="@+id/im_qd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/takephoto" />
-        </LinearLayout>
 
 
     </LinearLayout>

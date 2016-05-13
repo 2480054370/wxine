@@ -41,7 +41,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:background="@drawable/b4"
-                android:orientation="horizontal"></LinearLayout>
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="某某某"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="80dp"
+                    />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/content1"
