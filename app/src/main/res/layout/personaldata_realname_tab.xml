@@ -146,6 +146,19 @@
                         android:text="选择文件" />
                 </LinearLayout>
 
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/id_gallery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal"></LinearLayout>
+                </HorizontalScrollView>
+
                 <Button
                     android:id="@+id/PersonalRealnameUpdata"
                     style="?android:textAppearanceSmall"

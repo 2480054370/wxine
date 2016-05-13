@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="20dp">
+    android:layout_marginBottom="20dp"
+    android:background="#EEEEEE"
+    app:cardElevation="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,6 +73,42 @@
                 android:layout_height="24dp"
                 android:layout_margin="5dp"
                 android:src="@drawable/xreply" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_info_comment"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="5dp"
+                    android:layout_toLeftOf="@+id/info_comment_num"
+                    android:src="@drawable/xcomment" />
+
+                <TextView
+                    android:id="@+id/info_comment_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingBottom="7dp"
+                    android:paddingLeft="@dimen/padding_zero"
+                    android:paddingRight="@dimen/padding_eight"
+                    android:paddingTop="7dp"
+                    android:text="@string/comment_num"
+                    android:textSize="@dimen/fontsize" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/personal_item_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
         </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>
