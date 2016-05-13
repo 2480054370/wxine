@@ -28,7 +28,7 @@ public class CollMTab extends Fragment {
         RecyclerView recyclerView = (RecyclerView) view.findViewById(
                 R.id.fragment_list_rv);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this.getActivity(),4);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this.getActivity(),2);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setHasFixedSize(true);
 

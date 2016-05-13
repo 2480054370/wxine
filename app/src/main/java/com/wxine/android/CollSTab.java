@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,7 +43,9 @@ public class CollSTab extends Fragment {
         recyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickLitener(new CollSAdapter.OnItemClickLitener() {
             @Override
-            public void onItemClick(View view) {}
+            public void onItemClick(View view) {
+                Toast.makeText(getContext(),"---",Toast.LENGTH_SHORT).show();
+            }
         });
 
 
