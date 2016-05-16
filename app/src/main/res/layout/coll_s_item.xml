@@ -20,13 +20,13 @@
             android:padding="17dp">
 
             <ImageView
-                android:id="@+id/PersonalUser"
+                android:id="@+id/CollSUser"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/tou" />
 
             <TextView
-                android:id="@+id/PersonalName"
+                android:id="@+id/CollSName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -44,7 +44,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/PersonalImage"
+                android:id="@+id/CollSImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -58,7 +58,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/PersonalAgreeImg"
+                android:id="@+id/CollSAgreeImg"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginBottom="5dp"
@@ -68,7 +68,7 @@
                 android:src="@drawable/xfavorite" />
 
             <ImageView
-                android:id="@+id/PersonalShareImg"
+                android:id="@+id/CollSShareImg"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_margin="5dp"
@@ -79,15 +79,15 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/iv_info_comment"
+                    android:id="@+id/CollS_info_comment"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_margin="5dp"
-                    android:layout_toLeftOf="@+id/info_comment_num"
+                    android:layout_toLeftOf="@+id/CollS_comment_num"
                     android:src="@drawable/xcomment" />
 
                 <TextView
-                    android:id="@+id/info_comment_num"
+                    android:id="@+id/CollS_comment_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"

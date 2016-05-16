@@ -213,6 +213,9 @@
             android:name=".Bar_Personal"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
+            android:name=".CollSpage"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".SingActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity

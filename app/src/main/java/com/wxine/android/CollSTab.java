@@ -1,5 +1,6 @@
 package com.wxine.android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -44,7 +45,8 @@ public class CollSTab extends Fragment {
         mAdapter.setOnItemClickLitener(new CollSAdapter.OnItemClickLitener() {
             @Override
             public void onItemClick(View view) {
-                Toast.makeText(getContext(),"---",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity().getBaseContext(),CollSpage.class);
+                getActivity().startActivity(intent);
             }
         });
 
