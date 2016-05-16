@@ -57,13 +57,7 @@ public class Bar_Personal extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onBackPressed() {
-        //    super.onBackPressed();
-        MainActivity a = new MainActivity();
-        Intent back = new Intent(Bar_Personal.this,a.getClass());
-        startActivity(back);
-    }
+
 
     public void datainit() {
         User user = new User();

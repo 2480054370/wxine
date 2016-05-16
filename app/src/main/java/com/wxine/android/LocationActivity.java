@@ -25,7 +25,7 @@ import com.baidu.mapapi.model.LatLng;
 public class LocationActivity extends AppCompatActivity {
     private MapView mMapView;
     private BaiduMap mBaiduMap;
-
+    private MainActivity a =null;
     private Context context;
 
     // 定位相关
@@ -57,13 +57,6 @@ public class LocationActivity extends AppCompatActivity {
         initLocation();
     }
 
-    @Override
-    public void onBackPressed() {
-    //    super.onBackPressed();
-        MainActivity a = new MainActivity();
-        Intent back = new Intent(LocationActivity.this,a.getClass());
-        startActivity(back);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

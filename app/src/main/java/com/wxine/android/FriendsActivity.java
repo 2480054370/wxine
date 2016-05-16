@@ -37,13 +37,6 @@ public class FriendsActivity extends AppCompatActivity {
         setupViewPager();
     }
 
-    @Override
-    public void onBackPressed() {
-        //    super.onBackPressed();
-        MainActivity a = new MainActivity();
-        Intent back = new Intent(FriendsActivity.this,a.getClass());
-        startActivity(back);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

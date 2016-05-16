@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity
         user_name.setText(app.getSessionUser().getName());
         user_sign.setText(app.getSessionUser().getIntro());
 
-        displayView(0);
+
     }
 
     //完成组件的初始化
@@ -507,6 +507,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        displayView(0);
     }
 
     @Override
