@@ -55,6 +55,16 @@ public class Event_qd extends AppCompatActivity {
             }
         });
 
+
+        TableRow sing = (TableRow)findViewById(R.id.Sing);
+        sing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Event_qd.this, SingActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

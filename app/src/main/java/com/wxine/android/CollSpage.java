@@ -13,7 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 
 import com.wxine.android.model.Info;
 import com.wxine.android.model.User;
@@ -32,9 +34,16 @@ public class CollSpage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coll_s_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("");
 
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(CollSpage.this,
+                R.array.pass_type, R.layout.layout_drop_title);
+        adapter.setDropDownViewResource(R.layout.layout_drop_list);
+
+        Spinner mNavigationSpinner = new Spinner(getSupportActionBar().getThemedContext());
+        mNavigationSpinner.setAdapter(adapter);
+        toolbar.addView(mNavigationSpinner);
 
         mRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.info_refresh_widget);
         datainit();

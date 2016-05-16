@@ -1,18 +1,18 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainCoordLayoutStatus"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     app:statusBarBackground="@color/subpage">
 
     <RelativeLayout
         android:id="@+id/evaluate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/border">
-
+        >
         <android.support.design.widget.AppBarLayout
             android:id="@+id/pj_barlayout"
             android:layout_width="match_parent"
@@ -31,7 +31,7 @@
         <LinearLayout
             android:id="@+id/bg"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/pj_barlayout"
             android:background="#fff"
             android:orientation="vertical">
@@ -50,63 +50,20 @@
                     android:textColor="#fff"
                     android:textSize="20sp"
                     android:layout_marginTop="50dp"
-                    android:layout_marginLeft="80dp"
+                    android:layout_marginLeft="85dp"
                     />
 
-            </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/content1"
-                android:layout_width="match_parent"
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/userimage"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="50dp"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:text="xxxxx@qq.com"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:layout_marginLeft="85dp"
+                />
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingRight="10dp">
-
-                    <AutoCompleteTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="评价："
-                        android:inputType="textLongMessage"
-                        android:maxLines="3"
-                        android:singleLine="true"
-                        android:textColor="#000" />
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/content2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/content1"
-                android:layout_marginLeft="20dp"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingRight="10dp">
-
-                    <AutoCompleteTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="评价人员："
-                        android:inputType="textLongMessage"
-                        android:maxLines="3"
-                        android:singleLine="true"
-                        android:textColor="#000" />
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
         </LinearLayout>
 
         <com.wxine.android.utils.CircleImageView
@@ -177,6 +134,7 @@
                     android:layout_toRightOf="@+id/test2" />
             </LinearLayout>
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -204,27 +162,37 @@
             </LinearLayout>
         </LinearLayout>
 
+
         <LinearLayout
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/content3"
-            android:layout_marginLeft="20dp"
+            android:padding="20dp"
             android:orientation="vertical"
             android:weightSum="1">
+            <EditText
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:inputType="textMultiLine"
+                android:minLines="10"
+                android:maxLines="12"
+                android:hint="评论详情"
+                android:gravity="top"
+                android:background="@android:drawable/edit_text"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_weight="1"
-
                 >
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="活动照片:"
+                    android:text="评价照片:"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
@@ -237,6 +205,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

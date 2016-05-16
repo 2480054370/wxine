@@ -75,7 +75,7 @@ public class CollSpageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             ((TextViewHolder) holder).CollSName.setText(a.getUser().getName());
         }
     }
-
+    
     @Override
     public int getItemCount() {
         return list.size() + 1;
