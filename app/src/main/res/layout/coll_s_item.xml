@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/pic1" />
+                android:src="@drawable/superpanda" />
         </LinearLayout>
 
         <LinearLayout
@@ -74,9 +74,10 @@
                 android:layout_margin="5dp"
                 android:src="@drawable/xreply" />
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="right">
 
                 <ImageView
                     android:id="@+id/CollS_info_comment"
@@ -97,7 +98,7 @@
                     android:paddingTop="7dp"
                     android:text="@string/comment_num"
                     android:textSize="@dimen/fontsize" />
-            </RelativeLayout>
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"

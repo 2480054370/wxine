@@ -1,20 +1,14 @@
 package com.wxine.android;
 
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.WindowManager;
 import android.widget.ArrayAdapter;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.wxine.android.model.Info;
@@ -55,13 +49,7 @@ public class CollSpage extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    @Override
-    public void onBackPressed() {
-        //    super.onBackPressed();
-        MainActivity a = new MainActivity();
-        Intent back = new Intent(CollSpage.this,a.getClass());
-        startActivity(back);
-    }
+
 
     public void datainit() {
         User user = new User();
