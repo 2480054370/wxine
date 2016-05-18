@@ -47,16 +47,16 @@ public class Bar_Personal extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new BarPersonalAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view) {
-                Log.e("--------","skajdksa");
+                Log.e("--------", "skajdksa");
             }
+
             @Override
             public void onKQClick(View view, int position) {
-                Intent intent = new Intent(Bar_Personal.this,PersonalData.class);
+                Intent intent = new Intent(Bar_Personal.this, PersonalData.class);
                 startActivity(intent);
             }
         });
     }
-
 
 
     public void datainit() {
@@ -117,7 +117,8 @@ public class Bar_Personal extends AppCompatActivity {
         } else if (id == R.id.action_copylink) {
             return true;
         } else if (id == R.id.action_site) {
-            return true;
+            Intent i = new Intent(Bar_Personal.this, SettingsActivity.class);
+            startActivity(i);
         } else if (id == R.id.action_opinion) {
             return true;
         } else if (id == R.id.action_help) {
