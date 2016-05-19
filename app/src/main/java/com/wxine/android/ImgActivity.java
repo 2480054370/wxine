@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -41,12 +42,13 @@ public class ImgActivity extends AppCompatActivity {
             }
         });
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_list);
-        GridLayoutManager layoutManager = new GridLayoutManager(ImgActivity.this, 2);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(ImgActivity.this);
         layoutManager.setOrientation(GridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
         Collections.addAll(mTitle, title);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(mRecyclerViewAdapter = new ImgAdapter(this, mTitle));
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,5 +88,6 @@ public class ImgActivity extends AppCompatActivity {
             default:
                 break;
         }
+        */
     }
 }

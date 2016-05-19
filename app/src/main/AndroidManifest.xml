@@ -176,8 +176,6 @@
             android:name=".ImgActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".ImgNewActivity"
-            android:theme="@style/MyDialog"/>
 
         <activity
             android:name=".Event_pj"
