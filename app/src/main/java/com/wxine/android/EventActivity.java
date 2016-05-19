@@ -40,7 +40,8 @@ import java.util.List;
  */
 public class EventActivity extends AppCompatActivity {
     private TimelineAdapter mAdapter;
-    private List<Integer> image = Arrays.asList(R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou);
+    private List<Integer> image = Arrays.asList(R.drawable.tou, R.drawable.face, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou);
+    private List<Integer> bg = Arrays.asList(R.drawable.b4, R.drawable.wallpaper_d, R.drawable.b8, R.drawable.b4, R.drawable.b9, R.drawable.b4, R.drawable.b4, R.drawable.b4, R.drawable.b4, R.drawable.b4);
     private String username = "Lorem Ipsum is simply dummy text of the printing and ";
     private String time = "今天10:00 今天10:00 今天10:00 今天10:00 今天10:00 今天10:00 今天10:00 今天10:00 今天10:00 今天10:00 ";
 
@@ -78,7 +79,7 @@ public class EventActivity extends AppCompatActivity {
         List<String> content = new ArrayList<String>();
         Collections.addAll(list, listItems);
         Collections.addAll(content, listcontent);
-        mAdapter = new TimelineAdapter(image, list, content);
+        mAdapter = new TimelineAdapter(image, list, content,bg);
         recyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new TimelineAdapter.OnRecyclerViewItemClickListener() {
 
