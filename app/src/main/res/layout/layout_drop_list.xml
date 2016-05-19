@@ -5,5 +5,5 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:ellipsize="marquee"
-    android:background="@color/mdtp_red"
-    android:textColor="@color/white"/>
+    android:background="#FAFAFA"
+    android:textColor="#4D4D4D"/>

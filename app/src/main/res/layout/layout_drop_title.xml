@@ -4,5 +4,8 @@
     android:singleLine="true"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
+    android:text="活动"
     android:textColor="@color/white"
+    android:layout_centerVertical="true"
+    android:textSize="18sp"
     android:ellipsize="marquee"/>

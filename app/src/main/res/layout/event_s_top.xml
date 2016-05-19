@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/top_LineraLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/CollS_BgImage"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_weight="1"
+            android:background="@drawable/b4" />
+
+        <com.wxine.android.utils.CircleImageView
+            android:id="@+id/icon"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-50dp"
+            android:fitsSystemWindows="true"
+            android:src="@drawable/face" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/CollS_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="15dp"
+                android:text="C++"
+                android:textColor="#222222"
+                android:textSize="35dp" />
+
+            <TextView
+                android:id="@+id/CollS_autograph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/personal_name"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="C++是在C语言的基础上开发的一种面向对象编程、泛型编程和过程化编程"
+                android:textColor="#373737"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/CollS_FollowMan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/personal_autograph"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:text="2 位关注者"
+                android:textColor="#969696"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/event_button"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/personal_button"
+                android:text="活动详情"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#EEEEEE"
+                android:padding="12dp"
+                android:text="活动的信息"
+                android:textColor="#BBBBBB"
+                android:textSize="15px"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

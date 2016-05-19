@@ -24,12 +24,14 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.MyView
     List<Integer> image; //图片
     List<String> usename; //名字
     List<String> time;    //文本
+    List<Integer> bg;  //背景
     private PopupWindow popupwindow;
 
-    public TimelineAdapter(List<Integer> image, List<String> usename, List<String> time) {
+    public TimelineAdapter(List<Integer> image, List<String> usename, List<String> time,List<Integer> bg) {
         this.image = image;
         this.usename = usename;
         this.time = time;
+        this.bg = bg;
     }
 
     @Override
@@ -45,6 +47,7 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.MyView
         myViewHolder.icon.setImageResource(image.get(i));
         myViewHolder.name.setText(usename.get(i));
         myViewHolder.content.setText(time.get(i));
+        myViewHolder.imbg.setBackgroundResource(bg.get(i));
     }
 
     @Override
@@ -69,7 +72,7 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.MyView
         TextView name;
         TextView content;
         CardView cardView;
-        ImageView imitem;
+        ImageView imbg;
         Button btn1;
         Button btn2;
         Button btn3;
@@ -79,14 +82,14 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.MyView
             icon = (ImageView) itemView.findViewById(R.id.userimage);
             name = (TextView) itemView.findViewById(R.id.username);
             content = (TextView) itemView.findViewById(R.id.listview_time);
-
+            imbg = (ImageView)itemView.findViewById(R.id.item_bg);
 
 
             cardView = (CardView) itemView.findViewById(R.id.relative);
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(content.getContext(), Event_content.class);
+                    Intent intent = new Intent(content.getContext(), EventSpage.class);
                     content.getContext().startActivity(intent);
 
                 }
