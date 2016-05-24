@@ -40,8 +40,11 @@ import java.util.List;
  */
 public class EventActivity extends AppCompatActivity {
     private TimelineAdapter mAdapter;
+    private List<Integer> imicon = Arrays.asList(R.drawable.tou, R.drawable.face, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou);
     private List<Integer> image = Arrays.asList(R.drawable.tou, R.drawable.face, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou);
     private List<Integer> bg = Arrays.asList(R.drawable.b4, R.drawable.wallpaper_d, R.drawable.b8, R.drawable.b4, R.drawable.b9, R.drawable.b4, R.drawable.b4, R.drawable.b4, R.drawable.b4, R.drawable.b4);
+    private List<Integer> view2 = Arrays.asList(0xff159CE0, 0xff0D65AF,  0xffDC6602,0xff70C63F, 0xffE13239, 0xff5C83A2,  0xffF7B23D, 0xff0F66AB,  0xff5471AD, 0xff159CE0);
+    private List<Integer> view1 = Arrays.asList(0xff159CE0, 0xff0D65AF,  0xffDC6602,0xff70C63F, 0xffE13239, 0xff5C83A2,  0xffF7B23D, 0xff0F66AB,  0xff5471AD, 0xff159CE0);
     private String username = "Lorem Ipsum is simply dummy text of the printing and ";
     private String time = "今天10:00 今天10:00 今天10:00 今天10:00 今天10:00 今天10:00 今天10:00 今天10:00 今天10:00 今天10:00 ";
 
@@ -79,7 +82,7 @@ public class EventActivity extends AppCompatActivity {
         List<String> content = new ArrayList<String>();
         Collections.addAll(list, listItems);
         Collections.addAll(content, listcontent);
-        mAdapter = new TimelineAdapter(image, list, content,bg);
+        mAdapter = new TimelineAdapter(image, list, content,bg,view2,view1,imicon);
         recyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new TimelineAdapter.OnRecyclerViewItemClickListener() {
 
@@ -151,8 +154,6 @@ public class EventActivity extends AppCompatActivity {
 //        });
         Intent intent = new Intent(EventActivity.this, Event_qj.class);
         startActivity(intent);
-
-
     }
 
 
