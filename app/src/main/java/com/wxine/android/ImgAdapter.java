@@ -11,6 +11,9 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.wxine.android.model.Image;
+import com.wxine.android.utils.Images;
+
 import java.util.ArrayList;
 
 /**
@@ -37,14 +40,17 @@ public class ImgAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> im
     public static class ImgViewHolder extends RecyclerView.ViewHolder {
 
         private GridView gridview;
-        private BaseAdapter gv;
+        //private BaseAdapter gv;
+        private PhotoWallAdapter adapter;
         public ImgViewHolder(View itemView) {
             super(itemView);
             gridview = (GridView) itemView.findViewById(R.id.gridview);
-            gv = new Img_Grid_Adapter(mContext);
-            gridview.setAdapter(gv);
+            adapter = new PhotoWallAdapter(mContext, 0, Images.imageUrls, gridview);
+            //gv = new Img_Grid_Adapter(mContext);
+            gridview.setAdapter(adapter);
         }
     }
+
     public static class TitleViewHolder extends RecyclerView.ViewHolder {
         private TextView title;
         public TitleViewHolder(View itemView) {
