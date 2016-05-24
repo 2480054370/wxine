@@ -25,13 +25,19 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.MyView
     List<String> usename; //名字
     List<String> time;    //文本
     List<Integer> bg;  //背景
+    List<Integer> view2;
+    List<Integer> view1;
+    List<Integer> imicon;
     private PopupWindow popupwindow;
 
-    public TimelineAdapter(List<Integer> image, List<String> usename, List<String> time,List<Integer> bg) {
+    public TimelineAdapter(List<Integer> image, List<String> usename, List<String> time,List<Integer> bg,List<Integer> view2,List<Integer> view1,List<Integer> imicon) {
         this.image = image;
         this.usename = usename;
         this.time = time;
         this.bg = bg;
+        this.view2 = view2;
+        this.view1 = view1;
+        this.imicon = imicon;
     }
 
     @Override
@@ -45,9 +51,12 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.MyView
     @Override
     public void onBindViewHolder(MyViewHolder myViewHolder, int i) {
         myViewHolder.icon.setImageResource(image.get(i));
+        myViewHolder.im.setImageResource(imicon.get(i));
         myViewHolder.name.setText(usename.get(i));
         myViewHolder.content.setText(time.get(i));
         myViewHolder.imbg.setBackgroundResource(bg.get(i));
+        myViewHolder.v2.setBackgroundColor(view2.get(i));
+        myViewHolder.v1.setBackgroundColor(view1.get(i));
     }
 
     @Override
@@ -69,10 +78,13 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.MyView
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView icon;
+        ImageView im;
         TextView name;
         TextView content;
         CardView cardView;
         ImageView imbg;
+        View v2;
+        View v1;
         Button btn1;
         Button btn2;
         Button btn3;
@@ -80,11 +92,12 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.MyView
         public MyViewHolder(final View itemView) {
             super(itemView);
             icon = (ImageView) itemView.findViewById(R.id.userimage);
+            im = (ImageView) itemView.findViewById(R.id.images);
             name = (TextView) itemView.findViewById(R.id.username);
             content = (TextView) itemView.findViewById(R.id.listview_time);
             imbg = (ImageView)itemView.findViewById(R.id.item_bg);
-
-
+            v2 = (View)itemView.findViewById(R.id.view_2);
+            v1 = (View)itemView.findViewById(R.id.view_1);
             cardView = (CardView) itemView.findViewById(R.id.relative);
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
