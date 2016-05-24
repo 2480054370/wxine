@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/superpanda" />
+                android:src="@drawable/pic1" />
         </LinearLayout>
 
         <LinearLayout
@@ -79,15 +79,15 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/PersonalComment"
+                    android:id="@+id/iv_info_comment"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_margin="5dp"
-                    android:layout_toLeftOf="@+id/PersonalCommentNum"
+                    android:layout_toLeftOf="@+id/info_comment_num"
                     android:src="@drawable/xcomment" />
 
                 <TextView
-                    android:id="@+id/PersonalCommentNum"
+                    android:id="@+id/info_comment_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -98,17 +98,17 @@
                     android:text="@string/comment_num"
                     android:textSize="@dimen/fontsize" />
             </RelativeLayout>
-        </LinearLayout>
-        <!--
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:background="@color/line" />
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/BarRecyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scrollbars="vertical" />-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/personal_item_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
+        </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>
