@@ -51,7 +51,7 @@ public class NotifacationFragment extends Fragment {
                 transaction.setCustomAnimations(R.anim.fragment_up,R.anim.fragment_slide_left_exit);
            //     transaction.hide(NotifacationFragment.this).show(fragment).commit();
                 transaction.addToBackStack(null);
-                if (!fragment.isAdded() || frag) {
+                if (!fragment.isAdded() && frag) {
                     // 隐藏当前的fragment，add下一个到Activity中
                     transaction.hide(NotifacationFragment.this).add(R.id.content, fragment).commit();
                     frag = false;

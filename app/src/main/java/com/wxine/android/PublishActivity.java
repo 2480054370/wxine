@@ -32,6 +32,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -222,8 +223,14 @@ public class PublishActivity extends Activity {
             cursor.close();
 
 
+            //压缩，用于节省BITMAP内存空间--解决BUG的关键步骤
+            BitmapFactory.Options opts = new BitmapFactory.Options();
+            opts.inSampleSize = 2;    //这个的值压缩的倍数（2的整数倍），数值越小，压缩率越小，图片越清晰
+
+            //返回原图解码之后的bitmap对象
+            initData(BitmapFactory.decodeFile(picturePath,opts));
             //显示在Gallery视图
-            initData(BitmapFactory.decodeFile(picturePath));
+//            initData(BitmapFactory.decodeFile(picturePath));
             initView();
         }
 

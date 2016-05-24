@@ -487,11 +487,11 @@ public class MainActivity extends AppCompatActivity
                 }
                 break;
         }
-        transaction.commit();
+        transaction.commitAllowingStateLoss();
         if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();    // FragmentTransaction对fragment进行添加,移除,替换,以及执行其他动作。
             ft.replace(R.id.content_frame, fragment);
-            //ft.commit();
+            //ft.commit();k
             ft.commitAllowingStateLoss();
         }
 
