@@ -20,13 +20,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+
 /**
  * Created by zz on 2016/4/22.
  */
 public class PersonalDataRealname_Tab extends Fragment {
     Button PersonalRealnameUpdata;
     Button SelectFile;
-    View view;
+    private View view;
     private LayoutInflater mInflater;
     private LinearLayout mGallery;
     private Bitmap[] mImgIds;
@@ -59,7 +62,7 @@ public class PersonalDataRealname_Tab extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         //图库
-
+        if (requestCode == 1 && resultCode == getActivity().RESULT_OK && null != data) {
             Uri selectedImage = data.getData();
             String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
@@ -72,10 +75,16 @@ public class PersonalDataRealname_Tab extends Fragment {
             cursor.close();
 
 
-            //显示在Gallery视图
-            initData(BitmapFactory.decodeFile(picturePath));
-            initView();
+            //压缩，用于节省BITMAP内存空间--解决BUG的关键步骤
+            BitmapFactory.Options opts = new BitmapFactory.Options();
+            opts.inSampleSize = 2;    //这个的值压缩的倍数（2的整数倍），数值越小，压缩率越小，图片越清晰
 
+            //返回原图解码之后的bitmap对象
+            initData(BitmapFactory.decodeFile(picturePath,opts));
+            //显示在Gallery视图
+//            initData(BitmapFactory.decodeFile(picturePath));
+            initView();
+        }
         super.onActivityResult(requestCode, resultCode, data);
     }
     //照片的显示
@@ -84,7 +93,7 @@ public class PersonalDataRealname_Tab extends Fragment {
     }
 
     private void initView() {
-        mGallery = (LinearLayout) view.findViewById(R.id.id_gallery);
+        mGallery = (LinearLayout) view.findViewById(R.id.person_gallery);
         for (int i = 0; i < mImgIds.length; i++) {
             final View personalphoto_item = mInflater.inflate(R.layout.personalphoto_item,
                     mGallery, false);

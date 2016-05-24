@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="20dp"
     android:background="#EEEEEE"
-    card_view:cardElevation="8dp">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/pic1" />
+                android:src="@drawable/superpanda" />
         </LinearLayout>
 
         <LinearLayout

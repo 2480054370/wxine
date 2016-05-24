@@ -1,10 +1,12 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8E8E8"
-    tools:context=".SingActivity" >
+    android:fitsSystemWindows="true"
+    app:statusBarBackground="@color/subpage"
+    tools:context=".SingActivity">
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,17 +21,18 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
+
     <LinearLayout
         android:id="@+id/ll_popup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="55dp"
-            android:background="#586771" >
+            android:background="#586771">
 
             <TextView
                 android:id="@+id/popupwindow_calendar_month"
@@ -45,8 +48,7 @@
             android:id="@+id/popupwindow_calendar"
             android:layout_width="match_parent"
             android:layout_height="320dp"
-            android:clickable="false" >
-        </com.wxine.android.SignCalendar>
+            android:clickable="false"></com.wxine.android.SignCalendar>
 
         <Button
             android:id="@+id/btn_signIn"
@@ -65,8 +67,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ll_popup"
-        android:padding="20dp"
-        >
+        android:padding="20dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,8 +80,8 @@
             android:id="@+id/im_qd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/takephoto"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/takephoto" />
     </LinearLayout>
 
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
