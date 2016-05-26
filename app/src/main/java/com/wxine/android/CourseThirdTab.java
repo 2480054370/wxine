@@ -12,16 +12,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Created by @vitovalov on 30/9/15.
+ */
+public class CourseThirdTab extends Fragment {
 
-public class CollCTab extends Fragment {
-
-    private CollCAdapter mAdapter;
+    private CourseThirdAdapter mAdapter;
 
     private String mItemData = "Lorem Ipsum is simply dummy text of the printing and ";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.f_collc_recyclerview, container, false);
+        View view = inflater.inflate(R.layout.course_second_recyclerview, container, false);
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(
                 R.id.fragment_list_rv);
@@ -35,7 +37,7 @@ public class CollCTab extends Fragment {
         List<String> list = new ArrayList<String>();
         Collections.addAll(list, listItems);
 
-        mAdapter = new CollCAdapter(list);
+        mAdapter = new CourseThirdAdapter(list);
         recyclerView.setAdapter(mAdapter);
 
         return view;

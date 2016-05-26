@@ -210,7 +210,7 @@
 
         </activity>
         <activity
-            android:name=".CommAddActivity"
+            android:name=".CommThirdAddActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
@@ -226,7 +226,7 @@
             android:name=".Bar_Personal"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".CollSpage"
+            android:name=".CourseFirstPage"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".SingActivity"

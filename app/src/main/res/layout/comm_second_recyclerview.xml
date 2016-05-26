@@ -8,6 +8,6 @@
         android:id="@+id/fragment_list_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/f_collc_card"/>
+        tools:listitem="@layout/comm_second_card"/>
 
 </FrameLayout>

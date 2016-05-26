@@ -1,10 +1,7 @@
 package com.wxine.android;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,27 +13,18 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class CommATab extends Fragment {
+public class CommSecondTab extends Fragment {
 
-    private CommAAdapter mAdapter;
-    FloatingActionButton fab;
+    private CommSecondAdapter mAdapter;
 
-    private String mItemData = "Lorem Ipsum.";
+    private String mItemData = "Any other authority value "
+            + "Respond to a Request to Display Data";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.f_comma_recyclerview, container, false);
-        fab = (FloatingActionButton) view.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
-                Intent intent = new Intent(getContext(), CommAddActivity.class);
-                startActivity(intent);
-            }
-        });
+        View view = inflater.inflate(R.layout.comm_second_recyclerview, container, false);
+
         RecyclerView recyclerView = (RecyclerView) view.findViewById(
                 R.id.fragment_list_rv);
 
@@ -49,7 +37,7 @@ public class CommATab extends Fragment {
         List<String> list = new ArrayList<String>();
         Collections.addAll(list, listItems);
 
-        mAdapter = new CommAAdapter(list);
+        mAdapter = new CommSecondAdapter(list);
         recyclerView.setAdapter(mAdapter);
 
         return view;

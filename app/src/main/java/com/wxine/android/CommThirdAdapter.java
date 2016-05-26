@@ -8,19 +8,17 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by @Leeeeee on 2015/12/30.
- */
-public class CollCAdapter extends RecyclerView.Adapter<CollCAdapter.MyViewHolder>{
+
+public class CommThirdAdapter extends RecyclerView.Adapter<CommThirdAdapter.MyViewHolder>{
     List<String> mListData;
 
-    public CollCAdapter(List<String> mListData) {
+    public CommThirdAdapter(List<String> mListData) {
         this.mListData = mListData;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.f_collm_card,
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.comm_third_card,
                 viewGroup, false);
         return new MyViewHolder(view);
     }
@@ -42,7 +40,7 @@ public class CollCAdapter extends RecyclerView.Adapter<CollCAdapter.MyViewHolder
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            title = (TextView) itemView.findViewById(R.id.coll_name);
+            title = (TextView) itemView.findViewById(R.id.comm_name);
         }
     }
 

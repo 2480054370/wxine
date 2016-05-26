@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.wxine.android.model.Info;
 import com.wxine.android.utils.CircleImageView;
@@ -18,7 +17,7 @@ import java.util.List;
 /**
  * Created by zz on 2016/4/29.
  */
-public class CollSpageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
+public class CourseFirstPageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
     private final Context context;
     private List<Info> list;
     private static OnRecyclerViewItemClickListener mOnItemClickListener = null;
@@ -28,7 +27,7 @@ public class CollSpageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     }
 
-    public CollSpageAdapter(Context context, List<Info> list) {
+    public CourseFirstPageAdapter(Context context, List<Info> list) {
         this.context = context;
         this.list = list;
         setHasStableIds(true);
@@ -55,9 +54,9 @@ public class CollSpageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == ITEM_TYPE.ITEM_TYPE_IMAGE.ordinal()) {
-            return new ImageViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.coll_s_top, parent, false));
+            return new ImageViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.course_first_page_top, parent, false));
         } else {
-            return new TextViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.coll_s_item, parent, false));
+            return new TextViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.course_first_page_item, parent, false));
         }
     }
 

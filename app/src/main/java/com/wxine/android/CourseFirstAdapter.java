@@ -12,17 +12,17 @@ import java.util.List;
 /**
  * Created by 123 on 2015/12/30.
  */
-public class CollSAdapter extends RecyclerView.Adapter<CollSAdapter.MyViewHolder> implements View.OnClickListener {
+public class CourseFirstAdapter extends RecyclerView.Adapter<CourseFirstAdapter.MyViewHolder> implements View.OnClickListener {
     List<String> mListData;
     private static OnItemClickLitener mOnItemClickLitener = null;
 
-    public CollSAdapter(List<String> mListData) {
+    public CourseFirstAdapter(List<String> mListData) {
         this.mListData = mListData;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.f_colls_card,
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.course_first_card,
                 viewGroup, false);
         view.setOnClickListener(this);
         return new MyViewHolder(i,view);

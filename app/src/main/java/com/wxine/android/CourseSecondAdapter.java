@@ -8,17 +8,19 @@ import android.widget.TextView;
 
 import java.util.List;
 
-
-public class CommYAdapter extends RecyclerView.Adapter<CommYAdapter.MyViewHolder>{
+/**
+ * Created by @Leeeeee on 2015/12/30.
+ */
+public class CourseSecondAdapter extends RecyclerView.Adapter<CourseSecondAdapter.MyViewHolder>{
     List<String> mListData;
 
-    public CommYAdapter(List<String> mListData) {
+    public CourseSecondAdapter(List<String> mListData) {
         this.mListData = mListData;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.f_commy_card,
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.course_second_card,
                 viewGroup, false);
         return new MyViewHolder(view);
     }
@@ -40,7 +42,7 @@ public class CommYAdapter extends RecyclerView.Adapter<CommYAdapter.MyViewHolder
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            title = (TextView) itemView.findViewById(R.id.comm_name);
+            title = (TextView) itemView.findViewById(R.id.coll_name);
         }
     }
 

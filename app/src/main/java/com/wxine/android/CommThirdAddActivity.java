@@ -16,7 +16,7 @@ import android.widget.TextView;
 /**
  * Created by Leeeeee on 2016/4/13.
  */
-public class CommAddActivity extends AppCompatActivity {
+public class CommThirdAddActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private View vi;
     private Dialog dialog;
@@ -27,7 +27,7 @@ public class CommAddActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.f_comma_add);
+        setContentView(R.layout.comm_third_add);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("创建社群");
         setSupportActionBar(toolbar);
@@ -48,13 +48,13 @@ public class CommAddActivity extends AppCompatActivity {
         mRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    vi = LayoutInflater.from(getBaseContext()).inflate(R.layout.f_comma_adddialog,null);
+                    vi = LayoutInflater.from(getBaseContext()).inflate(R.layout.comm_third_adddialog,null);
 
                     mLinearLayout1 = (LinearLayout)vi.findViewById(R.id.Tab1);
                     mLinearLayout2 = (LinearLayout)vi.findViewById(R.id.Tab2);
                     privacy_t = (TextView)findViewById(R.id.privacy_t);
 
-                    dialog = new Dialog(CommAddActivity.this,R.style.Comma_addDialog);
+                    dialog = new Dialog(CommThirdAddActivity.this,R.style.Comma_addDialog);
                     dialog.setContentView(vi);
                     WindowManager.LayoutParams mt = getWindow().getAttributes();
 

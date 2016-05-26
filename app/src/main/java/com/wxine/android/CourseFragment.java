@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * Created by Leeeeee on 2016/4/5.
  */
-public class CollectionFragment extends Fragment implements View.OnClickListener{
+public class CourseFragment extends Fragment implements View.OnClickListener{
     private MyApplication app;
     private ViewPager viewPager;
     private TabLayout tabLayout;
@@ -47,9 +47,9 @@ public class CollectionFragment extends Fragment implements View.OnClickListener
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
-        adapter.addFrag(new CollSTab(), "推荐的");
-        adapter.addFrag(new CollCTab(), "加入的");
-        adapter.addFrag(new CollMTab(), "管理的");
+        adapter.addFrag(new CourseFirstTab(), "推荐的");
+        adapter.addFrag(new CourseSecondTab(), "加入的");
+        adapter.addFrag(new CourseThirdTab(), "管理的");
 
         viewPager.setAdapter(adapter);
     }

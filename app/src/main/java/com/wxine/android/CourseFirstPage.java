@@ -16,9 +16,9 @@ import com.wxine.android.model.User;
 
 import java.util.ArrayList;
 
-public class CollSpage extends AppCompatActivity {
+public class CourseFirstPage extends AppCompatActivity {
     private Toolbar toolbar;
-    private CollSpageAdapter mAdapter;
+    private CourseFirstPageAdapter mAdapter;
     private SwipeRefreshLayout mRefreshLayout;
     private LinearLayoutManager mLayoutManager;
     ArrayList<Info> list = new ArrayList<Info>();
@@ -26,12 +26,12 @@ public class CollSpage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.coll_s_main);
+        setContentView(R.layout.course_first_page_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(CollSpage.this,
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(CourseFirstPage.this,
                 R.array.pass_type, R.layout.layout_drop_title);
         adapter.setDropDownViewResource(R.layout.layout_drop_list);
 
@@ -45,7 +45,7 @@ public class CollSpage extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new CollSpageAdapter(this.getApplicationContext(), list);
+        mAdapter = new CourseFirstPageAdapter(this.getApplicationContext(), list);
         mRecyclerView.setAdapter(mAdapter);
     }
 

@@ -11,16 +11,16 @@ import java.util.List;
 /**
  * Created by 123 on 2015/12/30.
  */
-public class CollMAdapter extends RecyclerView.Adapter<CollMAdapter.MyViewHolder>{
+public class CourseThirdAdapter extends RecyclerView.Adapter<CourseThirdAdapter.MyViewHolder>{
     List<String> mListData;
 
-    public CollMAdapter(List<String> mListData) {
+    public CourseThirdAdapter(List<String> mListData) {
         this.mListData = mListData;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.f_collm_card,
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.course_second_card,
                 viewGroup, false);
         return new MyViewHolder(view);
     }

@@ -9,16 +9,16 @@ import android.widget.TextView;
 import java.util.List;
 
 
-public class CommRAdapter extends RecyclerView.Adapter<CommRAdapter.MyViewHolder>implements View.OnClickListener{
+public class CommFirstAdapter extends RecyclerView.Adapter<CommFirstAdapter.MyViewHolder>implements View.OnClickListener{
     List<String> mListData;
     private static OnItemClickLitener mOnItemClickLitener = null;
-    public CommRAdapter(List<String> mListData) {
+    public CommFirstAdapter(List<String> mListData) {
         this.mListData = mListData;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.f_commr_card,
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.comm_first_card,
                 viewGroup, false);
         view.setOnClickListener(this);
         return new MyViewHolder(view);

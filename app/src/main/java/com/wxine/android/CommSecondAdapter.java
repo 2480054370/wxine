@@ -8,17 +8,16 @@ import android.widget.TextView;
 
 import java.util.List;
 
-
-public class CommAAdapter extends RecyclerView.Adapter<CommAAdapter.MyViewHolder>{
+public class CommSecondAdapter extends RecyclerView.Adapter<CommSecondAdapter.MyViewHolder>{
     List<String> mListData;
 
-    public CommAAdapter(List<String> mListData) {
+    public CommSecondAdapter(List<String> mListData) {
         this.mListData = mListData;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.f_comma_card,
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.comm_second_card,
                 viewGroup, false);
         return new MyViewHolder(view);
     }

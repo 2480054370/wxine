@@ -47,9 +47,9 @@ public class CommunitiesFragment extends Fragment implements View.OnClickListene
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
-        adapter.addFrag(new CommRTab(), "推荐");
-        adapter.addFrag(new CommYTab(), "已加入");
-        adapter.addFrag(new CommATab(), "你的社群");
+        adapter.addFrag(new CommFirstTab(), "推荐");
+        adapter.addFrag(new CommSecondTab(), "已加入");
+        adapter.addFrag(new CommThirdTab(), "你的社群");
 
         viewPager.setAdapter(adapter);
     }

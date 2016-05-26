@@ -34,7 +34,7 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,//系统自带item侧滑菜单监听
-        CollectionFragment.OnFragmentInteractionListener,
+        CourseFragment.OnFragmentInteractionListener,
         InfosFragment.OnFragmentInteractionListener,
         CommunitiesFragment.OnFragmentInteractionListener,
         ProfileFragment.OnFragmentInteractionListener,
@@ -440,7 +440,7 @@ public class MainActivity extends AppCompatActivity
                 Collection_image.setImageResource(R.drawable.ic_collect_pressed);
                 Collection_text.setTextColor(white);
                 if (fg2 == null) {
-                    fg2 = new CollectionFragment();
+                    fg2 = new CourseFragment();
                     transaction.add(R.id.content, fg2);
                 } else {
                     transaction.show(fg2);

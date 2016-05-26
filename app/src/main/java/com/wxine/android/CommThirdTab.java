@@ -1,6 +1,8 @@
 package com.wxine.android;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,18 +15,27 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class CommYTab extends Fragment {
+public class CommThirdTab extends Fragment {
 
-    private CommYAdapter mAdapter;
+    private CommThirdAdapter mAdapter;
+    FloatingActionButton fab;
 
-    private String mItemData = "Any other authority value "
-            + "Respond to a Request to Display Data";
+    private String mItemData = "Lorem Ipsum.";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.f_commy_recyclerview, container, false);
-
+        View view = inflater.inflate(R.layout.comm_third_recyclerview, container, false);
+        fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+                Intent intent = new Intent(getContext(), CommThirdAddActivity.class);
+                startActivity(intent);
+            }
+        });
         RecyclerView recyclerView = (RecyclerView) view.findViewById(
                 R.id.fragment_list_rv);
 
@@ -37,7 +48,7 @@ public class CommYTab extends Fragment {
         List<String> list = new ArrayList<String>();
         Collections.addAll(list, listItems);
 
-        mAdapter = new CommYAdapter(list);
+        mAdapter = new CommThirdAdapter(list);
         recyclerView.setAdapter(mAdapter);
 
         return view;
