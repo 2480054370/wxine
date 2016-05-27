@@ -12,16 +12,15 @@ import android.widget.GridView;
 /**
  * Created by zz on 2016/4/21.
  */
-public class Event_cd_Tab extends Fragment {
-    private CDAdapter cdAdapter;
-    private GridView cdGridView;
+public class EventFirstTab extends Fragment {
+    private GridView qbGridView;
+    private QBAdapter qbAdapter;
     private boolean isShowDelete=false;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.event_cd_tab, container, false);
-
-        cdGridView = (GridView) view.findViewById(R.id.gridView_cd);
-        cdGridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        View view = inflater.inflate(R.layout.event_qb_tab, container, false);
+        qbGridView = (GridView) view.findViewById(R.id.gridView_qb);
+        qbGridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 if (isShowDelete) {
@@ -29,14 +28,15 @@ public class Event_cd_Tab extends Fragment {
 
                 } else {
                     isShowDelete = true;
+
                 }
-                cdAdapter.setIsShowDelete(isShowDelete);
+                qbAdapter.setIsShowDelete(isShowDelete);
                 return true;
 
             }
         });
-        cdAdapter=new CDAdapter(getContext(), new String[]{"abc","dsaf","redv"}, new int[]{R.drawable.face,R.drawable.face,R.drawable.face});
-        cdGridView.setAdapter(cdAdapter);
+        qbAdapter=new QBAdapter(getContext(), new String[]{"abc","dsaf","redv","gdsfs","test","ffff","aaaa"}, new int[]{R.drawable.face,R.drawable.face,R.drawable.face,R.drawable.face,R.drawable.face,R.drawable.face,R.drawable.face});
+        qbGridView.setAdapter(qbAdapter);
         return view;
 
 

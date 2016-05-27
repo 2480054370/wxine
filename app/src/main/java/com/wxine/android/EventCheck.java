@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by zz on 2016/4/5.
  */
-public class Event_kq extends AppCompatActivity {
+public class EventCheck extends AppCompatActivity {
 
 
     @Override
@@ -39,16 +39,15 @@ public class Event_kq extends AppCompatActivity {
     private void setupViewPager() {
         final ViewPager viewPager = (ViewPager) findViewById(R.id.event_kq_ViewPager);
         setupViewPager(viewPager);
-
         TabLayout tabLayout = (TabLayout) findViewById(R.id.event_kq_TabLayout);
         tabLayout.setupWithViewPager(viewPager);
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new Event_qb_Tab(), "全部");
-        adapter.addFrag(new Event_cd_Tab(), "迟到");
-        adapter.addFrag(new Event_wcj_Tab(), "未参加");
+        adapter.addFrag(new EventFirstTab(), "全部");
+        adapter.addFrag(new EventSecondTab(), "迟到");
+        adapter.addFrag(new EventThirdTab(), "未参加");
         viewPager.setAdapter(adapter);
     }
 

@@ -11,7 +11,7 @@ import android.widget.Toast;
 /**
  * Created by zz on 2016/4/5.
  */
-public class Event_content extends AppCompatActivity {
+public class EventContent extends AppCompatActivity {
     private Toolbar toolbar;
 
     @Override
@@ -34,7 +34,7 @@ public class Event_content extends AppCompatActivity {
                                        int pos, long id) {
 
                 String[] languages = getResources().getStringArray(R.array.join);
-                Toast.makeText(Event_content.this, "你点击的是:" + languages[pos], Toast.LENGTH_SHORT).show();
+                Toast.makeText(EventContent.this, "你点击的是:" + languages[pos], Toast.LENGTH_SHORT).show();
             }
 
             @Override

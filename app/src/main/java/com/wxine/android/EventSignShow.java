@@ -15,7 +15,7 @@ import java.io.File;
 /**
  * Created by zz on 2016/4/5.
  */
-public class Event_qd_show extends AppCompatActivity {
+public class EventSignShow extends AppCompatActivity {
 
 
     @Override

@@ -123,7 +123,7 @@ public class EventSpageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(content.getContext(), Event_content.class);
+                    Intent intent = new Intent(content.getContext(), EventContent.class);
                     content.getContext().startActivity(intent);
                 }
             });

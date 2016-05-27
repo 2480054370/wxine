@@ -16,15 +16,15 @@ import java.io.File;
 /**
  * Created by zz on 2016/4/5.
  */
-public class Event_qj extends AppCompatActivity {
+public class EventEvaluate extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.event_qj);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.qj_toolbar);
-        toolbar.setTitle("请假");
+        setContentView(R.layout.event_pingjia);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.pj_toolbar);
+        toolbar.setTitle("评价");
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,24 +32,26 @@ public class Event_qj extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        Button btnCancel = (Button)findViewById(R.id.cancel);
+
+        Button btnCancel = (Button)findViewById(R.id.cancel1);
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
-           }
-      });
+            }
+        });
 
-      ImageView imageView = (ImageView)findViewById(R.id.im_qj);
-       imageView.setOnClickListener(new View.OnClickListener() {
+        ImageView imageView = (ImageView)findViewById(R.id.im_pj);
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
-          public void onClick(View v) {
-               Intent intent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-              intent2.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(Environment.getExternalStorageDirectory(),
-                      "head.jpg")));
-               startActivityForResult(intent2, 2);//采用ForResult打开
-          }
-       });
+            public void onClick(View v) {
+                Intent intent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                intent2.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(Environment.getExternalStorageDirectory(),
+                        "head.jpg")));
+                startActivityForResult(intent2, 2);//采用ForResult打开
+            }
+        });
+
     }
 
 

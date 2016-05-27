@@ -14,7 +14,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Switch;
 
 import com.wxine.android.model.Info;
 import com.wxine.android.model.User;
@@ -51,19 +50,19 @@ public class EventSpage extends AppCompatActivity {
 
                         break;
                     case 1:
-                        Intent intent = new Intent(EventSpage.this, Event_qd.class);
+                        Intent intent = new Intent(EventSpage.this, EventSign.class);
                         startActivity(intent);
                         break;
                     case 2:
-                        Intent intent1 = new Intent(EventSpage.this, Event_qj.class);
+                        Intent intent1 = new Intent(EventSpage.this, EventLeave.class);
                         startActivity(intent1);
                         break;
                     case 3:
-                        Intent intent2 = new Intent(EventSpage.this, Event_pj.class);
+                        Intent intent2 = new Intent(EventSpage.this, EventEvaluate.class);
                         startActivity(intent2);
                         break;
                     case 4:
-                        Intent intent3 = new Intent(EventSpage.this, Event_kq.class);
+                        Intent intent3 = new Intent(EventSpage.this, EventCheck.class);
                         startActivity(intent3);
                         break;
                 }
