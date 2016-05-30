@@ -12,7 +12,7 @@ import android.widget.GridView;
 /**
  * Created by zz on 2016/4/21.
  */
-public class Event_wcj_Tab extends Fragment {
+public class EventThirdTab extends Fragment {
     private GridView mGridView;
     private GridViewAdapter mAdapter;
     private boolean isShowDelete=false;

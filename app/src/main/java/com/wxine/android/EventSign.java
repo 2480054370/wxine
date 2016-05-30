@@ -8,7 +8,6 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TableRow;
 
 import java.io.File;
@@ -16,7 +15,7 @@ import java.io.File;
 /**
  * Created by zz on 2016/4/5.
  */
-public class Event_qd extends AppCompatActivity {
+public class EventSign extends AppCompatActivity {
     private final static int SCANNIN_GREQUEST_CODE = 1;
 
     @Override
@@ -49,7 +48,7 @@ public class Event_qd extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Event_qd.this, MipcaActivityCapture.class);
+                intent.setClass(EventSign.this, MipcaActivityCapture.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(intent, SCANNIN_GREQUEST_CODE);
             }
@@ -60,7 +59,7 @@ public class Event_qd extends AppCompatActivity {
         sing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Event_qd.this, SingActivity.class);
+                Intent intent = new Intent(EventSign.this, SingActivity.class);
                 startActivity(intent);
             }
         });
@@ -73,14 +72,14 @@ public class Event_qd extends AppCompatActivity {
 
             case 2:
                 if (resultCode == RESULT_OK) {
-                    Intent intent = new Intent(Event_qd.this, Event_qd_show.class);
+                    Intent intent = new Intent(EventSign.this, EventSignShow.class);
                     startActivity(intent);
                 }
 
                 break;
             case SCANNIN_GREQUEST_CODE:
                 if(resultCode == RESULT_OK){
-                    Intent intent = new Intent(Event_qd.this, Event_qd_show.class);
+                    Intent intent = new Intent(EventSign.this, EventSignShow.class);
                     startActivity(intent);
 
                 }

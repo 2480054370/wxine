@@ -1,35 +1,17 @@
 package com.wxine.android;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Display;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.wxine.android.model.Info;
 
-import org.w3c.dom.Text;
-
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -42,7 +24,7 @@ public class EventActivity extends AppCompatActivity {
     private TimelineAdapter mAdapter;
     private List<Integer> imicon = Arrays.asList(R.drawable.tou, R.drawable.face, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou);
     private List<Integer> image = Arrays.asList(R.drawable.tou, R.drawable.face, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou);
-    private List<Integer> bg = Arrays.asList(R.drawable.b4, R.drawable.wallpaper_d, R.drawable.b8, R.drawable.b4, R.drawable.b9, R.drawable.b4, R.drawable.b4, R.drawable.b4, R.drawable.b4, R.drawable.b4);
+    private List<Integer> bg = Arrays.asList(R.drawable.b4, R.drawable.b4, R.drawable.b4, R.drawable.b4, R.drawable.b4, R.drawable.b4, R.drawable.b4, R.drawable.b4, R.drawable.b4, R.drawable.b4);
     private List<Integer> view2 = Arrays.asList(0xff159CE0, 0xff0D65AF,  0xffDC6602,0xff70C63F, 0xffE13239, 0xff5C83A2,  0xffF7B23D, 0xff0F66AB,  0xff5471AD, 0xff159CE0);
     private List<Integer> view1 = Arrays.asList(0xff159CE0, 0xff0D65AF,  0xffDC6602,0xff70C63F, 0xffE13239, 0xff5C83A2,  0xffF7B23D, 0xff0F66AB,  0xff5471AD, 0xff159CE0);
     private String username = "Lorem Ipsum is simply dummy text of the printing and ";
@@ -105,7 +87,7 @@ public class EventActivity extends AppCompatActivity {
 
             @Override
             public void onPJClick(View view, Info da, int position) {
-                Intent intent = new Intent(EventActivity.this, Event_pj.class);
+                Intent intent = new Intent(EventActivity.this, EventEvaluate.class);
                 startActivity(intent);
             }
 
@@ -152,23 +134,18 @@ public class EventActivity extends AppCompatActivity {
 //                startActivityForResult(intent2, 2);//采用ForResult打开
 //            }
 //        });
-        Intent intent = new Intent(EventActivity.this, Event_qj.class);
+        Intent intent = new Intent(EventActivity.this, EventLeave.class);
         startActivity(intent);
     }
 
-
-
-
-
-
     public void showQDDig() {
-        Intent intent = new Intent(EventActivity.this, Event_qd.class);
+        Intent intent = new Intent(EventActivity.this, EventSign.class);
         startActivity(intent);
     }
 
 
     public void showKQDig() {
-        Intent intent = new Intent(EventActivity.this, Event_kq.class);
+        Intent intent = new Intent(EventActivity.this, EventCheck.class);
         startActivity(intent);
     }
 }

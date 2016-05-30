@@ -165,17 +165,17 @@
         </activity>
 
         <activity
-            android:name=".Event_content"
+            android:name=".EventContent"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <activity
-            android:name=".Event_qj"
+            android:name=".EventLeave"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <activity
-            android:name=".Event_qd_show"
+            android:name=".EventSignShow"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
@@ -188,7 +188,7 @@
         </activity>
 
         <activity
-            android:name=".Event_pj"
+            android:name=".EventEvaluate"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
@@ -198,12 +198,12 @@
         </activity>
 
         <activity
-            android:name=".Event_qd"
+            android:name=".EventSign"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <activity
-            android:name=".Event_kq"
+            android:name=".EventCheck"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".PhotosDetailsActivity">
@@ -217,7 +217,7 @@
             android:name=".change_Personal"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".Event_content"
+            android:name=".EventContent"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".MySkin"

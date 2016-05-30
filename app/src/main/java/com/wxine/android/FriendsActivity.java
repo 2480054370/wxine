@@ -1,6 +1,5 @@
 package com.wxine.android;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -24,7 +23,7 @@ public class FriendsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_friends);
+        setContentView(R.layout.friends);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("好友");
         setSupportActionBar(toolbar);
@@ -63,9 +62,9 @@ public class FriendsActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new FindFragment(), "推荐");
-        adapter.addFrag(new TofollowFragment(), "以关注");
-        adapter.addFrag(new FollowerFragment(), "关注者");
+        adapter.addFrag(new FriendsFirstTab(), "推荐");
+        adapter.addFrag(new FriendsSecondTab(), "以关注");
+        adapter.addFrag(new FriendsThirdTab(), "关注者");
 
         viewPager.setAdapter(adapter);
     }

@@ -22,9 +22,9 @@ import java.util.Collections;
 public class ImgActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     //item 显示所需
-    private String[] title = {"默认相册"};
+    private String[] title = {"2013-10-24 星期四","2013-10-4 星期san","2013-10-4 星期二","2013-10-14 星期一"};
     private ArrayList<String> mTitle = new ArrayList<>();
-    private ImgAdapter mRecyclerViewAdapter;
+    ImgAdapter mRecyclerViewAdapter;
     public Intent intent = null;
 
     @Override
