@@ -4,19 +4,12 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:paddingLeft="@dimen/activity_horizontal_margin">
-    <TextView
-        android:id="@+id/recommend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="人员推荐"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/fragment_list_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/recommend"
-        android:layout_marginTop="35dp"
-        tools:listitem="@layout/adapter_find_item"/>
+        android:layout_marginTop="15dp"
+        tools:listitem="@layout/frineds_third_adapter"/>
 
 </FrameLayout>

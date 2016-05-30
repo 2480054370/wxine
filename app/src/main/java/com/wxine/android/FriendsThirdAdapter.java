@@ -10,15 +10,15 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by Bumblebee on 2016/5/3.
+ * Created by Bumblebee on 2016/3/31.
  */
-public class TofollowAdapter  extends RecyclerView.Adapter<TofollowAdapter.MyViewHolder>{
+public class FriendsThirdAdapter extends RecyclerView.Adapter<FriendsThirdAdapter.MyViewHolder> {
     List<Integer> mDataset; //图片
     List<String> mListData; //名字
     List<String> mDatas;    //文本
 
 
-    public TofollowAdapter(List<Integer> mDataset, List<String> mListData, List<String> mDatas) {
+    public FriendsThirdAdapter(List<Integer> mDataset, List<String> mListData, List<String> mDatas) {
         this.mDataset = mDataset;
         this.mListData = mListData;
         this.mDatas = mDatas;
@@ -26,7 +26,7 @@ public class TofollowAdapter  extends RecyclerView.Adapter<TofollowAdapter.MyVie
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_tofollow_item,
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.frineds_third_adapter,
                 viewGroup, false);
         return new MyViewHolder(view);
     }

@@ -1,7 +1,6 @@
 package com.wxine.android;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -41,7 +40,7 @@ public class LocationActivity extends AppCompatActivity {
         // requestWindowFeature(Window.FEATURE_NO_TITLE);
         // 在使用SDK各组件之前初始化context信息，传入ApplicationContext
         SDKInitializer.initialize(getApplicationContext());
-        setContentView(R.layout.activity_location);
+        setContentView(R.layout.location);
         this.context = this;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("位置信息");

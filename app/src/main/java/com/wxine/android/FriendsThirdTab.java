@@ -1,5 +1,6 @@
 package com.wxine.android;
 
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,18 +15,18 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by Bumblebee on 2016/5/3.
+ * Created by Bumblebee on 2016/3/31.
  */
-public class TofollowFragment extends Fragment{
-    private TofollowAdapter mAdapter;
-    private List<Integer> mDataset = Arrays.asList(R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou, R.drawable.tou);
+public class FriendsThirdTab extends Fragment {
+    private FriendsThirdAdapter mAdapter;
+    private List<Integer> mDataset = Arrays.asList(R.drawable.tou, R.drawable.tou, R.drawable.tou,R.drawable.tou, R.drawable.tou, R.drawable.tou,R.drawable.tou, R.drawable.tou, R.drawable.tou,R.drawable.tou);
     private String mItemData = "Lorem Ipsum is simply dummy text of the printing and ";
     private String mDatas = "typesetting industry Lorem Ipsum has been the industry's standard dummy ";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tofollow, container, false);
+        View view = inflater.inflate(R.layout.fragment_follwer, container, false);
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(
                 R.id.fragment_list_rv);
@@ -40,7 +41,7 @@ public class TofollowFragment extends Fragment{
         List<String> content=new ArrayList<String>();
         Collections.addAll(list, listItems);
         Collections.addAll(content,listcontent);
-        mAdapter = new TofollowAdapter(mDataset,list,content);
+        mAdapter = new FriendsThirdAdapter(mDataset,list,content);
         recyclerView.setAdapter(mAdapter);
 
         return view;
