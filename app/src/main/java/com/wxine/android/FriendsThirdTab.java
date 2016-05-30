@@ -26,7 +26,7 @@ public class FriendsThirdTab extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_follwer, container, false);
+        View view = inflater.inflate(R.layout.frineds_third_recyclerview, container, false);
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(
                 R.id.fragment_list_rv);

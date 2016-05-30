@@ -30,15 +30,15 @@ public class ImgAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> im
     }
 
     private ArrayList<String> mTitle = new ArrayList<>();
-    private ArrayList<ArrayList<HashMap<String, Object>>> mList;
+   // private ArrayList<ArrayList<HashMap<String, Object>>> mList;
     private static Context mContext;
     private final LayoutInflater mLayoutInflater;
 
 
-    public ImgAdapter(Context context, ArrayList<String> mTitle,ArrayList<ArrayList<HashMap<String, Object>>> mList) {
+    public ImgAdapter(Context context, ArrayList<String> mTitle) {
         mContext = context;
         this.mTitle = mTitle;
-        this.mList = mList;
+        //this.mList = mList;
         mLayoutInflater = LayoutInflater.from(context);
         setHasStableIds(true);
     }
