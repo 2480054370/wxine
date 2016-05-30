@@ -19,48 +19,45 @@ import java.util.ArrayList;
 /**
  * Created by NM on 2016/4/7.
  */
-public class NotifacationFragment extends Fragment {
+public class NotificationReadFragment extends Fragment{
     private OnFragmentInteractionListener mListener;
     private RecyclerView mReclcerView;
     private LinearLayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
     private RelativeLayout mRelativeLayout;
     private Fragment fragment;
-    private Boolean frag = true;
 
-    public NotifacationFragment (){
+    public NotificationReadFragment(){
 
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_notification, container,false);
+        View view = inflater.inflate(R.layout.activity_notification_read, container,false);
         mReclcerView = (RecyclerView)view.findViewById(R.id.notification);
         mLayoutManager = new LinearLayoutManager(this.getContext());
         mReclcerView.setLayoutManager(mLayoutManager);
         ArrayList<Info> Test = new ArrayList<Info>();
         mAdapter = new NotificationAdapter(this.getContext(),Test);
         mReclcerView.setAdapter(mAdapter);
-        mRelativeLayout  = (RelativeLayout)view.findViewById(R.id.notification_read);
-        mRelativeLayout.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.notification_read).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.setCustomAnimations(R.anim.fragment_up,R.anim.fragment_slide_left_exit);
-           //     transaction.hide(NotifacationFragment.this).show(fragment).commit();
+                transaction.setCustomAnimations(R.anim.fragment_down,R.anim.fragment_slide_left_exit);      //自定义动画
+
+               //transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);                  //系统自带的动画
+            //    transaction.hide(NotifacationReadFragment.this).show(fragment).commit();
                 transaction.addToBackStack(null);
-                if (!fragment.isAdded() && frag) {
+                if (!fragment.isAdded()) {
                     // 隐藏当前的fragment，add下一个到Activity中
-                    transaction.hide(NotifacationFragment.this).add(R.id.content, fragment).commit();
-                    frag = false;
+                    transaction.hide(NotificationReadFragment.this).add(R.id.content, fragment).commit();
                 } else {
                     // 隐藏当前的fragment，显示下一个
-                    transaction.hide(NotifacationFragment.this).show(fragment).commit();
+                    transaction.hide(NotificationReadFragment.this).show(fragment).commit();
                 }
-                //transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-//                transaction.commit();
+  //              transaction.commit();
             }
         });
         return view;
@@ -83,7 +80,7 @@ public class NotifacationFragment extends Fragment {
                     + " must implement OnFragmentInteractionListener");
         }
         MainActivity a = new MainActivity();
-        fragment = a.getNotiReadFra();
+        fragment = a.getNotiFra();
     }
 
     @Override
@@ -92,16 +89,6 @@ public class NotifacationFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);

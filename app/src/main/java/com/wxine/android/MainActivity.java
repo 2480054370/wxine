@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity
         CommunitiesFragment.OnFragmentInteractionListener,
         ProfileFragment.OnFragmentInteractionListener,
         ProfileUncertFragment.OnFragmentInteractionListener,
-        NotifacationFragment.OnFragmentInteractionListener,
-        NotifacationReadFragment.OnFragmentInteractionListener,
+        NotificationFragment.OnFragmentInteractionListener,
+        NotificationReadFragment.OnFragmentInteractionListener,
         View.OnClickListener {
     private RelativeLayout content_layout;
     private RelativeLayout Collection_layout;
@@ -474,8 +474,8 @@ public class MainActivity extends AppCompatActivity
                 notice_image.setImageResource(R.drawable.ic_notice_pressed);
                 notice_text.setTextColor(white);
                 if (!frag) {
-                    fg4 = new NotifacationFragment();
-                    fg5 = new NotifacationReadFragment();
+                    fg4 = new NotificationFragment();
+                    fg5 = new NotificationReadFragment();
 //                    if(getFragmentManager() instanceof ButtonClickListener)
 //                        ((ButtonClickListener)getFragmentManager()).buttonClick();
 //                    Bundle bundle = new Bundle();

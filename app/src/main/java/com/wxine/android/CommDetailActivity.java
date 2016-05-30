@@ -1,6 +1,5 @@
 package com.wxine.android;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,22 +14,22 @@ import java.util.ArrayList;
 /**
  * Created by NM on 2016/4/28.
  */
-public class PersonalActivity extends AppCompatActivity {
-    private PersonalAdapter mAdapter;
+public class CommDetailActivity extends AppCompatActivity {
+    private CommDetailAdapter mAdapter;
     private ArrayList<Info> list = null;
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bar_personal_main);
+        setContentView(R.layout.comm_main);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.infos_recycler_view);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(PersonalActivity.this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(CommDetailActivity.this);
         recyclerView.setLayoutManager(linearLayoutManager);
-        mAdapter = new PersonalAdapter(getApplicationContext(),list);
+        mAdapter = new CommDetailAdapter(getApplicationContext(),list);
         recyclerView.setAdapter(mAdapter);
     }
 

@@ -1,7 +1,6 @@
 package com.wxine.android;
 
 import android.app.Activity;
-import android.app.Notification;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,51 +14,53 @@ import android.widget.RelativeLayout;
 
 import com.wxine.android.model.Info;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by NM on 2016/4/7.
  */
-public class NotifacationReadFragment extends Fragment{
+public class NotificationFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     private RecyclerView mReclcerView;
     private LinearLayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
     private RelativeLayout mRelativeLayout;
     private Fragment fragment;
+    private Boolean frag = true;
 
-    public NotifacationReadFragment(){
+    public NotificationFragment(){
 
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_notification_read, container,false);
+        View view = inflater.inflate(R.layout.activity_notification, container,false);
         mReclcerView = (RecyclerView)view.findViewById(R.id.notification);
         mLayoutManager = new LinearLayoutManager(this.getContext());
         mReclcerView.setLayoutManager(mLayoutManager);
         ArrayList<Info> Test = new ArrayList<Info>();
         mAdapter = new NotificationAdapter(this.getContext(),Test);
         mReclcerView.setAdapter(mAdapter);
-        view.findViewById(R.id.notification_read).setOnClickListener(new View.OnClickListener() {
+        mRelativeLayout  = (RelativeLayout)view.findViewById(R.id.notification_read);
+        mRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.setCustomAnimations(R.anim.fragment_down,R.anim.fragment_slide_left_exit);      //自定义动画
-
-               //transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);                  //系统自带的动画
-            //    transaction.hide(NotifacationReadFragment.this).show(fragment).commit();
+                transaction.setCustomAnimations(R.anim.fragment_up,R.anim.fragment_slide_left_exit);
+           //     transaction.hide(NotifacationFragment.this).show(fragment).commit();
                 transaction.addToBackStack(null);
-                if (!fragment.isAdded()) {
+                if (!fragment.isAdded() && frag) {
                     // 隐藏当前的fragment，add下一个到Activity中
-                    transaction.hide(NotifacationReadFragment.this).add(R.id.content, fragment).commit();
+                    transaction.hide(NotificationFragment.this).add(R.id.content, fragment).commit();
+                    frag = false;
                 } else {
                     // 隐藏当前的fragment，显示下一个
-                    transaction.hide(NotifacationReadFragment.this).show(fragment).commit();
+                    transaction.hide(NotificationFragment.this).show(fragment).commit();
                 }
-  //              transaction.commit();
+                //transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+//                transaction.commit();
             }
         });
         return view;
@@ -82,7 +83,7 @@ public class NotifacationReadFragment extends Fragment{
                     + " must implement OnFragmentInteractionListener");
         }
         MainActivity a = new MainActivity();
-        fragment = a.getNotiFra();
+        fragment = a.getNotiReadFra();
     }
 
     @Override
@@ -91,6 +92,16 @@ public class NotifacationReadFragment extends Fragment{
         mListener = null;
     }
 
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p/>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);

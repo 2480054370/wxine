@@ -14,11 +14,11 @@ import java.util.List;
 /**
  * Created by zhoubing on 15/10/16.
  */
-public class PersonalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class CommDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final Context context;
     private List<Info> list;
 
-    public PersonalAdapter(Context context, List<Info> list) {
+    public CommDetailAdapter(Context context, List<Info> list) {
         this.context = context;
         this.list = list;
         setHasStableIds(true);
@@ -34,9 +34,9 @@ public class PersonalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == ITEM_TYPE.ITEM_TYPE_IMAGE.ordinal()) {
-            return new ImageViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.shequn_personal_top, parent, false));
+            return new ImageViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.comm_top, parent, false));
         } else {
-            return new TextViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.shequn_personal_item, parent, false));
+            return new TextViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.comm_item, parent, false));
         }
     }
 

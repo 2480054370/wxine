@@ -43,7 +43,7 @@ public class CommFirstTab extends Fragment {
         mAdapter.setOnItemClickLitener(new CommFirstAdapter.OnItemClickLitener() {
             @Override
             public void onItemClick(View view) {
-                Intent i = new Intent(getActivity(),PersonalActivity.class);
+                Intent i = new Intent(getActivity(),CommDetailActivity.class);
                 startActivity(i);
             }
         });
