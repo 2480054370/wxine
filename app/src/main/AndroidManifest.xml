@@ -105,27 +105,27 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".Setting_account"
+            android:name=".SettingsAccount"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".Setting_message"
+            android:name=".SettingsMessage"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".Setting_secret"
+            android:name=".SettingsSecret"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".Setting_aboutwangxin"
+            android:name=".SettingsAboutwangxin"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".PersonalData"
+            android:name=".PersonalDataActivity"
             android:label="@string/title_personaldata"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
@@ -223,7 +223,7 @@
             android:name=".MySkin"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".Bar_Personal"
+            android:name=".HomeActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".CourseFirstPage"

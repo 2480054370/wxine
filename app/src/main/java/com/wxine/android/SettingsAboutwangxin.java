@@ -11,7 +11,7 @@ import android.widget.Toast;
 /**
  * Created by zz on 2016/4/12.
  */
-public class Setting_aboutwangxin extends AppCompatActivity {
+public class SettingsAboutwangxin extends AppCompatActivity {
     private Toolbar toolbar;
     TableRow aboutUs;
     TableRow CheckForUpdates;
@@ -19,7 +19,7 @@ public class Setting_aboutwangxin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aboutwangxin);
+        setContentView(R.layout.settings_aboutwangxin);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("设置");
         setSupportActionBar(toolbar);
@@ -30,14 +30,14 @@ public class Setting_aboutwangxin extends AppCompatActivity {
         aboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Setting_aboutwangxin.this, "关于我们", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SettingsAboutwangxin.this, "关于我们", Toast.LENGTH_SHORT).show();
             }
         });
 
         CheckForUpdates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Setting_aboutwangxin.this, "已经是最新版本", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SettingsAboutwangxin.this, "已经是最新版本", Toast.LENGTH_SHORT).show();
             }
         });
     }

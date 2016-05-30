@@ -1,7 +1,5 @@
 package com.wxine.android;
 
-import android.content.ContentResolver;
-import android.content.ContextWrapper;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -11,7 +9,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,13 +17,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-
 /**
  * Created by zz on 2016/4/22.
  */
-public class PersonalDataRealname_Tab extends Fragment {
+public class PersonalDataSecondTab extends Fragment {
     Button PersonalRealnameUpdata;
     Button SelectFile;
     private View view;
@@ -37,7 +31,7 @@ public class PersonalDataRealname_Tab extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mInflater = LayoutInflater.from(getContext());
-        view = inflater.inflate(R.layout.personaldata_realname_tab, container, false);
+        view = inflater.inflate(R.layout.personaldata_second_tab, container, false);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         PersonalRealnameUpdata = (Button) view.findViewById(R.id.PersonalRealnameUpdata);
         PersonalRealnameUpdata.setOnClickListener(new View.OnClickListener() {

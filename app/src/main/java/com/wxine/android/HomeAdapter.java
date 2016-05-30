@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by zz on 2016/4/29.
  */
-public class BarPersonalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
+public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
     private final Context context;
     private List<Info> list;
     private static OnRecyclerViewItemClickListener mOnItemClickListener = null;
@@ -28,7 +28,7 @@ public class BarPersonalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         void onKQClick(View view, int position);
     }
 
-    public BarPersonalAdapter(Context context, List<Info> list) {
+    public HomeAdapter(Context context, List<Info> list) {
         this.context = context;
         this.list = list;
         setHasStableIds(true);
@@ -55,9 +55,9 @@ public class BarPersonalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == ITEM_TYPE.ITEM_TYPE_IMAGE.ordinal()) {
-            return new ImageViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.bar_personal_top, parent, false));
+            return new ImageViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.home_top, parent, false));
         } else {
-            return new TextViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.bar_personal_item, parent, false));
+            return new TextViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.home_item, parent, false));
         }
     }
 

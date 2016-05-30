@@ -11,14 +11,14 @@ import android.widget.Toast;
 /**
  * Created by zz on 2016/4/5.
  */
-public class Setting_account extends AppCompatActivity {
+public class SettingsAccount extends AppCompatActivity {
     private Toolbar toolbar;
     Button updataOk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account);
+        setContentView(R.layout.settings_account);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("设置");
         setSupportActionBar(toolbar);
@@ -27,7 +27,7 @@ public class Setting_account extends AppCompatActivity {
         updataOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Setting_account.this, "登录认证确认更新", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SettingsAccount.this, "登录认证确认更新", Toast.LENGTH_SHORT).show();
             }
         });
     }

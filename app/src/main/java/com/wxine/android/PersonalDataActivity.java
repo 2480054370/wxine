@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by zz on 2016/4/21.
  */
-public class PersonalData extends AppCompatActivity {
+public class PersonalDataActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     @Override
@@ -49,9 +49,9 @@ public class PersonalData extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new PersonalDataInformation_Tab(), "基本信息");
-        adapter.addFrag(new PersonalDataRealname_Tab(), "实名认证");
-        adapter.addFrag(new PersonalDataContact_Tab(), "联系信息");
+        adapter.addFrag(new PersonalDataFirstTab(), "基本信息");
+        adapter.addFrag(new PersonalDataSecondTab(), "实名认证");
+        adapter.addFrag(new PersonalDataThirdTab(), "联系信息");
         viewPager.setAdapter(adapter);
     }
 

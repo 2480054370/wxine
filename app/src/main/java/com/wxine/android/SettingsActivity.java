@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Switch;
 import android.widget.TableRow;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class SettingsActivity extends AppCompatActivity {
     TableRow secret;
     TableRow AboutWangxin;
     TableRow NightMode;
+    Switch ModeSwitchButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public class SettingsActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, Setting_account.class);
+                Intent intent = new Intent(SettingsActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +43,7 @@ public class SettingsActivity extends AppCompatActivity {
         message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, Setting_message.class);
+                Intent intent = new Intent(SettingsActivity.this, SettingsMessage.class);
                 startActivity(intent);
             }
         });
@@ -50,16 +52,24 @@ public class SettingsActivity extends AppCompatActivity {
         secret.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, Setting_secret.class);
+                Intent intent = new Intent(SettingsActivity.this, SettingsSecret.class);
                 startActivity(intent);
             }
         });
 
         NightMode = (TableRow) findViewById(R.id.NightMode);
+        ModeSwitchButton = (Switch) findViewById(R.id.ModeSwitchButton);
+
         NightMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(SettingsActivity.this, "暂停使用", Toast.LENGTH_SHORT).show();
+                if (ModeSwitchButton.isChecked()) {
+                    ModeSwitchButton.setChecked(false);
+                    Toast.makeText(SettingsActivity.this, "true", Toast.LENGTH_SHORT).show();
+                } else {
+                    ModeSwitchButton.setChecked(true);
+                    Toast.makeText(SettingsActivity.this, "true", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -67,7 +77,7 @@ public class SettingsActivity extends AppCompatActivity {
         AboutWangxin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, Setting_aboutwangxin.class);
+                Intent intent = new Intent(SettingsActivity.this, SettingsAboutwangxin.class);
                 startActivity(intent);
             }
         });

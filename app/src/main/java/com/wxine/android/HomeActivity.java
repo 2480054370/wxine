@@ -1,7 +1,6 @@
 package com.wxine.android;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -12,17 +11,15 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.RelativeLayout;
 
 import com.wxine.android.model.Info;
 import com.wxine.android.model.User;
 
 import java.util.ArrayList;
 
-public class Bar_Personal extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
     private Toolbar toolbar;
-    private BarPersonalAdapter mAdapter;
+    private HomeAdapter mAdapter;
     private SwipeRefreshLayout mRefreshLayout;
     private LinearLayoutManager mLayoutManager;
     ArrayList<Info> list = new ArrayList<Info>();
@@ -30,7 +27,7 @@ public class Bar_Personal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bar_personal_main);
+        setContentView(R.layout.home_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
 
@@ -42,9 +39,9 @@ public class Bar_Personal extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new BarPersonalAdapter(this.getApplicationContext(), list);
+        mAdapter = new HomeAdapter(this.getApplicationContext(), list);
         mRecyclerView.setAdapter(mAdapter);
-        mAdapter.setOnItemClickListener(new BarPersonalAdapter.OnRecyclerViewItemClickListener() {
+        mAdapter.setOnItemClickListener(new HomeAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view) {
                 Log.e("--------", "skajdksa");
@@ -52,7 +49,7 @@ public class Bar_Personal extends AppCompatActivity {
 
             @Override
             public void onKQClick(View view, int position) {
-                Intent intent = new Intent(Bar_Personal.this, PersonalData.class);
+                Intent intent = new Intent(HomeActivity.this, PersonalDataActivity.class);
                 startActivity(intent);
             }
         });
@@ -117,7 +114,7 @@ public class Bar_Personal extends AppCompatActivity {
         } else if (id == R.id.action_copylink) {
             return true;
         } else if (id == R.id.action_site) {
-            Intent i = new Intent(Bar_Personal.this, SettingsActivity.class);
+            Intent i = new Intent(HomeActivity.this, SettingsActivity.class);
             startActivity(i);
         } else if (id == R.id.action_opinion) {
             return true;

@@ -212,12 +212,11 @@
                                 android:textColor="#292727"
                                 android:textSize="16.0sp" />
 
-                            <CheckBox
+                            <Switch
+                                android:id="@+id/ModeSwitchButton"
                                 android:layout_width="wrap_content"
-                                android:layout_height="fill_parent"
-                                android:layout_gravity="right"
-                                android:gravity="center_vertical"
-                                android:paddingRight="10.0dip" />
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="3.0dip" />
                         </TableRow>
 
                         <View
