@@ -26,7 +26,7 @@ public class SettingsMessage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_message);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.Message_toolbar);
         toolbar.setTitle("设置");
         setSupportActionBar(toolbar);
 

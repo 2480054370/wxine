@@ -3,11 +3,13 @@ package com.wxine.android;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.TableRow;
 import android.widget.Toast;
 
+import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
@@ -18,7 +20,7 @@ import org.androidannotations.annotations.ViewById;
 @EActivity(R.layout.activity_setting)
 public class SettingsActivity extends AppCompatActivity {
     @ViewById
-    Toolbar toolbar;
+    Toolbar Setting_toolbar;
 
     @ViewById
     Switch ModeSwitchButton;
@@ -38,9 +40,18 @@ public class SettingsActivity extends AppCompatActivity {
     @ViewById
     TableRow AboutWangxin;
 
+    @AfterViews
+    void init() {
+        Setting_toolbar.setTitle("设置");
+        setSupportActionBar(Setting_toolbar);
+    }
+
     @Click({R.id.LoginAuthentication, R.id.MessageAuthentication, R.id.SecretAdmin, R.id.NightMode, R.id.AboutWangxin})
     void TableRowSelect(View view) {
         switch (view.getId()) {
+            case android.R.id.home:
+                finish();
+                break;
             case R.id.LoginAuthentication:
                 Intent Lintent = new Intent(this, SettingsAccount.class);
                 startActivity(Lintent);
@@ -67,5 +78,15 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(Aintent);
                 break;
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
