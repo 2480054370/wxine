@@ -1,68 +1,59 @@
 package com.wxine.android;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.TableRow;
 import android.widget.Toast;
 
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
+
 /**
  * Created by zz on 2016/4/5.
  */
+@EActivity(R.layout.activity_setting)
 public class SettingsActivity extends AppCompatActivity {
-    private Toolbar toolbar;
-    TableRow login;
-    TableRow message;
-    TableRow secret;
-    TableRow AboutWangxin;
-    TableRow NightMode;
+    @ViewById
+    Toolbar toolbar;
+
+    @ViewById
     Switch ModeSwitchButton;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("返回");
-        setSupportActionBar(toolbar);
+    @ViewById
+    TableRow LoginAuthentication;
 
-        login = (TableRow) findViewById(R.id.LoginAuthentication);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, SettingsActivity.class);
-                startActivity(intent);
-            }
-        });
+    @ViewById
+    TableRow MessageAuthentication;
 
-        message = (TableRow) findViewById(R.id.MessageAuthentication);
-        message.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, SettingsMessage.class);
-                startActivity(intent);
-            }
-        });
+    @ViewById
+    TableRow SecretAdmin;
 
-        secret = (TableRow) findViewById(R.id.SecretAdmin);
-        secret.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, SettingsSecret.class);
-                startActivity(intent);
-            }
-        });
+    @ViewById
+    TableRow NightMode;
 
-        NightMode = (TableRow) findViewById(R.id.NightMode);
-        ModeSwitchButton = (Switch) findViewById(R.id.ModeSwitchButton);
+    @ViewById
+    TableRow AboutWangxin;
 
-        NightMode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    @Click({R.id.LoginAuthentication, R.id.MessageAuthentication, R.id.SecretAdmin, R.id.NightMode, R.id.AboutWangxin})
+    void TableRowSelect(View view) {
+        switch (view.getId()) {
+            case R.id.LoginAuthentication:
+                Intent Lintent = new Intent(this, SettingsAccount.class);
+                startActivity(Lintent);
+                break;
+            case R.id.MessageAuthentication:
+                Intent Mintent = new Intent(this, SettingsMessage.class);
+                startActivity(Mintent);
+                break;
+            case R.id.SecretAdmin:
+                Intent Sintent = new Intent(this, SettingsSecret.class);
+                startActivity(Sintent);
+                break;
+            case R.id.NightMode:
                 if (ModeSwitchButton.isChecked()) {
                     ModeSwitchButton.setChecked(false);
                     Toast.makeText(SettingsActivity.this, "true", Toast.LENGTH_SHORT).show();
@@ -70,26 +61,11 @@ public class SettingsActivity extends AppCompatActivity {
                     ModeSwitchButton.setChecked(true);
                     Toast.makeText(SettingsActivity.this, "true", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
-
-        AboutWangxin = (TableRow) findViewById(R.id.AboutWangxin);
-        AboutWangxin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, SettingsAboutwangxin.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-            return true;
+                break;
+            case R.id.AboutWangxin:
+                Intent Aintent = new Intent(this, SettingsAboutwangxin.class);
+                startActivity(Aintent);
+                break;
         }
-        return super.onOptionsItemSelected(item);
     }
 }
