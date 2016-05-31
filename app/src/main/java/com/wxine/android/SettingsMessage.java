@@ -1,67 +1,69 @@
 package com.wxine.android;
 
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TableRow;
 import android.widget.Toast;
 
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
+
 /**
  * Created by zz on 2016/4/8.
  */
+@EActivity(R.layout.settings_message)
 public class SettingsMessage extends AppCompatActivity {
-    private Toolbar toolbar;
-    private Switch EmailSwitchButton;
-    private Switch PhoneSwitchButton;
+
+    @ViewById
+    Toolbar Message_toolbar;
+
+    @ViewById
+    Switch EmailSwitchButton;
+
+    @ViewById
+    Switch PhoneSwitchButton;
+
+    @ViewById
     TableRow EmailNotice;
+
+    @ViewById
     TableRow PhoneNotice;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.settings_message);
-        toolbar = (Toolbar) findViewById(R.id.Message_toolbar);
-        toolbar.setTitle("设置");
-        setSupportActionBar(toolbar);
+    @AfterViews
+    void init() {
+        Message_toolbar.setTitle("设置");
+        setSupportActionBar(Message_toolbar);
+    }
 
-        PhoneSwitchButton = (Switch) findViewById(R.id.PhoneSwitchButton);
-        EmailSwitchButton = (Switch) findViewById(R.id.EmailSwitchButton);
-        EmailNotice = (TableRow) findViewById(R.id.EmailNotice);
-        PhoneNotice = (TableRow) findViewById(R.id.PhoneNotice);
-
-        EmailNotice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    @Click({R.id.EmailNotice, R.id.PhoneNotice})
+    void SButtonSelect(View view) {
+        switch (view.getId()) {
+            case R.id.EmailNotice:
                 if (EmailSwitchButton.isChecked()) {
                     EmailSwitchButton.setChecked(false);
-                    Toast.makeText(SettingsMessage.this, "true", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SettingsMessage.this, "false", Toast.LENGTH_SHORT).show();
                 } else {
                     EmailSwitchButton.setChecked(true);
                     Toast.makeText(SettingsMessage.this, "true", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
-
-        PhoneNotice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                break;
+            case R.id.PhoneNotice:
                 if (PhoneSwitchButton.isChecked()) {
                     PhoneSwitchButton.setChecked(false);
-                    Toast.makeText(SettingsMessage.this, "true", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SettingsMessage.this, "false", Toast.LENGTH_SHORT).show();
                 } else {
                     PhoneSwitchButton.setChecked(true);
                     Toast.makeText(SettingsMessage.this, "true", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
+                break;
+        }
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

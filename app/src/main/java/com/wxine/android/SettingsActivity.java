@@ -42,7 +42,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     @AfterViews
     void init() {
-        Setting_toolbar.setTitle("设置");
+        Setting_toolbar.setTitle("返回主页");
         setSupportActionBar(Setting_toolbar);
     }
 
@@ -53,15 +53,15 @@ public class SettingsActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.LoginAuthentication:
-                Intent Lintent = new Intent(this, SettingsAccount.class);
+                Intent Lintent = new Intent(this, SettingsAccount_.class);
                 startActivity(Lintent);
                 break;
             case R.id.MessageAuthentication:
-                Intent Mintent = new Intent(this, SettingsMessage.class);
+                Intent Mintent = new Intent(this, SettingsMessage_.class);
                 startActivity(Mintent);
                 break;
             case R.id.SecretAdmin:
-                Intent Sintent = new Intent(this, SettingsSecret.class);
+                Intent Sintent = new Intent(this, SettingsSecret_.class);
                 startActivity(Sintent);
                 break;
             case R.id.NightMode:
@@ -74,7 +74,7 @@ public class SettingsActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.AboutWangxin:
-                Intent Aintent = new Intent(this, SettingsAboutwangxin.class);
+                Intent Aintent = new Intent(this, SettingsAboutwangxin_.class);
                 startActivity(Aintent);
                 break;
         }

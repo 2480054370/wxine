@@ -105,22 +105,22 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".SettingsAccount"
+            android:name=".SettingsAccount_"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".SettingsMessage"
+            android:name=".SettingsMessage_"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".SettingsSecret"
+            android:name=".SettingsSecret_"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".SettingsAboutwangxin"
+            android:name=".SettingsAboutwangxin_"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

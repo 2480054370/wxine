@@ -11,13 +11,8 @@
         android:layout_height="fill_parent"
         android:background="#FFFFFF">
 
-        <RelativeLayout
-            android:id="@+id/SettingAccountRelativeLayout"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="#3f51b5">
-
             <android.support.design.widget.AppBarLayout
+                android:id="@+id/AccountAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fitsSystemWindows="true"
@@ -32,12 +27,11 @@
                     app:navigationIcon="?attr/homeAsUpIndicator"
                     app:popupTheme="@style/AppTheme.PopupOverlay" />
             </android.support.design.widget.AppBarLayout>
-        </RelativeLayout>
 
         <ScrollView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/SettingAccountRelativeLayout"
+            android:layout_below="@+id/AccountAppBar"
             android:fadingEdge="none">
 
             <LinearLayout

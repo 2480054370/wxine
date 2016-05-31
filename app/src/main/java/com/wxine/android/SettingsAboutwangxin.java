@@ -1,6 +1,5 @@
 package com.wxine.android;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -8,38 +7,42 @@ import android.view.View;
 import android.widget.TableRow;
 import android.widget.Toast;
 
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
+
 /**
  * Created by zz on 2016/4/12.
  */
+@EActivity(R.layout.settings_aboutwangxin)
 public class SettingsAboutwangxin extends AppCompatActivity {
-    private Toolbar toolbar;
+
+    @ViewById
+    Toolbar Aboutwx_toolbar;
+
+    @ViewById
     TableRow aboutUs;
+
+    @ViewById
     TableRow CheckForUpdates;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.settings_aboutwangxin);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("设置");
-        setSupportActionBar(toolbar);
+    @AfterViews
+    void init() {
+        Aboutwx_toolbar.setTitle("设置");
+        setSupportActionBar(Aboutwx_toolbar);
+    }
 
-        aboutUs = (TableRow) findViewById(R.id.aboutUs);
-        CheckForUpdates = (TableRow) findViewById(R.id.CheckForUpdates);
-
-        aboutUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    @Click({R.id.aboutUs, R.id.CheckForUpdates})
+    void Aboutwangxin(View view) {
+        switch (view.getId()) {
+            case R.id.aboutUs:
                 Toast.makeText(SettingsAboutwangxin.this, "关于我们", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        CheckForUpdates.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                break;
+            case R.id.CheckForUpdates:
                 Toast.makeText(SettingsAboutwangxin.this, "已经是最新版本", Toast.LENGTH_SHORT).show();
-            }
-        });
+                break;
+        }
     }
 
     @Override
