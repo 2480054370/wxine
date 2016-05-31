@@ -19,7 +19,7 @@ public class SettingsAccount extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_account);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.Account_toolbar);
         toolbar.setTitle("设置");
         setSupportActionBar(toolbar);
 

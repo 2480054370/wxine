@@ -11,34 +11,28 @@
         android:layout_height="fill_parent"
         android:background="#FFFFFF">
 
-        <RelativeLayout
-            android:id="@+id/SettingRelativeLayout"
-            android:layout_width="fill_parent"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/SettingAppBar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#3f51b5">
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-            <android.support.design.widget.AppBarLayout
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/Setting_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fitsSystemWindows="true"
-                android:theme="@style/AppTheme.AppBarOverlay">
-
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="#0f9d58"
-                    app:layout_scrollFlags="scroll|enterAlways"
-                    app:navigationIcon="?attr/homeAsUpIndicator"
-                    app:popupTheme="@style/AppTheme.PopupOverlay" />
-            </android.support.design.widget.AppBarLayout>
-        </RelativeLayout>
+                android:layout_height="?attr/actionBarSize"
+                android:background="#0f9d58"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        </android.support.design.widget.AppBarLayout>
 
         <ScrollView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/SettingRelativeLayout"
-            android:fadingEdge="none">
+            android:layout_below="@+id/SettingAppBar"
+            android:fadingEdge="none"><!--设置拉滚动条时 ，边框渐变的放向-->
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -208,7 +202,7 @@
                                 android:gravity="center_vertical"
                                 android:includeFontPadding="false"
                                 android:paddingLeft="17.0dip"
-                                android:text="主题选择"
+                                android:text="夜间模式"
                                 android:textColor="#292727"
                                 android:textSize="16.0sp" />
 

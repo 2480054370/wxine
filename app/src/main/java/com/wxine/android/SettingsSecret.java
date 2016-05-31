@@ -19,7 +19,7 @@ public class SettingsSecret extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_secret);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.Secret_toolbar);
         toolbar.setTitle("设置");
         setSupportActionBar(toolbar);
 
