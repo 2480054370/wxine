@@ -35,7 +35,6 @@ public class EventCheck extends AppCompatActivity {
 
     }
 
-
     private void setupViewPager() {
         final ViewPager viewPager = (ViewPager) findViewById(R.id.event_kq_ViewPager);
         setupViewPager(viewPager);

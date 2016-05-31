@@ -1,36 +1,30 @@
 package com.wxine.android;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
-/**
- * Created by Bumblebee on 2016/5/9.
- */
 public class ImgActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     //item 显示所需
-    private String[] title = {"2013-10-24 星期四","2013-10-4 星期san","2013-10-4 星期二","2013-10-14 星期一"};
+    private String[] title = {"2013-10-24 星期四", "2013-10-4 星期san", "2013-10-4 星期二", "2013-10-14 星期一", "2013-10-24 星期四", "2013-10-4 星期san", "2013-10-4 星期二", "2013-10-14 星期一"};
     private ArrayList<String> mTitle = new ArrayList<>();
     ImgAdapter mRecyclerViewAdapter;
-    public Intent intent = null;
+    private ArrayList<ArrayList<HashMap<String, Object>>> mArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_img);
+        setContentView(R.layout.img);
         //Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("相册");
@@ -46,48 +40,24 @@ public class ImgActivity extends AppCompatActivity {
         layoutManager.setOrientation(GridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
         Collections.addAll(mTitle, title);
+        initData();
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setAdapter(mRecyclerViewAdapter = new ImgAdapter(this, mTitle));
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (intent == null) {
-                    intent = new Intent(ImgActivity.this, ImgNewActivity.class);
-                    startActivityForResult(intent, 0);
-                } else {
-                    startActivityForResult(intent, 0);
-                }
-            }
-        });
-        mRecyclerViewAdapter.setOnItemClickListener(new ImgAdapter.OnRecyclerViewItemClickListener() {
-
-            @Override
-            public void onItemClick(View view,String title) {
-                Intent intent = new Intent(ImgActivity.this, PhotosActivity.class);
-                intent.putExtra("title",title);
-                startActivity(intent);
-            }
-        });
+        mRecyclerView.setAdapter(mRecyclerViewAdapter = new ImgAdapter(this, mTitle, mArrayList));
 
     }
 
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (resultCode) { //resultCode为回传的标记，我在B中回传的是RESULT_OK
-            case RESULT_OK:
-                String message = data.getStringExtra("text");
-                if (message != null) {
-                    mTitle.add(message);
-                    mRecyclerViewAdapter.notifyItemInserted(0);
-                    mRecyclerView.scrollToPosition(0);
-                }
-                break;
-            default:
-                break;
+    private void initData() {
+        mArrayList = new ArrayList<ArrayList<HashMap<String, Object>>>();
+        HashMap<String, Object> hashMap = null;
+        ArrayList<HashMap<String, Object>> arrayListForEveryGridView;
+        for (int i = 0; i < title.length+1; i++) {
+            arrayListForEveryGridView = new ArrayList<HashMap<String, Object>>();
+            for (int j = 0; j < 10; j++) {
+                hashMap = new HashMap<String, Object>();
+                hashMap.put("content", "i=" + i + " ,j=" + j);
+                arrayListForEveryGridView.add(hashMap);
+            }
+            mArrayList.add(arrayListForEveryGridView);
         }
-        */
     }
 }
