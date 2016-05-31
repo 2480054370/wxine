@@ -68,16 +68,45 @@ public class PersonalDataSecondTab extends Fragment {
             String picturePath = cursor.getString(columnIndex);
             cursor.close();
 
+            //解码图像大小,对图片进行缩放...防止图片过大导致内存溢出...
+            BitmapFactory.Options o = new BitmapFactory.Options();//实例化一个对象...
 
-            //压缩，用于节省BITMAP内存空间--解决BUG的关键步骤
+            o.inJustDecodeBounds = true;//这个就是Options的第一个属性,设置为true的时候，不会完全的对图片进行解码操作,不会为其分配内存，只是获取图片的基本信息...
+
+            BitmapFactory.decodeFile(picturePath,o);
+
+            /*
+             * 下面也就是对图片进行的一个压缩的操作...如果图片过大，最后会根据指定的数值进行缩放...
+             * 找到正确的刻度值，它应该是2的幂.
+             * 这里我指定了图片的长度和宽度为70个像素...
+             *
+             * */
+
+            final int REQUIRED_SIZE=70;
+            int width_tmp=o.outWidth, height_tmp=o.outHeight;
+            int scale=1;
+            while(true){
+                if(width_tmp/2<REQUIRED_SIZE || height_tmp/2<REQUIRED_SIZE)
+                    break;
+                width_tmp/=2;
+                height_tmp/=2;
+                scale*=2;
+            }
+
+            BitmapFactory.Options o2 = new BitmapFactory.Options(); //这里定义了一个新的对象...获取的还是同一张图片...
+            o2.inSampleSize=scale;   //对这张图片设置一个缩放值...inJustDecodeBounds不需要进行设置...
+            initData(BitmapFactory.decodeFile(picturePath,o2));
+            initView();
+
+            /*//压缩，用于节省BITMAP内存空间--解决BUG的关键步骤
             BitmapFactory.Options opts = new BitmapFactory.Options();
             opts.inSampleSize = 2;    //这个的值压缩的倍数（2的整数倍），数值越小，压缩率越小，图片越清晰
 
             //返回原图解码之后的bitmap对象
-            initData(BitmapFactory.decodeFile(picturePath,opts));
+            initData(BitmapFactory.decodeFile(picturePath,opts));*/
             //显示在Gallery视图
 //            initData(BitmapFactory.decodeFile(picturePath));
-            initView();
+
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
