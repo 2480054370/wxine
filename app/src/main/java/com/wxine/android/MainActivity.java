@@ -281,8 +281,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         switch (id) {
             case R.id.action_settings:
-                Intent ite = new Intent(MainActivity.this, SettingsActivity.class);
-                startActivity(ite);
+                Intent Sintent = new Intent(MainActivity.this, SettingsActivity_.class);
+                startActivity(Sintent);
                 return true;
             case R.id.action_search:
                 Intent it = new Intent(MainActivity.this, SearchActivity.class);
