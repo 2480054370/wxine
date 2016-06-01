@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, HomeActivity.class);
+                intent.setClass(MainActivity.this, HomeActivity_.class);
                 startActivity(intent);
             }
         });
@@ -406,7 +406,7 @@ public class MainActivity extends AppCompatActivity
                     task = new TimerTask() {
                         @Override
                         public void run() {
-                            Intent InPersonal = new Intent(MainActivity.this, HomeActivity.class);
+                            Intent InPersonal = new Intent(MainActivity.this, HomeActivity_.class);
                             startActivity(InPersonal);
                         }
                     };

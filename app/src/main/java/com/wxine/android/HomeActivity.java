@@ -1,7 +1,6 @@
 package com.wxine.android;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,32 +14,40 @@ import android.view.View;
 import com.wxine.android.model.Info;
 import com.wxine.android.model.User;
 
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
+
 import java.util.ArrayList;
 
+@EActivity(R.layout.home_main)
 public class HomeActivity extends AppCompatActivity {
-    private Toolbar toolbar;
+    @ViewById
+    Toolbar Home_toolbar;
+
     private HomeAdapter mAdapter;
-    private SwipeRefreshLayout mRefreshLayout;
+
+    @ViewById
+    SwipeRefreshLayout home_refresh_widget;
+
     private LinearLayoutManager mLayoutManager;
+
+    @ViewById
+    RecyclerView home_recycler_view;
+
     ArrayList<Info> list = new ArrayList<Info>();
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_main);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("");
+    @AfterViews
+    void init() {
+        Home_toolbar.setTitle("");
+        setSupportActionBar(Home_toolbar);
 
-        setSupportActionBar(toolbar);
-
-        mRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.info_refresh_widget);
         datainit();
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.infos_recycler_view);
-        mRecyclerView.setHasFixedSize(true);
+        home_recycler_view.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        home_recycler_view.setLayoutManager(mLayoutManager);
         mAdapter = new HomeAdapter(this.getApplicationContext(), list);
-        mRecyclerView.setAdapter(mAdapter);
+        home_recycler_view.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new HomeAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view) {
@@ -54,7 +61,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
-
 
     public void datainit() {
         User user = new User();
@@ -100,9 +106,6 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (item.getItemId() == android.R.id.home) {
             onBackPressed();

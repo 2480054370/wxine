@@ -42,7 +42,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     @AfterViews
     void init() {
-        Setting_toolbar.setTitle("返回主页");
+        Setting_toolbar.setTitle("返回");
         setSupportActionBar(Setting_toolbar);
     }
 
