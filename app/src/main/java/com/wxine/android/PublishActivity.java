@@ -16,6 +16,7 @@ import android.support.v7.app.ActionBar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -32,12 +33,18 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
+import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
+
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.Serializable;
 
 public class PublishActivity extends Activity {
 
@@ -55,15 +62,17 @@ public class PublishActivity extends Activity {
 
     private LinearLayout mGallery;  //Gallery视图
     private Bitmap[] mImgIds;       //选中的图片
+    private String[] mImgIds2;       //选中的图片
     private LayoutInflater mInflater;   //图片的item
     private boolean sendTF = false;    //
-
+    private ImageLoader imageLoader;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_publish);
 
+       imageLoader = ImageLoader.getInstance(); // Get singleton instance
 
         mInflater = LayoutInflater.from(this);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -210,6 +219,7 @@ public class PublishActivity extends Activity {
     //选中图片后的返回时事件
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+
         //图库
         if (requestCode == 1 && resultCode == RESULT_OK && null != data) {
             Uri selectedImage = data.getData();
@@ -224,45 +234,24 @@ public class PublishActivity extends Activity {
             cursor.close();
 
 
-            //解码图像大小,对图片进行缩放...防止图片过大导致内存溢出...
-            BitmapFactory.Options o = new BitmapFactory.Options();//实例化一个对象...
+            //压缩，用于节省BITMAP内存空间--解决BUG的关键步骤
+            
+//            BitmapFactory.Options opts = new BitmapFactory.Options();
+//            opts.inSampleSize = 2;    //这个的值压缩的倍数（2的整数倍），数值越小，压缩率越小，图片越清晰
 
-            o.inJustDecodeBounds = true;//这个就是Options的第一个属性,设置为true的时候，不会完全的对图片进行解码操作,不会为其分配内存，只是获取图片的基本信息...
-
-            BitmapFactory.decodeFile(picturePath,o);
-
-            /*
-             * 下面也就是对图片进行的一个压缩的操作...如果图片过大，最后会根据指定的数值进行缩放...
-             * 找到正确的刻度值，它应该是2的幂.
-             * 这里我指定了图片的长度和宽度为70个像素...
-             *
-             * */
-
-            final int REQUIRED_SIZE=70;
-            int width_tmp=o.outWidth, height_tmp=o.outHeight;
-            int scale=1;
-            while(true){
-                if(width_tmp/2<REQUIRED_SIZE || height_tmp/2<REQUIRED_SIZE)
-                    break;
-                width_tmp/=2;
-                height_tmp/=2;
-                scale*=2;
-            }
-
-            BitmapFactory.Options o2 = new BitmapFactory.Options(); //这里定义了一个新的对象...获取的还是同一张图片...
-            o2.inSampleSize=scale;   //对这张图片设置一个缩放值...inJustDecodeBounds不需要进行设置...
-            initData(BitmapFactory.decodeFile(picturePath,o2));
-            initView();
-
+            //Bitmap bmp = imageLoader.loadImageSync(picturePath,getWholeOptions());
+            //返回原图解码之后的bitmap对象
+           // initData(BitmapFactory.decodeFile(picturePath,opts));
+            //initData(bmp);
+            initData2(picturePath);
             //显示在Gallery视图
 //            initData(BitmapFactory.decodeFile(picturePath));
-
+            initView();
         }
 
         //相机
         if (requestCode == 2 && resultCode == RESULT_OK && null != data) {
             Bundle extras = data.getExtras();
-
             Bitmap head = extras.getParcelable("data");
             setPicToView(head);//保存在SD卡中
             initData(head);
@@ -300,20 +289,49 @@ public class PublishActivity extends Activity {
         }
     }
 
+    private DisplayImageOptions getWholeOptions() {
+        DisplayImageOptions options = new DisplayImageOptions.Builder()
+                .cacheInMemory(true)//设置下载的图片是否缓存在内存中
+                .cacheOnDisk(true)//设置下载的图片是否缓存在SD卡中
+                .considerExifParams(true)  //是否考虑JPEG图像EXIF参数（旋转，翻转）
+                .imageScaleType(ImageScaleType.IN_SAMPLE_INT)//设置图片以如何的编码方式显示
+                .bitmapConfig(Bitmap.Config.RGB_565)//设置图片的解码类型
+                //.decodingOptions(BitmapFactory.Options decodingOptions)//设置图片的解码配置
+                .delayBeforeLoading(0)//int delayInMillis为你设置的下载前的延迟时间
+                //设置图片加入缓存前，对bitmap进行设置
+                //.preProcessor(BitmapProcessor preProcessor)
+                .resetViewBeforeLoading(true)//设置图片在下载前是否重置，复位
+                .displayer(new RoundedBitmapDisplayer(20))//不推荐用！！！！是否设置为圆角，弧度为多少
+                .displayer(new FadeInBitmapDisplayer(100))//是否图片加载好后渐入的动画时间，可能会出现闪动
+                .build();//构建完成
+
+        return options;
+    }
 
     //照片的显示
     private void initData(Bitmap pub_photos) {
         mImgIds = new Bitmap[]{pub_photos};
     }
 
+    //照片的显示
+    private void initData2(String pub_photos) {
+        mImgIds2 = new String[]{pub_photos};
+    }
+
+
+
     private void initView() {
         mGallery = (LinearLayout) findViewById(R.id.id_gallery);
-        for (int i = 0; i < mImgIds.length; i++) {
+        Log.e("tag:len","a "+mImgIds2.length);
+        for (int i = 0; i < mImgIds2.length; i++) {
             final View view = mInflater.inflate(R.layout.album_item,
                     mGallery, false);
             final ImageView img = (ImageView) view.findViewById(R.id.pub_photos);
-            img.setImageBitmap(mImgIds[i]);
+          //  img.setImageBitmap(mImgIds[i]);
+            mImgIds2[i] = "file:///"+mImgIds2[i];
+            imageLoader.displayImage(mImgIds2[i], img);
             mGallery.addView(view);
+
             //删除照片
             ImageView remove = (ImageView) view.findViewById(R.id.remove_img);
             remove.setOnClickListener(new View.OnClickListener() {
