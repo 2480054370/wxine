@@ -7,10 +7,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
+import com.wxine.android.model.Comment;
 import com.wxine.android.model.Info;
 import com.wxine.android.model.User;
 
@@ -19,12 +22,13 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 @EActivity(R.layout.home_main)
 public class HomeActivity extends AppCompatActivity {
     @ViewById
     Toolbar Home_toolbar;
-
     private HomeAdapter mAdapter;
 
     @ViewById
@@ -33,21 +37,34 @@ public class HomeActivity extends AppCompatActivity {
     private LinearLayoutManager mLayoutManager;
 
     @ViewById
-    RecyclerView home_recycler_view;
+    RecyclerView home_main_recyclerView;
 
     ArrayList<Info> list = new ArrayList<Info>();
+
+    @ViewById
+    ImageView PersonalAgreeImg;
+
+    @ViewById
+    ImageView PersonalShareImg;
+
+    @ViewById
+    ImageView PersonalComment;
+
 
     @AfterViews
     void init() {
         Home_toolbar.setTitle("");
         setSupportActionBar(Home_toolbar);
 
+        View a = LayoutInflater.from(this).inflate(R.layout.home_item, null);
+        RecyclerView recyclerView = (RecyclerView) a.findViewById(R.id.home_item_recycler);
+
         datainit();
-        home_recycler_view.setHasFixedSize(true);
+        home_main_recyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
-        home_recycler_view.setLayoutManager(mLayoutManager);
+        home_main_recyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new HomeAdapter(this.getApplicationContext(), list);
-        home_recycler_view.setAdapter(mAdapter);
+        home_main_recyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new HomeAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view) {
@@ -60,6 +77,13 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        recyclerView.setHasFixedSize(true);
+        FullyLinearLayoutManager mLayoutManager = new FullyLinearLayoutManager(this);
+        recyclerView.setLayoutManager(mLayoutManager);
+        final CommentsAdapter mAdapter = new CommentsAdapter(this, new ArrayList<Comment>(list.get(1).getComments()));
+        //Log.v("==height======", String.valueOf(0));
+        recyclerView.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
     }
 
     public void datainit() {
@@ -78,6 +102,30 @@ public class HomeActivity extends AppCompatActivity {
         info.setName("aaa");
         info.setCleancontent("this is c content1");
 
+        Comment comment1 = new Comment();
+        comment1.setContent("this is a comment1");
+        comment1.setUser(user);
+        comment1.setScore(60);
+        comment1.setCtime(new java.sql.Timestamp(2014121123));
+        Set<Comment> set1 = new HashSet<>();
+        set1.add(comment1);
+
+        Comment comment2 = new Comment();
+        comment2.setContent("this is a comment1");
+        comment2.setUser(user);
+        comment2.setScore(60);
+        comment2.setCtime(new java.sql.Timestamp(2014121123));
+        set1.add(comment2);
+        info.setComments(set1);
+
+        Comment comment3 = new Comment();
+        comment3.setContent("this is a comment1");
+        comment3.setUser(user);
+        comment3.setScore(60);
+        comment3.setCtime(new java.sql.Timestamp(2014121123));
+        set1.add(comment3);
+        info.setComments(set1);
+
         User user2 = new User();
         user2.setName("bbb");
         user2.setImage("http://www.qqpk.cn/Article/UploadFiles/201112/20111228132051137.jpg");
@@ -92,6 +140,7 @@ public class HomeActivity extends AppCompatActivity {
         info2.setName("bbb");
         info2.setContent("this is content2");
         info2.setCleancontent("this is c content");
+        info2.setComments(set1);
 
         list.add(info);
         list.add(info2);

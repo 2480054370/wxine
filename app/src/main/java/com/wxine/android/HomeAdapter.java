@@ -1,6 +1,7 @@
 package com.wxine.android;
 
 import android.content.Context;
+import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +10,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.wxine.android.model.Comment;
 import com.wxine.android.model.Info;
 import com.wxine.android.utils.CircleImageView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -57,12 +60,12 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
         if (viewType == ITEM_TYPE.ITEM_TYPE_IMAGE.ordinal()) {
             return new ImageViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.home_top, parent, false));
         } else {
-            return new TextViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.home_item, parent, false));
+            return new TextViewHolder(context, LayoutInflater.from(parent.getContext()).inflate(R.layout.home_item, parent, false));
         }
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         Info a;
         if (position > 0) {
             a = list.get(position - 1);
@@ -73,6 +76,33 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
 
         } else if (holder instanceof TextViewHolder) {
             ((TextViewHolder) holder).PersonalName.setText(a.getUser().getName());
+            if (a.getComments().size() > 0) {
+                ViewGroup.LayoutParams lp = ((TextViewHolder) holder).home_item_recycler.getLayoutParams();
+                lp.height = 200;
+                ((TextViewHolder) holder).home_item_recycler.setLayoutParams(lp);
+                ((TextViewHolder) holder).home_item_recycler.requestLayout();
+                final CommentsAdapter mAdapter = new CommentsAdapter(context, new ArrayList<Comment>(a.getComments()));
+                ((TextViewHolder) holder).home_item_recycler.setAdapter(mAdapter);
+                mAdapter.notifyDataSetChanged();
+
+                //自动滚动
+                final int count = a.getComments().size();
+                if (count > 1) {//一个滚动没有意义
+                    final Handler handler = new Handler();
+                    Runnable runnable = new Runnable() {
+                        int to = 1;
+
+                        @Override
+                        public void run() {
+                            ((TextViewHolder) holder).home_item_recycler.smoothScrollToPosition(to);
+                            if (to >= count) to = 1;
+                            else to = to + 1;//重新开始
+                            handler.postDelayed(this, 3000);
+                        }
+                    };
+                    handler.postDelayed(runnable, 3000);
+                }
+            }
         }
     }
 
@@ -92,14 +122,20 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
         private ImageView PersonalImage;
         private ImageView PersonalAgreeImg;
         private ImageView PersonalShareImg;
+        public RecyclerView home_item_recycler;
 
-        TextViewHolder(View view) {
+        TextViewHolder(Context context, View view) {
             super(view);
             PersonalUser = (ImageView) view.findViewById(R.id.PersonalUser);
             PersonalName = (TextView) view.findViewById(R.id.PersonalName);
             PersonalImage = (ImageView) view.findViewById(R.id.PersonalImage);
             PersonalAgreeImg = (ImageView) view.findViewById(R.id.PersonalAgreeImg);
             PersonalShareImg = (ImageView) view.findViewById(R.id.PersonalShareImg);
+            home_item_recycler = (RecyclerView) view.findViewById(R.id.home_item_recycler);
+            home_item_recycler.setHasFixedSize(true);
+
+            FullyLinearLayoutManager mLayoutManager = new FullyLinearLayoutManager(context);
+            home_item_recycler.setLayoutManager(mLayoutManager);
         }
     }
 
@@ -124,7 +160,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
                     mOnItemClickListener.onKQClick(v, getLayoutPosition());
                 }
             });
-
         }
     }
+
+
 }
